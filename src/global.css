@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #e9d19c;
+
+  --animate-loading-bar: loading-bar 2s linear infinite;
+  @keyframes loading-bar {
+    0% {
+      left: -40%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+}
