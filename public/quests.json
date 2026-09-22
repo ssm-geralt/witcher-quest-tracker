@@ -1,0 +1,254 @@
+[
+  {
+    "name": "Kaer Morhen",
+    "completed": false,
+    "type": "main",
+    "location": "whiteOrchard",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Kaer_Morhen_(quest)",
+    "notes": [
+      {
+        "text": "When starting a new game, when asked to simulate a witcher 2 save, select 'On' so that you can choose what happened in the previous game during an interaction in Vizima."
+      },
+      {
+        "text": "In the main menu options, you can have alternate appearances for Yennefer, Triss, Ciri, Dandelion, and Nilfgaardian soldiers' armor."
+      },
+      {
+        "text": "Here is a list of many of the Easter Eggs that can be found in the game.",
+        "link": "https://witcher.fandom.com/wiki/The_Witcher_3_Easter_eggs"
+      },
+      {
+        "text": "Here is a list of many of the Easter Eggs that can be found in the game.",
+        "link": "https://witcher.fandom.com/wiki/The_Witcher_3_Easter_eggs"
+      },
+      {
+        "text": "When fast traveling, there are cutscenes/loading screens that tell you what part of the main quest you are at. The narrator of these is actually an older Dandelion (a bard you will meet later on in the game). He is also the one that does all the journal entries for everything in your quest log."
+      },
+      {
+        "text": "There are new hair and beard options from the next gen update."
+      },
+      {
+        "text": "With the next gen upgrade, you no longer need stamina to run outside of combat."
+      },
+      {
+        "text": "In the next gen upgrade, guards are no longer extremely over-leveled and can easily be dispatched if you anger them."
+      },
+      {
+        "text": "Fall damage has now been reduced."
+      }
+    ]
+  },
+  {
+    "name": "Lilac and Gooseberries Part 1",
+    "completed": false,
+    "type": "main",
+    "location": "whiteOrchard",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Lilac_and_Gooseberries",
+    "notes": [
+      {
+        "text": "Get the Temerian armor set at the Woesong Bridge vendor in White Orchard. Note that the set does not level with you, but if you wait until you are a higher level, the set will also be a higher level.",
+        "completed": false
+      },
+      {
+        "text": "There is now a new animation for picking up herbs."
+      },
+      {
+        "text": "You can parry and break enemies' spears in combat, but it has to be the right kind of spear to do this. Halberds and poleaxes cannot be parried or broken, only simple spears.",
+        "link": "https://www.youtube.com/watch?v=ShqU6LaDT7M&t=314s"
+      },
+      {
+        "text": "You can now walk backwards while on horseback, do a flourish when going from idle to a gallop, and achieve a unique sort of backflip dismount animation when getting off Roach in tight spaces.",
+        "link": "https://www.youtube.com/watch?v=675YpIIl6PU&t=194s"
+      },
+      {
+        "text": "You can pet Roach now by holding down the jump button when your right hand is towards the head.",
+        "link": "https://www.youtube.com/watch?v=PUTSvC6OKBM&t=86s"
+      },
+      {
+        "text": "Roach can now kick enemies. She can even knock down werewolves so that you can do a finisher move on them. There is no other way to knock down a werewolf.",
+        "link": "https://www.youtube.com/watch?v=MxlvbAilMio&t=132s"
+      },
+      {
+        "text": "Roach can now run over enemies and either stagger or kill them. The dismount animations are now triggered based on where the camera angle is positioned.",
+        "link": "https://www.youtube.com/watch?v=YTKrw-QyFuM&t=691s"
+      },
+      {
+        "text": "Find Yen's raven skull at the beginning area (give it back to Yen eventually), see the battle from the intro, horse head, items from guy that Yen crashed into, etc.",
+        "link": "https://www.youtube.com/watch?v=2IRqQ-6Is2s&list=PLgHgYXIqVlYb0UtbPpQmlVbbomM92PNEv&index=43",
+        "completed": false
+      }
+    ]
+  },
+  {
+    "name": "Twisted Firestarter",
+    "level": 1,
+    "completed": false,
+    "link": "https://witcher.fandom.com/wiki/Twisted_Firestarter",
+    "location": "whiteOrchard",
+    "type": "side",
+    "finishBefore": ["Lilac and Gooseberries Part 2"]
+  },
+  {
+    "name": "A Frying Pan, Spick and Span",
+    "completed": false,
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/A_Frying_Pan,_Spick_and_Span",
+    "location": "whiteOrchard",
+    "type": "side",
+    "notes": [
+      {
+        "text": "Break open the door to the house before talking to the frying pan lady to get unique dialogue."
+      },
+      {
+        "text": "Thaler's monocle dialogue is now fixed in the next gen update. Make sure to pick up the monocle in 'A Frying Pan, Spick and Span', so you can return it to Thaler in 'A Deadly Plot'."
+      }
+    ],
+    "finishBefore": ["Lilac and Gooseberries Part 2"]
+  },
+  {
+    "name": "Precious Cargo",
+    "completed": false,
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Precious_Cargo",
+    "location": "whiteOrchard",
+    "type": "side",
+    "finishBefore": ["Lilac and Gooseberries Part 2"]
+  },
+  {
+    "name": "Missing in Action",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Missing_in_Action",
+    "notes": [
+      {
+        "text": "During 'Missing in Action' you can see that Dune is missing a couple fingers."
+      }
+    ],
+    "completed": false,
+    "location": "whiteOrchard",
+    "type": "side",
+    "finishBefore": ["Lilac and Gooseberries Part 2"]
+  },
+  {
+    "name": "Devil by the Well",
+    "level": 2,
+    "completed": false,
+    "link": "https://witcher.fandom.com/wiki/Contract:_Devil_by_the_Well",
+    "location": "whiteOrchard",
+    "type": "contract",
+    "notes": [
+      {
+        "text": "Visit Tomira after Devil by the Well for more lore about the fate of the villagers. Tomira is the herbalist woman you will meet during 'The Beast of White Orchard' and 'On Death's Bed'."
+      }
+    ],
+    "finishBefore": ["On Thin Ice"]
+  },
+  {
+    "name": "On Death's Bed",
+    "level": 2,
+    "completed": false,
+    "link": "https://witcher.fandom.com/wiki/On_Death%27s_Bed",
+    "location": "whiteOrchard",
+    "type": "side",
+    "finishBefore": ["Lilac and Gooseberries Part 2"],
+    "notes": [
+      {
+        "text": "This is started during The Beast of White Orchard when you speak with Tomira. Complete before the griffin."
+      },
+      {
+        "text": "Tomira in White Orchard will buy honey comb for 7 coins whereas other merchants will only buy it for 4 coins. If you aard a beehive all the way to Tomira's hut, it will actually kill her."
+      },
+      {
+        "text": "Lena's fate is determined in the Nilfgaardian camp later on in the game. I've put a reminder next to some quests that are closer to that area."
+      }
+    ]
+  },
+  {
+    "name": "The Beast of White Orchard",
+    "completed": false,
+    "level": 3,
+    "link": "https://witcher.fandom.com/wiki/The_Beast_of_White_Orchard",
+    "location": "whiteOrchard",
+    "type": "main",
+    "notes": [
+      {
+        "text": "Hidden area of Nilgaardian camp. Open the door, climb the stairs, jump over the wall, and aard.",
+        "link": "https://www.youtube.com/watch?v=7xT9ZnmA3h0&t=583s"
+      },
+      {
+        "text": "During 'The Beast of White Orchard', you can find an interesting sketch on the table of the Nilfgaardian captain. It appears to be a map of White Orchard."
+      },
+      {
+        "text": "You can find Florian's grave in the cemetary and it has a wooden sword. It doesn't state the truth of the love between him and Mislav."
+      },
+      {
+        "text": "If you remain in the fort after reporting the Griffin's death, you can hear the sound of whipping and the punished peasant crying in pain. The whiplashes will be struck 15 times as sentenced before the sound stops completely."
+      }
+    ]
+  },
+  {
+    "name": "Lilac and Gooseberries Part 2",
+    "level": 1,
+    "completed": false,
+    "link": "https://witcher.fandom.com/wiki/Lilac_and_Gooseberries",
+    "location": "whiteOrchard",
+    "type": "main",
+    "notes": [{ "text": "Spawn a chort by killing a bunch of cows." }]
+  },
+  {
+    "name": "The Incident at White Orchard",
+    "completed": false,
+    "level": 2,
+    "link": "https://witcher.fandom.com/wiki/The_Incident_at_White_Orchard",
+    "location": "whiteOrchard",
+    "type": "main"
+  },
+  {
+    "name": "Dirty Funds",
+    "level": 2,
+    "completed": false,
+    "link": "https://witcher.fandom.com/wiki/Dirty_Funds",
+    "location": "whiteOrchard",
+    "type": "treasure"
+  },
+  {
+    "name": "Deserter Gold",
+    "level": 3,
+    "completed": false,
+    "link": "https://witcher.fandom.com/wiki/Deserter_Gold",
+    "location": "whiteOrchard",
+    "type": "treasure"
+  },
+  {
+    "name": "Temerian Valuables",
+    "level": 4,
+    "completed": false,
+    "link": "https://witcher.fandom.com/wiki/Temerian_Valuables",
+    "location": "whiteOrchard",
+    "type": "treasure"
+  },
+  {
+    "name": "Viper Silver Sword (Basic)",
+    "level": 6,
+    "completed": false,
+    "link": "https://witcher.fandom.com/wiki/Viper_School_Gear",
+    "location": "whiteOrchard",
+    "type": "scavenger"
+  },
+  {
+    "name": "Viper Steel Sword (Basic)",
+    "level": 6,
+    "completed": false,
+    "link": "https://witcher.fandom.com/wiki/Viper_School_Gear",
+    "location": "whiteOrchard",
+    "type": "scavenger"
+  },
+  {
+    "name": "Gwent: Collect 'em All!",
+    "level": 1,
+    "completed": false,
+    "link": "https://witcher.fandom.com/wiki/Collect_%27Em_All",
+    "location": "whiteOrchard",
+    "type": "gwent"
+  }
+]
