@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { questArraySchema, type AppVM, type Quest } from "./domain";
+import type { AppVM } from "./domain";
 import { getQuests } from "./data";
+import { questArraySchema, type Quest } from "./components/quest/domain";
 
 export const useAppController = (): AppVM => {
   const [{ isLoading, error, quests }, setQuestsState] = useState<{
@@ -44,9 +45,26 @@ export const useAppController = (): AppVM => {
     fetchQuests();
   }, []);
 
+  const setQuestCompletionState: AppVM["setQuestCompletionState"] = (
+    index,
+    completionState,
+  ) => {
+    setQuestsState((prevQuestsState) => ({
+      ...prevQuestsState,
+      quests: prevQuestsState.quests?.map((quest, previousIndex) => {
+        if (index === previousIndex) {
+          return { ...quest, completionState, isAutoSet: false };
+        }
+
+        return quest;
+      }),
+    }));
+  };
+
   return {
     quests,
     isLoading,
     error,
+    setQuestCompletionState,
   };
 };

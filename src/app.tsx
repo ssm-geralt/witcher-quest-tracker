@@ -1,10 +1,12 @@
 import { useAppController } from "./useAppController";
 import { MainHeader } from "./components/mainHeader";
 import { LoadingIndicator } from "./components/loadingIndicator";
-import { Checkbox } from "./components/checkbox";
+import { Quest } from "./components/quest/quest";
 
 export function App() {
-  const { isLoading, error, quests } = useAppController();
+  const { isLoading, error, quests, setQuestCompletionState } =
+    useAppController();
+
   return (
     <div className="bg-black text-white min-h-dvh flex flex-col">
       <LoadingIndicator isLoading={isLoading} />
@@ -14,13 +16,15 @@ export function App() {
       <main className="grow px-4">
         {error ? <p className="text-red-500">{error}</p> : null}
 
-        <ul>
-          {quests?.map(({ name }, index) => (
-            <li key={name}>
-              {name}
-              <Checkbox variant={index % 2 === 0 ? "failure" : "success"}>
-                <span className="sr-only">{name}</span>
-              </Checkbox>
+        <ul className="flex flex-col gap-4">
+          {quests?.map((quest, index) => (
+            <li key={quest.name + index}>
+              <Quest
+                quest={quest}
+                onCompletionStateChange={(newState) =>
+                  setQuestCompletionState(index, newState)
+                }
+              />
             </li>
           ))}
         </ul>
