@@ -1,7 +1,6 @@
 [
   {
     "name": "Kaer Morhen",
-    "completed": false,
     "type": "main",
     "location": "whiteOrchard",
     "level": 1,
@@ -22,7 +21,7 @@
         "link": "https://witcher.fandom.com/wiki/The_Witcher_3_Easter_eggs"
       },
       {
-        "text": "When fast traveling, there are cutscenes/loading screens that tell you what part of the main quest you are at. The narrator of these is actually an older Dandelion (a bard you will meet later on in the game). He is also the one that does all the journal entries for everything in your quest log."
+        "text": "When fast traveling, there are cut-scenes/loading screens that tell you what part of the main quest you are at. The narrator of these is actually an older Dandelion (a bard you will meet later on in the game). He is also the one that does all the journal entries for everything in your quest log."
       },
       {
         "text": "There are new hair and beard options from the next gen update."
@@ -40,7 +39,6 @@
   },
   {
     "name": "Lilac and Gooseberries Part 1",
-    "completed": false,
     "type": "main",
     "location": "whiteOrchard",
     "level": 1,
@@ -48,7 +46,7 @@
     "notes": [
       {
         "text": "Get the Temerian armor set at the Woesong Bridge vendor in White Orchard. Note that the set does not level with you, but if you wait until you are a higher level, the set will also be a higher level.",
-        "completed": false
+        "isCompleted": false
       },
       {
         "text": "There is now a new animation for picking up herbs."
@@ -76,14 +74,16 @@
       {
         "text": "Find Yen's raven skull at the beginning area (give it back to Yen eventually), see the battle from the intro, horse head, items from guy that Yen crashed into, etc.",
         "link": "https://www.youtube.com/watch?v=2IRqQ-6Is2s&list=PLgHgYXIqVlYb0UtbPpQmlVbbomM92PNEv&index=43",
-        "completed": false
+        "isCompleted": false
+      },
+      {
+        "text": "Elsa the innkeeper and the merchant you saved from the griffin sell cards."
       }
     ]
   },
   {
     "name": "Twisted Firestarter",
     "level": 1,
-    "completed": false,
     "link": "https://witcher.fandom.com/wiki/Twisted_Firestarter",
     "location": "whiteOrchard",
     "type": "side",
@@ -91,7 +91,6 @@
   },
   {
     "name": "A Frying Pan, Spick and Span",
-    "completed": false,
     "level": 1,
     "link": "https://witcher.fandom.com/wiki/A_Frying_Pan,_Spick_and_Span",
     "location": "whiteOrchard",
@@ -108,7 +107,6 @@
   },
   {
     "name": "Precious Cargo",
-    "completed": false,
     "level": 1,
     "link": "https://witcher.fandom.com/wiki/Precious_Cargo",
     "location": "whiteOrchard",
@@ -124,7 +122,6 @@
         "text": "During 'Missing in Action' you can see that Dune is missing a couple fingers."
       }
     ],
-    "completed": false,
     "location": "whiteOrchard",
     "type": "side",
     "finishBefore": ["Lilac and Gooseberries Part 2"]
@@ -132,7 +129,6 @@
   {
     "name": "Devil by the Well",
     "level": 2,
-    "completed": false,
     "link": "https://witcher.fandom.com/wiki/Contract:_Devil_by_the_Well",
     "location": "whiteOrchard",
     "type": "contract",
@@ -146,7 +142,6 @@
   {
     "name": "On Death's Bed",
     "level": 2,
-    "completed": false,
     "link": "https://witcher.fandom.com/wiki/On_Death%27s_Bed",
     "location": "whiteOrchard",
     "type": "side",
@@ -165,7 +160,6 @@
   },
   {
     "name": "The Beast of White Orchard",
-    "completed": false,
     "level": 3,
     "link": "https://witcher.fandom.com/wiki/The_Beast_of_White_Orchard",
     "location": "whiteOrchard",
@@ -189,15 +183,16 @@
   {
     "name": "Lilac and Gooseberries Part 2",
     "level": 1,
-    "completed": false,
     "link": "https://witcher.fandom.com/wiki/Lilac_and_Gooseberries",
     "location": "whiteOrchard",
     "type": "main",
-    "notes": [{ "text": "Spawn a chort by killing a bunch of cows." }]
+    "notes": [
+      { "text": "Spawn a chort by killing a bunch of cows." },
+      { "text": "Elsa the innkeeper might sell additional cards." }
+    ]
   },
   {
     "name": "The Incident at White Orchard",
-    "completed": false,
     "level": 2,
     "link": "https://witcher.fandom.com/wiki/The_Incident_at_White_Orchard",
     "location": "whiteOrchard",
@@ -206,7 +201,6 @@
   {
     "name": "Dirty Funds",
     "level": 2,
-    "completed": false,
     "link": "https://witcher.fandom.com/wiki/Dirty_Funds",
     "location": "whiteOrchard",
     "type": "treasure"
@@ -214,7 +208,6 @@
   {
     "name": "Deserter Gold",
     "level": 3,
-    "completed": false,
     "link": "https://witcher.fandom.com/wiki/Deserter_Gold",
     "location": "whiteOrchard",
     "type": "treasure"
@@ -222,7 +215,6 @@
   {
     "name": "Temerian Valuables",
     "level": 4,
-    "completed": false,
     "link": "https://witcher.fandom.com/wiki/Temerian_Valuables",
     "location": "whiteOrchard",
     "type": "treasure"
@@ -230,7 +222,6 @@
   {
     "name": "Viper Silver Sword (Basic)",
     "level": 6,
-    "completed": false,
     "link": "https://witcher.fandom.com/wiki/Viper_School_Gear",
     "location": "whiteOrchard",
     "type": "scavenger"
@@ -238,7 +229,6 @@
   {
     "name": "Viper Steel Sword (Basic)",
     "level": 6,
-    "completed": false,
     "link": "https://witcher.fandom.com/wiki/Viper_School_Gear",
     "location": "whiteOrchard",
     "type": "scavenger"
@@ -246,9 +236,241 @@
   {
     "name": "Gwent: Collect 'em All!",
     "level": 1,
-    "completed": false,
     "link": "https://witcher.fandom.com/wiki/Collect_%27Em_All",
     "location": "whiteOrchard",
     "type": "gwent"
+  },
+  {
+    "name": "Imperial Audience",
+    "level": 2,
+    "type": "main",
+    "link": "https://witcher.fandom.com/wiki/Imperial_Audience",
+    "location": "vizima",
+    "notes": [
+      {
+        "text": "Best choices are: spared Aryan, sided with Vernon, saved Triss, saved Sile, spared Letho."
+      },
+      {
+        "text": "In Vizima, the chamberlain will give a different reaction to each of the 3 black outfits. He doesn't seem to like the one with the tight belt."
+      },
+      {
+        "text": "In Vizima, you can keep your towel for the rest of the game by dropping it and then picking it up after you pick your black outfit.",
+        "isCompleted": false
+      },
+      {
+        "text": "Speak with Morvran Voorhis and his friend about neutrality during 'Imperial Audience' (follow the chamberlain).",
+        "isCompleted": false
+      },
+      {
+        "text": "New gear found in a chest in Yennifer's room in Vizima (Steel Sword of a Thousand Flowers, White Widow of the Valley of Flowers Silver Sword, armor, boots, gauntlets, and trousers of a Thousand Flowers, Nine-tailed Vixen steel and silver sword, and White Tiger of the West armor, boots, trousers, and vambraces.",
+        "isCompleted": false
+      },
+      {
+        "text": "Enter a secret chamber by pressing a stone.",
+        "isCompleted": false,
+        "link": "https://www.youtube.com/watch?v=MZoVcr4o5BY&t=19s"
+      }
+    ]
+  },
+  {
+    "name": "Gwent: Collect 'em All!",
+    "level": 1,
+    "type": "gwent",
+    "link": "https://witcher.fandom.com/wiki/Collect_%27Em_All",
+    "location": "vizima",
+    "notes": [
+      {
+        "text": "Play Gwent against the player in the courtyard in Vizima (Collect 'em All)."
+      }
+    ]
+  },
+  {
+    "name": "Funeral Pyres",
+    "level": 3,
+    "type": "side",
+    "link": "https://witcher.fandom.com/wiki/Funeral_Pyres",
+    "location": "velen",
+    "notes": [
+      {
+        "text": "You can find the man that teaches you how to play gwent hanging from the Hanged Man's Tree near Mulbrydale. You can loot an unfinished book under him.",
+        "isCompleted": false
+      },
+      {
+        "text": "If you do 'Funeral Pyres' before 'In the Eternal Fire's Shadow', you will get some unique dialogue."
+      },
+      {
+        "text": "During the quest 'Funeral Pyres', when meeting the Eternal Fire Priest, you can see a map of the Witcher world lying on the stone table next to the priest."
+      }
+    ]
+  },
+  {
+    "name": "At the Mercy of Strangers Part 1",
+    "link": "https://witcher.fandom.com/wiki/At_the_Mercy_of_Strangers",
+    "location": "velen",
+    "type": "encounter",
+    "notes": [
+      {
+        "text": "If you save John Verdun, there will be a second part to this quest. You can find him again north of Ursten (you can check the map in the attached quest page link). Make sure to do part one when you pass by while completing 'The Nilfgaardian Connection'."
+      },
+      {
+        "text": "If you save John Verden, during 'At the Mercy of Strangers', in the second spot that he appears, you can find a note from a refugee at the back of his camp."
+      }
+    ]
+  },
+  {
+    "name": "The Nilfgaardian Connection",
+    "level": 5,
+    "link": "https://witcher.fandom.com/wiki/The_Nilfgaardian_Connection",
+    "location": "velen",
+    "type": "main",
+    "notes": [
+      {
+        "text": "During 'The Nilfgaardian Connection', if you don't go to the inn at the crossroads right away and find Henrik instead, you'll get a unique interaction when visiting the Baron's castle during the quest 'Bloody Baron'.",
+        "link": "https://www.youtube.com/watch?v=hw2YgSXbGfU&t=487s"
+      },
+      {
+        "text": "During the 'Nilfgaardian Connection', as you make your way to the inn at the crossroads, there is a man that sends his daughter away in case the Baron's men return. You can even follow her and see her cowering in the woods or get attacked, though she can't actually die. If you don't kill the Baron's men in the inn, they will be asking the man about his daughter later on. There is also a couple that is concerned about their pigs and the man says he'd rather slaughter them then let the Baron's men have them.",
+        "link": "https://www.youtube.com/watch?v=YTKrw-QyFuM&t=401s"
+      },
+      {
+        "text": "During 'The Nilfgaardian Connection', even if you resolve the matter with the Baron's men peacefully, you can still get into a fight if you pester them long enough after the conversation."
+      },
+      {
+        "text": "If you fall from a great distance and die, you will sometimes hear a Wilhelm scream."
+      },
+      {
+        "text": "You can now find a candle lantern in a cave North West of the Hanged Man's Tree."
+      },
+      {
+        "text": "The Wild Hunt do not appear in the bestiary, so it can be useful to know that Elemental Oil works against them."
+      },
+      {
+        "text": "buy every card in the inn",
+        "isCompleted": false
+      }
+    ]
+  },
+  {
+    "name": "Looters (I)",
+    "link": "https://witcher.fandom.com/wiki/Looters",
+    "location": "velen",
+    "type": "encounter"
+  },
+  {
+    "name": "Man's Best Friend",
+    "link": "https://witcher.fandom.com/wiki/Man%27s_Best_Friend",
+    "location": "velen",
+    "type": "encounter"
+  },
+  {
+    "name": "Deadly Crossing (II)",
+    "link": "https://witcher.fandom.com/wiki/Deadly_Crossing?so=search",
+    "location": "velen",
+    "type": "encounter",
+    "notes": [
+      {
+        "text": "Deadly crossing 2 is triggered by going across when Nilfgaardian soldiers are alive, then coming back at a later time."
+      },
+      {
+        "text": "Where to find the powerful sword called Moonblade. It is South West of Mulbrydale, in the water West of the bridge.",
+        "isCompleted": false
+      },
+      {
+        "text": "The traveling merchant switches between 3 main locations. Here is a map of where they are. He has dialogue at each place. First spot is west of Crow's Perch near Blackbough.",
+        "link": "https://www.youtube.com/watch?v=Z0f8MjdKAf4&t=603s"
+      },
+      {
+        "text": "Second traveling merchant spot is east of Glory Gate."
+      },
+      {
+        "text": "Third traveling merchant spot is near Carston."
+      }
+    ]
+  },
+  {
+    "name": "Hazardous Goods",
+    "link": "https://witcher.fandom.com/wiki/Hazardous_Goods",
+    "level": 5,
+    "location": "velen",
+    "type": "side",
+    "notes": [
+      {
+        "text": "Complete immediately when encountered"
+      },
+      {
+        "text": "In Hazardous Goods, if you help burn the cart, meditate far away from the area for 10-12 days and the man will reappear at a new location.",
+        "isCompleted": false,
+        "link": "https://www.youtube.com/watch?v=5D6rsORwqXc&list=PLgHgYXIqVlYb0UtbPpQmlVbbomM92PNEv&t=348s"
+      }
+    ],
+    "finishBefore": ["Ghosts of the Past"]
+  },
+  {
+    "name": "Caravan Attack",
+    "link": "https://witcher.fandom.com/wiki/Caravan_Attack",
+    "location": "velen",
+    "type": "encounter",
+    "notes": [
+      {
+        "text": "The person you save from 'Caravan Attack' will show up as a shopkeeper at Crow's Perch."
+      }
+    ]
+  },
+  {
+    "name": "Harassing a Troll",
+    "link": "https://witcher.fandom.com/wiki/Harassing_a_Troll",
+    "location": "velen",
+    "type": "encounter",
+    "notes": [
+      {
+        "text": "North West of the Inn of the Crossroads, you can pass through a Nilfgaardian camp and see a map of the Continent. The Redanians are on the opposite shore. On top of the hill, you can see a couple that have died and are holding hands.",
+        "link": "https://www.youtube.com/watch?v=VmY9tIzdS2s&t=6s"
+      }
+    ]
+  },
+  {
+    "name": "Face Me if You Dare (I)",
+    "link": "https://witcher.fandom.com/wiki/Face_Me_if_You_Dare!?",
+    "location": "velen",
+    "type": "encounter",
+    "notes": [
+      {
+        "text": "In 'Face me if you Dare', Ronvid is fighting for Lady Bilberry. You can find a notice on a nearby noticeboard that says, 'My daughter Bilberry, a lovely girl and the apple of our eyes, died this year, the fourth of her short life. We buried her in the graveyard, by the crooked birch. Whoever wants to place a lump of earth or light a candle for her, that's where to go. — Butkins' This implies that Ronvid is Butkins and is fighting for his daughter that passed away."
+      }
+    ]
+  },
+  {
+    "name": "Bloody Baron",
+    "link": "https://witcher.fandom.com/wiki/Bloody_Baron_(quest)",
+    "level": 6,
+    "location": "velen",
+    "type": "main",
+    "notes": [
+      {
+        "text": "Get the Nilfgaardian armor set from the quartermaster, which can be found in Crow's Perch along with matching horse gear. Note that the set does not level with you, but if you wait until you are a higher level, the set will also be a higher level.",
+        "isCompleted": false
+      },
+      {
+        "text": "You can get the Nilfgaardian crossbow from the quartermaster at Crow's Perch (part of the elite crossbow set)",
+        "isCompleted": false
+      },
+      {
+        "text": "Faster way to get up to the Smiths at Crow's Perch.",
+        "link": "https://www.youtube.com/watch?v=0awxfvgPUj0"
+      },
+      {
+        "text": "Find the underwater cave that leads to Crow's Perch.",
+        "isCompleted": false,
+        "link": "https://www.youtube.com/watch?v=ZpOGFPHpMk4&t=3s"
+      },
+      {
+        "text": "You can see someone in Crow's Perch putting up the new signtravel post, which becomes available to use after the baron questline."
+      },
+      {
+        "text": "Secret room hiding a dead body in Crow's Perch.",
+        "link": "https://www.youtube.com/watch?v=MeneR0uzWqQ&t=33s",
+        "isCompleted": false
+      }
+    ]
   }
 ]
