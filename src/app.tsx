@@ -16,18 +16,20 @@ export function App() {
       <main className="grow px-4">
         {error ? <p className="text-red-500">{error}</p> : null}
 
-        <ul className="flex flex-col gap-4">
-          {quests?.map((quest, index) => (
-            <li key={quest.name + index}>
-              <Quest
-                quest={quest}
-                onCompletionStateChange={(newState) =>
-                  setQuestCompletionState(index, newState)
-                }
-              />
-            </li>
-          ))}
-        </ul>
+        {quests ? (
+          <ul className="flex flex-col gap-4">
+            {quests?.map((quest, index) => (
+              <li key={quest.name + index}>
+                <Quest
+                  quest={quest}
+                  onCompletionStateChange={(newState) =>
+                    setQuestCompletionState(index, newState)
+                  }
+                />
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </main>
     </div>
   );

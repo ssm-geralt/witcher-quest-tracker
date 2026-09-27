@@ -12,4 +12,53 @@
       left: 100%;
     }
   }
+
+  --animate-backdrop-in: backdrop-in 200ms ease-in-out forwards;
+  @keyframes backdrop-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  --animate-backdrop-out: backdrop-out 200ms ease-in-out forwards;
+  @keyframes backdrop-out {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  --animate-modal-in: modal-in 200ms ease-in-out forwards;
+  @keyframes modal-in {
+    0% {
+      transform: scale(0.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  --animate-modal-out: modal-out 200ms ease-in-out forwards;
+  @keyframes modal-out {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.2);
+    }
+  }
+}
+
+html,
+body {
+  @apply w-full h-full scrollbar-gutter-stable;
+}
+
+.scroll-fix {
+  @apply overflow-hidden;
 }
