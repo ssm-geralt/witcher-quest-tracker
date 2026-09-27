@@ -45,6 +45,8 @@ export const useAppController = (): AppVM => {
     fetchQuests();
   }, []);
 
+  const questMap = new Map(quests?.map((quest) => [quest.id, quest]));
+
   const setQuestCompletionState: AppVM["setQuestCompletionState"] = (
     index,
     completionState,
@@ -63,6 +65,7 @@ export const useAppController = (): AppVM => {
 
   return {
     quests,
+    questMap,
     isLoading,
     error,
     setQuestCompletionState,

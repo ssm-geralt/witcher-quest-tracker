@@ -1,6 +1,7 @@
 import z from "zod";
 
 export const questSchema = z.object({
+  id: z.string(),
   name: z.string(),
   completionState: z.enum(["success", "empty", "failure"]).optional(),
   type: z.enum([
@@ -17,6 +18,7 @@ export const questSchema = z.object({
   notes: z
     .array(
       z.object({
+        id: z.string(),
         text: z.string(),
         isCompleted: z.boolean().optional(),
         link: z.string().optional(),
