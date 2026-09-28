@@ -11,11 +11,15 @@ import {
 } from "./helpers";
 
 export const useAppController = (): AppVM => {
-  const [{ isLoading, error, quests }, setQuestsState] = useState<{
+  const [{ isLoading, error, quests, rawQuests }, setQuestsState] = useState<{
     quests?: Quest[];
+    rawQuests?: Quest[];
     isLoading: boolean;
     error?: string;
   }>({ isLoading: false });
+  const [confirmationDialogProps, setConfirmationDialogProps] = useState<
+    AppVM["confirmationDialogProps"]
+  >({ isOpen: false });
 
   const setQuestCompletionState: AppVM["setQuestCompletionState"] = (
     index,
@@ -31,6 +35,45 @@ export const useAppController = (): AppVM => {
         return quest;
       }),
     }));
+  };
+
+  const controls: AppVM["controls"] = {
+    reset: {
+      onClick() {
+        setConfirmationDialogProps({
+          isOpen: true,
+          onAnimationEnd: ({ animationName }) => {
+            if (animationName === "modal-out") {
+              setConfirmationDialogProps({ isOpen: false });
+            }
+          },
+          data: {
+            title: "Are you sure you want to reset your progress?",
+            okButton: {
+              text: "Yes",
+              onClick: () => {
+                setQuestsState((prev) =>
+                  prev.rawQuests ? { ...prev, quests: rawQuests } : prev,
+                );
+                setConfirmationDialogProps((prev) => ({
+                  ...prev,
+                  isOpen: false,
+                }));
+              },
+            },
+            cancelButton: {
+              text: "Cancel",
+              onClick: () =>
+                setConfirmationDialogProps((prev) => ({
+                  ...prev,
+                  isOpen: false,
+                })),
+            },
+          },
+        });
+      },
+      disabled: isLoading || !rawQuests,
+    },
   };
 
   useEffect(() => {
@@ -62,6 +105,7 @@ export const useAppController = (): AppVM => {
           quests: progress
             ? createQuestListWithProgress(quests, progress)
             : data,
+          rawQuests: data,
           isLoading: false,
         }));
       } catch {
@@ -93,8 +137,10 @@ export const useAppController = (): AppVM => {
 
   return {
     quests,
+    controls,
     isLoading,
     error,
     setQuestCompletionState,
+    confirmationDialogProps,
   };
 };

@@ -4,21 +4,25 @@ import {
   useState,
   type DetailedHTMLProps,
   type DialogHTMLAttributes,
+  type AnimationEvent,
 } from "react";
 import { createPortal } from "react-dom";
 
 export type DialogProps = Omit<
   DetailedHTMLProps<DialogHTMLAttributes<HTMLDialogElement>, HTMLDialogElement>,
-  "open"
+  "open" | "onAnimationEnd"
 > & {
   isOpen: boolean;
   onBackgroundClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onAnimationEnd?: (e: AnimationEvent<HTMLDivElement>) => void;
 };
 
 export function Dialog({
   isOpen,
   onBackgroundClick,
+  onAnimationEnd,
   children,
+  className,
   ...props
 }: DialogProps) {
   const [open, setOpen] = useState(isOpen);
@@ -55,18 +59,17 @@ export function Dialog({
 
       <dialog
         {...props}
-        className={
-          "fixed top-1/2 left-1/2 z-101 max-h-full overflow-auto -translate-1/2 bg-transparent"
-        }
+        className={clsx(
+          "fixed top-1/2 left-1/2 z-101 max-h-full overflow-auto -translate-1/2 bg-transparent",
+          className,
+        )}
         open={open}
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
       >
         <div
           className={isOpen ? "animate-modal-in" : "animate-modal-out"}
-          onAnimationEnd={({ animationName }) => {
-            if (animationName === "modal-out") {
+          onAnimationEnd={(e) => {
+            onAnimationEnd?.(e);
+            if (e.animationName === "modal-out") {
               setOpen(false);
             }
           }}

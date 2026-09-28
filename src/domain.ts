@@ -1,3 +1,5 @@
+import type { ConfirmationDialogProps } from "./components/confirmationDialog";
+import type { ControlsProps } from "./components/controls";
 import { completionStateSchema, type Quest } from "./components/quest/domain";
 import z from "zod";
 
@@ -21,4 +23,6 @@ export interface AppVM {
     index: number,
     newCompletionState: Quest["completionState"],
   ) => void;
+  controls: ControlsProps;
+  confirmationDialogProps: ConfirmationDialogProps;
 }
