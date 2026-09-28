@@ -4,6 +4,7 @@ import { LoadingIndicator } from "./components/loadingIndicator";
 import { Quest } from "./components/quest/quest";
 import { Controls } from "./components/controls";
 import { ConfirmationDialog } from "./components/confirmationDialog";
+import { Statistics } from "./components/statistics";
 
 export function App() {
   const {
@@ -21,10 +22,26 @@ export function App() {
       <MainHeader />
       <main className="grow px-4">
         <section className="my-4">
+          <header>
+            <h2 className="text-center">Controls</h2>
+          </header>
           <Controls {...controls} />
         </section>
 
+        {quests ? (
+          <section className="my-4">
+            <header>
+              <h2 className="text-center">Statistics</h2>
+            </header>
+            <Statistics quests={quests} />
+          </section>
+        ) : null}
+
         <section>
+          <header>
+            <h2 className="text-center">Quests</h2>
+          </header>
+
           {error ? <p className="text-red-500">{error}</p> : null}
 
           {quests ? (

@@ -9,7 +9,7 @@ export interface ControlsProps {
 
 export function Controls({ reset }: ControlsProps) {
   return (
-    <div className="flex gap-4 justify-end">
+    <div className="flex gap-4 justify-center">
       <Button onClick={reset.onClick} disabled={reset.disabled}>
         Reset progress
       </Button>
