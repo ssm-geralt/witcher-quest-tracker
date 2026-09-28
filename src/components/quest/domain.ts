@@ -1,9 +1,11 @@
 import z from "zod";
 
+export const completionStateSchema = z.enum(["success", "empty", "failure"]);
+
 export const questSchema = z.object({
   id: z.string(),
   name: z.string(),
-  completionState: z.enum(["success", "empty", "failure"]).optional(),
+  completionState: completionStateSchema.optional(),
   type: z.enum([
     "main",
     "side",

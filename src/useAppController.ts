@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
-import type { AppVM } from "./domain";
+import type { AppVM, Progress } from "./domain";
 import { getQuests } from "./data";
 import { questArraySchema, type Quest } from "./components/quest/domain";
+import {
+  convertQuestToProgressItem,
+  createQuestListWithProgress,
+  isProgressMade,
+  loadProgress,
+  saveProgress,
+} from "./helpers";
 
 export const useAppController = (): AppVM => {
   const [{ isLoading, error, quests }, setQuestsState] = useState<{
@@ -9,6 +16,22 @@ export const useAppController = (): AppVM => {
     isLoading: boolean;
     error?: string;
   }>({ isLoading: false });
+
+  const setQuestCompletionState: AppVM["setQuestCompletionState"] = (
+    index,
+    completionState,
+  ) => {
+    setQuestsState((prevQuestsState) => ({
+      ...prevQuestsState,
+      quests: prevQuestsState.quests?.map((quest, previousIndex) => {
+        if (index === previousIndex) {
+          return { ...quest, completionState, isAutoSet: false };
+        }
+
+        return quest;
+      }),
+    }));
+  };
 
   useEffect(() => {
     const fetchQuests = async () => {
@@ -32,7 +55,15 @@ export const useAppController = (): AppVM => {
           return;
         }
 
-        setQuestsState((prev) => ({ ...prev, quests: data, isLoading: false }));
+        const progress = loadProgress();
+
+        setQuestsState((prev) => ({
+          ...prev,
+          quests: progress
+            ? createQuestListWithProgress(quests, progress)
+            : data,
+          isLoading: false,
+        }));
       } catch {
         setQuestsState((prev) => ({
           ...prev,
@@ -45,27 +76,23 @@ export const useAppController = (): AppVM => {
     fetchQuests();
   }, []);
 
-  const questMap = new Map(quests?.map((quest) => [quest.id, quest]));
+  useEffect(() => {
+    if (!quests) {
+      return;
+    }
 
-  const setQuestCompletionState: AppVM["setQuestCompletionState"] = (
-    index,
-    completionState,
-  ) => {
-    setQuestsState((prevQuestsState) => ({
-      ...prevQuestsState,
-      quests: prevQuestsState.quests?.map((quest, previousIndex) => {
-        if (index === previousIndex) {
-          return { ...quest, completionState, isAutoSet: false };
-        }
+    const progress = quests.reduce<Progress>((progress, q) => {
+      if (isProgressMade(q)) {
+        progress.push(convertQuestToProgressItem(q));
+      }
+      return progress;
+    }, []);
 
-        return quest;
-      }),
-    }));
-  };
+    saveProgress(progress);
+  }, [quests]);
 
   return {
     quests,
-    questMap,
     isLoading,
     error,
     setQuestCompletionState,
