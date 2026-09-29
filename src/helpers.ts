@@ -24,9 +24,9 @@ export const convertQuestToProgressItem = ({
 });
 
 export const createQuestWithProgress = (
-  quest: Quest,
+  quest: ProcessedQuest,
   { completionState, isAutoSet, notes }: Omit<ProgressItem, "id">,
-): Quest => ({
+): ProcessedQuest => ({
   ...quest,
   completionState,
   isAutoSet,
@@ -37,9 +37,9 @@ export const createQuestWithProgress = (
 });
 
 export const createQuestListWithProgress = (
-  quests: Quest[],
+  quests: ProcessedQuest[],
   progress: Progress,
-) =>
+): ProcessedQuest[] =>
   quests.map((quest) => {
     const progressItem = progress.find((p) => p.id === quest.id);
     if (progressItem) {

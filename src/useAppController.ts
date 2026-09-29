@@ -4,7 +4,6 @@ import { getQuests } from "./data";
 import {
   questArraySchema,
   type ProcessedQuest,
-  type Quest,
 } from "./components/quest/domain";
 import {
   convertQuestToProgressItem,
@@ -16,13 +15,15 @@ import {
 } from "./helpers";
 
 export const useAppController = (): AppVM => {
-  const [{ isLoading, error, processedQuests, rawQuests }, setQuestsState] =
-    useState<{
-      processedQuests?: ProcessedQuest[];
-      rawQuests?: Quest[];
-      isLoading: boolean;
-      error?: string;
-    }>({ isLoading: false });
+  const [
+    { isLoading, error, processedQuests, rawProcessedQuests },
+    setQuestsState,
+  ] = useState<{
+    processedQuests?: ProcessedQuest[];
+    rawProcessedQuests?: ProcessedQuest[];
+    isLoading: boolean;
+    error?: string;
+  }>({ isLoading: false });
   const [confirmationDialogProps, setConfirmationDialogProps] = useState<
     AppVM["confirmationDialogProps"]
   >({ isOpen: false });
@@ -81,7 +82,9 @@ export const useAppController = (): AppVM => {
               text: "Yes",
               onClick: () => {
                 setQuestsState((prev) =>
-                  prev.rawQuests ? { ...prev, quests: rawQuests } : prev,
+                  prev.rawProcessedQuests
+                    ? { ...prev, processedQuests: rawProcessedQuests }
+                    : prev,
                 );
                 setConfirmationDialogProps((prev) => ({
                   ...prev,
@@ -100,7 +103,7 @@ export const useAppController = (): AppVM => {
           },
         });
       },
-      disabled: isLoading || !rawQuests,
+      disabled: isLoading || !rawProcessedQuests,
     },
   };
 
@@ -127,15 +130,15 @@ export const useAppController = (): AppVM => {
         }
 
         const progress = loadProgress();
+        const processedQuests = processQuests(data);
         const questWithProgress = progress
-          ? createQuestListWithProgress(quests, progress)
-          : data;
-        const processedQuests = processQuests(questWithProgress);
+          ? createQuestListWithProgress(processedQuests, progress)
+          : processedQuests;
 
         setQuestsState((prev) => ({
           ...prev,
-          processedQuests,
-          rawQuests: data,
+          processedQuests: questWithProgress,
+          rawProcessedQuests: processedQuests,
           isLoading: false,
         }));
       } catch {
