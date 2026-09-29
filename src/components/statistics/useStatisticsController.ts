@@ -24,7 +24,8 @@ export const useStatisticsController = ({
     completed,
     failed,
     finished: completed + failed,
-    percentage: ((completed + failed) / quests.length) * 100,
+    percentage:
+      quests.length > 0 ? ((completed + failed) / quests.length) * 100 : 100,
     total: quests.length,
   };
 };

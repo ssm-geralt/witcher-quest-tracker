@@ -8,7 +8,8 @@
     "notes": [
       {
         "id": "0.0",
-        "text": "When starting a new game, when asked to simulate a witcher 2 save, select 'On' so that you can choose what happened in the previous game during an interaction in Vizima."
+        "text": "When starting a new game, when asked to simulate a witcher 2 save, select 'On' so that you can choose what happened in the previous game during an interaction in Vizima.",
+        "isCompleted": false
       },
       {
         "id": "0.1",
@@ -108,7 +109,7 @@
     "level": 1,
     "link": "https://witcher.fandom.com/wiki/Twisted_Firestarter",
     "location": "whiteOrchard",
-    "finishBefore": ["Lilac and Gooseberries Part 2"]
+    "finishBefore": ["9"]
   },
   {
     "id": "3",
@@ -127,7 +128,7 @@
       }
     ],
     "location": "whiteOrchard",
-    "finishBefore": ["Lilac and Gooseberries Part 2"]
+    "finishBefore": ["9"]
   },
   {
     "id": "4",
@@ -136,7 +137,7 @@
     "level": 1,
     "link": "https://witcher.fandom.com/wiki/Precious_Cargo",
     "location": "whiteOrchard",
-    "finishBefore": ["Lilac and Gooseberries Part 2"]
+    "finishBefore": ["9"]
   },
   {
     "id": "5",
@@ -151,7 +152,7 @@
       }
     ],
     "location": "whiteOrchard",
-    "finishBefore": ["Lilac and Gooseberries Part 2"]
+    "finishBefore": ["9"]
   },
   {
     "id": "6",
@@ -189,7 +190,7 @@
       }
     ],
     "location": "whiteOrchard",
-    "finishBefore": ["Lilac and Gooseberries Part 2"]
+    "finishBefore": ["9"]
   },
   {
     "id": "8",

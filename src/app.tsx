@@ -10,8 +10,9 @@ export function App() {
   const {
     isLoading,
     error,
-    quests,
+    processedQuests,
     setQuestCompletionState,
+    setNoteCompletion,
     controls,
     confirmationDialogProps,
   } = useAppController();
@@ -28,12 +29,12 @@ export function App() {
           <Controls {...controls} />
         </section>
 
-        {quests ? (
+        {processedQuests ? (
           <section className="my-4">
             <header>
               <h2 className="text-center">Statistics</h2>
             </header>
-            <Statistics quests={quests} />
+            <Statistics quests={processedQuests} />
           </section>
         ) : null}
 
@@ -44,14 +45,17 @@ export function App() {
 
           {error ? <p className="text-red-500">{error}</p> : null}
 
-          {quests ? (
+          {processedQuests ? (
             <ul className="flex flex-col gap-4">
-              {quests?.map((quest, index) => (
-                <li key={quest.name + index}>
+              {processedQuests?.map((quest) => (
+                <li key={quest.id}>
                   <Quest
                     quest={quest}
                     onCompletionStateChange={(newState) =>
-                      setQuestCompletionState(index, newState)
+                      setQuestCompletionState(quest.id, newState)
+                    }
+                    onNoteCompletionChange={(e) =>
+                      setNoteCompletion(quest.id, e)
                     }
                   />
                 </li>

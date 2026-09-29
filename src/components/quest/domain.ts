@@ -1,3 +1,4 @@
+import type { ChangeEvent } from "react";
 import z from "zod";
 
 export const completionStateSchema = z.enum(["success", "empty", "failure"]);
@@ -36,12 +37,22 @@ export const questArraySchema = z.array(questSchema);
 
 export type Quest = z.infer<typeof questSchema>;
 
+export type ProcessedQuest = Omit<Quest, "finishBefore"> & {
+  finishBefore: { id: string; name: string }[];
+};
+
 export interface QuestProps {
-  quest: Quest;
+  quest: ProcessedQuest;
   onCompletionStateChange: (newState?: Quest["completionState"]) => void;
+  onNoteCompletionChange: (
+    e: ChangeEvent<HTMLInputElement, HTMLInputElement>,
+  ) => void;
 }
 
 export interface QuestVM {
-  quest: Quest;
+  quest: ProcessedQuest;
   handleOnCompletionStateChange: () => void;
+  onNoteCompletionChange: (
+    e: ChangeEvent<HTMLInputElement, HTMLInputElement>,
+  ) => void;
 }

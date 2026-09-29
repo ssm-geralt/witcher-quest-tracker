@@ -1,6 +1,11 @@
+import type { ChangeEvent } from "react";
 import type { ConfirmationDialogProps } from "./components/confirmationDialog";
 import type { ControlsProps } from "./components/controls";
-import { completionStateSchema, type Quest } from "./components/quest/domain";
+import {
+  completionStateSchema,
+  type ProcessedQuest,
+  type Quest,
+} from "./components/quest/domain";
 import z from "zod";
 
 const progressItem = z.object({
@@ -16,12 +21,16 @@ export type ProgressItem = z.infer<typeof progressItem>;
 export type Progress = z.infer<typeof progressSchema>;
 
 export interface AppVM {
-  quests?: Quest[];
+  processedQuests?: ProcessedQuest[];
   error?: string;
   isLoading: boolean;
   setQuestCompletionState: (
-    index: number,
+    id: string,
     newCompletionState: Quest["completionState"],
+  ) => void;
+  setNoteCompletion: (
+    id: string,
+    e: ChangeEvent<HTMLInputElement, HTMLInputElement>,
   ) => void;
   controls: ControlsProps;
   confirmationDialogProps: ConfirmationDialogProps;

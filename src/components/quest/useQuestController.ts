@@ -3,6 +3,7 @@ import type { QuestProps, QuestVM } from "./domain";
 export const useQuestController = ({
   quest,
   onCompletionStateChange,
+  onNoteCompletionChange,
 }: QuestProps): QuestVM => {
   const handleOnCompletionStateChange = () => {
     switch (quest.completionState) {
@@ -21,5 +22,5 @@ export const useQuestController = ({
     }
   };
 
-  return { quest, handleOnCompletionStateChange };
+  return { quest, handleOnCompletionStateChange, onNoteCompletionChange };
 };

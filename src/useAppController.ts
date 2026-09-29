@@ -1,35 +1,63 @@
 import { useEffect, useState } from "react";
 import type { AppVM, Progress } from "./domain";
 import { getQuests } from "./data";
-import { questArraySchema, type Quest } from "./components/quest/domain";
+import {
+  questArraySchema,
+  type ProcessedQuest,
+  type Quest,
+} from "./components/quest/domain";
 import {
   convertQuestToProgressItem,
   createQuestListWithProgress,
   isProgressMade,
   loadProgress,
+  processQuests,
   saveProgress,
 } from "./helpers";
 
 export const useAppController = (): AppVM => {
-  const [{ isLoading, error, quests, rawQuests }, setQuestsState] = useState<{
-    quests?: Quest[];
-    rawQuests?: Quest[];
-    isLoading: boolean;
-    error?: string;
-  }>({ isLoading: false });
+  const [{ isLoading, error, processedQuests, rawQuests }, setQuestsState] =
+    useState<{
+      processedQuests?: ProcessedQuest[];
+      rawQuests?: Quest[];
+      isLoading: boolean;
+      error?: string;
+    }>({ isLoading: false });
   const [confirmationDialogProps, setConfirmationDialogProps] = useState<
     AppVM["confirmationDialogProps"]
   >({ isOpen: false });
 
   const setQuestCompletionState: AppVM["setQuestCompletionState"] = (
-    index,
+    id,
     completionState,
   ) => {
     setQuestsState((prevQuestsState) => ({
       ...prevQuestsState,
-      quests: prevQuestsState.quests?.map((quest, previousIndex) => {
-        if (index === previousIndex) {
+      processedQuests: prevQuestsState.processedQuests?.map((quest) => {
+        if (id === quest.id) {
           return { ...quest, completionState, isAutoSet: false };
+        }
+
+        return quest;
+      }),
+    }));
+  };
+
+  const setNoteCompletion: AppVM["setNoteCompletion"] = (id, event) => {
+    setQuestsState((prevQuestsState) => ({
+      ...prevQuestsState,
+      processedQuests: prevQuestsState.processedQuests?.map((quest) => {
+        if (id === quest.id) {
+          return {
+            ...quest,
+            notes: quest.notes?.map((note) => {
+              const noteId = event.target.value;
+              if (noteId === note.id) {
+                return { ...note, isCompleted: event.target.checked };
+              }
+              return note;
+            }),
+          };
         }
 
         return quest;
@@ -99,12 +127,14 @@ export const useAppController = (): AppVM => {
         }
 
         const progress = loadProgress();
+        const questWithProgress = progress
+          ? createQuestListWithProgress(quests, progress)
+          : data;
+        const processedQuests = processQuests(questWithProgress);
 
         setQuestsState((prev) => ({
           ...prev,
-          quests: progress
-            ? createQuestListWithProgress(quests, progress)
-            : data,
+          processedQuests,
           rawQuests: data,
           isLoading: false,
         }));
@@ -121,11 +151,11 @@ export const useAppController = (): AppVM => {
   }, []);
 
   useEffect(() => {
-    if (!quests) {
+    if (!processedQuests) {
       return;
     }
 
-    const progress = quests.reduce<Progress>((progress, q) => {
+    const progress = processedQuests.reduce<Progress>((progress, q) => {
       if (isProgressMade(q)) {
         progress.push(convertQuestToProgressItem(q));
       }
@@ -133,14 +163,15 @@ export const useAppController = (): AppVM => {
     }, []);
 
     saveProgress(progress);
-  }, [quests]);
+  }, [processedQuests]);
 
   return {
-    quests,
+    processedQuests,
     controls,
     isLoading,
     error,
     setQuestCompletionState,
+    setNoteCompletion,
     confirmationDialogProps,
   };
 };

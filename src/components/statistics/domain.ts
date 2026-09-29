@@ -1,7 +1,7 @@
-import type { Quest } from "../quest/domain";
+import type { ProcessedQuest } from "../quest/domain";
 
 export interface StatisticsProps {
-  quests: Quest[];
+  quests: ProcessedQuest[];
 }
 
 export interface StatisticsVM {

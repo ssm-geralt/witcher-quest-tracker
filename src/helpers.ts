@@ -1,4 +1,4 @@
-import type { Quest } from "./components/quest/domain";
+import type { ProcessedQuest, Quest } from "./components/quest/domain";
 import { PROGRESS_LS_KEY } from "./constants";
 import lzString from "lz-string";
 import { progressSchema, type Progress, type ProgressItem } from "./domain";
@@ -32,7 +32,7 @@ export const createQuestWithProgress = (
   isAutoSet,
   notes: quest.notes?.map((n) => ({
     ...n,
-    isCompleted: notes?.includes(n.id),
+    isCompleted: notes?.includes(n.id) ? true : n.isCompleted,
   })),
 });
 
@@ -96,4 +96,52 @@ export const saveSingleProgressItem = (item: ProgressItem) => {
   }
 
   saveProgress(savedProgress);
+};
+
+export const processQuests = (quests: Quest[]) => {
+  const output = quests?.reduce<{
+    result: ProcessedQuest[];
+    helper: Record<string, number[] | undefined>;
+  }>(
+    (output, q, index) => {
+      output.helper[q.id]?.forEach((qIndex) => {
+        const dependentItem = output.result[qIndex];
+
+        if (dependentItem) {
+          dependentItem.finishBefore.push({ id: q.id, name: q.name });
+        }
+      });
+      output.helper[q.id] = undefined;
+
+      q.finishBefore?.forEach((beforeId) => {
+        if (output.helper[beforeId]) {
+          output.helper[beforeId].push(index);
+          return;
+        }
+
+        output.helper[beforeId] = [index];
+      });
+
+      output.result.push({ ...q, finishBefore: [] });
+
+      return output;
+    },
+    { result: [], helper: {} },
+  );
+
+  const leftovers = Object.keys(output.helper).reduce<string[]>((acc, key) => {
+    const value = output.helper[key];
+
+    if (value && value.length > 0) {
+      acc.push(key);
+    }
+
+    return acc;
+  }, []);
+
+  if (leftovers.length > 0) {
+    console.log("unmatched 'finishBefore' items", leftovers);
+  }
+
+  return output.result;
 };
