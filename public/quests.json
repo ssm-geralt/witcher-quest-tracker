@@ -31,7 +31,7 @@
       },
       {
         "id": "0.5",
-        "text": "There are new hair and beard options from the next gen update."
+        "text": "There are new hair and beard options from the next gen update and from the latest  remaster."
       },
       {
         "id": "0.6",
@@ -44,6 +44,11 @@
       {
         "id": "0.8",
         "text": "Fall damage has now been reduced."
+      },
+      {
+        "id": "0.9",
+        "text": "Enable gameplay > enemy upscaling, so you cannot get too OP. With the latest remaster also enable gameplay > enable loot merge. if you are looking for more challenging gwent set gameplay > gwent difficulty level to hard.",
+        "isCompleted": false
       }
     ],
     "location": "whiteOrchard"
@@ -97,7 +102,8 @@
       },
       {
         "id": "1.8",
-        "text": "Elsa the innkeeper and the merchant you saved from the griffin sell cards."
+        "text": "Elsa the innkeeper and the merchant you saved from the griffin sell cards.",
+        "isCompleted": false
       }
     ],
     "location": "whiteOrchard"
@@ -124,7 +130,8 @@
       },
       {
         "id": "3.1",
-        "text": "Thaler's monocle dialogue is now fixed in the next gen update. Make sure to pick up the monocle in 'A Frying Pan, Spick and Span', so you can return it to Thaler in 'A Deadly Plot'."
+        "text": "Thaler's monocle dialogue is now fixed in the next gen update. Make sure to pick up the monocle in 'A Frying Pan, Spick and Span', so you can return it to Thaler in 'A Deadly Plot'.",
+        "isCompleted": false
       }
     ],
     "location": "whiteOrchard",
@@ -202,7 +209,8 @@
       {
         "id": "8.0",
         "text": "Hidden area of Nilgaardian camp. Open the door, climb the stairs, jump over the wall, and aard.",
-        "link": "https://www.youtube.com/watch?v=7xT9ZnmA3h0&t=583s"
+        "link": "https://www.youtube.com/watch?v=7xT9ZnmA3h0&t=583s",
+        "isCompleted": false
       },
       {
         "id": "8.1",
@@ -228,7 +236,8 @@
     "notes": [
       {
         "id": "9.0",
-        "text": "Spawn a chort by killing a bunch of cows."
+        "text": "Spawn a chort by killing a bunch of cows.",
+        "isCompleted": false
       },
       {
         "id": "9.1",
