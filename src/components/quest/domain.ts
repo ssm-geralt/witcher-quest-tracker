@@ -28,8 +28,11 @@ export const questSchema = z.object({
       }),
     )
     .optional(),
-  location: z.enum(["whiteOrchard", "vizima", "velen"]),
+  specialNote: z.object({ text: z.string() }).optional(),
+  location: z.enum(["whiteOrchard", "vizima", "velen", "skellige"]),
+  ignoreLocation: z.boolean().optional(),
   finishBefore: z.array(z.string()).optional(),
+  prerequisites: z.array(z.string()).optional(),
   isAutoSet: z.boolean().optional(),
 });
 

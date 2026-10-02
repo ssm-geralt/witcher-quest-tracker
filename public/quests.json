@@ -174,7 +174,7 @@
       }
     ],
     "location": "whiteOrchard",
-    "finishBefore": ["On Thin Ice"]
+    "finishBefore": ["On Thin Ice", "8"]
   },
   {
     "id": "7",
@@ -329,7 +329,7 @@
       },
       {
         "id": "17.4",
-        "text": "New gear found in a chest in Yennifer's room in Vizima (Steel Sword of a Thousand Flowers, White Widow of the Valley of Flowers Silver Sword, armor, boots, gauntlets, and trousers of a Thousand Flowers, Nine-tailed Vixen steel and silver sword, and White Tiger of the West armor, boots, trousers, and vambraces.",
+        "text": "New gears from remasters are found in a chest in Yennifer's room in Vizima.",
         "isCompleted": false
       },
       {
@@ -361,6 +361,7 @@
     "type": "side",
     "level": 3,
     "link": "https://witcher.fandom.com/wiki/Funeral_Pyres",
+    "finishBefore": ["In the Eternal Fire's Shadow"],
     "notes": [
       {
         "id": "19.0",
@@ -374,6 +375,10 @@
       {
         "id": "19.2",
         "text": "During the quest 'Funeral Pyres', when meeting the Eternal Fire Priest, you can see a map of the Witcher world lying on the stone table next to the priest."
+      },
+      {
+        "id": "19.3",
+        "text": "Titus can die so make sure to jump in quickly to keep him alive if you wish to learn more and get more of a reward."
       }
     ],
     "location": "velen"
@@ -382,6 +387,7 @@
     "id": "20",
     "name": "At the Mercy of Strangers Part 1",
     "type": "encounter",
+    "finishBefore": ["21"],
     "link": "https://witcher.fandom.com/wiki/At_the_Mercy_of_Strangers",
     "notes": [
       {
@@ -440,6 +446,7 @@
     "id": "22",
     "name": "Looters (I)",
     "type": "encounter",
+    "finishBefore": ["23"],
     "link": "https://witcher.fandom.com/wiki/Looters",
     "location": "velen"
   },
@@ -447,6 +454,7 @@
     "id": "23",
     "name": "Man's Best Friend",
     "type": "encounter",
+    "finishBefore": ["24"],
     "link": "https://witcher.fandom.com/wiki/Man%27s_Best_Friend",
     "location": "velen"
   },
@@ -454,6 +462,7 @@
     "id": "24",
     "name": "Deadly Crossing (II)",
     "type": "encounter",
+    "finishBefore": ["25"],
     "link": "https://witcher.fandom.com/wiki/Deadly_Crossing?so=search",
     "notes": [
       {
@@ -507,6 +516,7 @@
     "name": "Caravan Attack",
     "type": "encounter",
     "link": "https://witcher.fandom.com/wiki/Caravan_Attack",
+    "finishBefore": ["27"],
     "notes": [
       {
         "id": "26.0",
@@ -518,6 +528,7 @@
   {
     "id": "27",
     "name": "Harassing a Troll",
+    "finishBefore": ["28"],
     "type": "encounter",
     "link": "https://witcher.fandom.com/wiki/Harassing_a_Troll",
     "notes": [
@@ -532,6 +543,7 @@
   {
     "id": "28",
     "name": "Face Me if You Dare (I)",
+    "finishBefore": ["29"],
     "type": "encounter",
     "link": "https://witcher.fandom.com/wiki/Face_Me_if_You_Dare!?",
     "notes": [
@@ -634,5 +646,114 @@
       }
     ],
     "location": "velen"
+  },
+  {
+    "id": "32",
+    "name": "Ciri's Room",
+    "level": 5,
+    "link": "https://witcher.fandom.com/wiki/Ciri%27s_Room",
+    "finishBefore": ["Isle of the Mists"],
+    "location": "velen",
+    "type": "side"
+  },
+  {
+    "id": "33",
+    "name": "The Mysterious Passenger",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/A_Mysterious_Passenger",
+    "finishBefore": ["Ladies of the Wood"],
+    "prerequisites": ["Calm Before the Storm"],
+    "location": "skellige",
+    "ignoreLocation": true,
+    "type": "side",
+    "specialNote": {
+      "text": "The following quest is not worth doing considering how out of order you will have to do certain quests. It is simply a 3 minute bit of dialogue and that is it. If you would like to watch it, i've attached a youtube clip of the quest itself in the extra details link. I've only added it here in case someone did want to do it."
+    },
+    "notes": [
+      {
+        "id": "33.0",
+        "text": "The Mysterious Passenger is a very short quest that just involves dialogue on Uma, so doesn't really matter if you miss it. If you do the quests in the intended order this will not be started therefore it's not going to show a red mark in the quest tracker.",
+        "link": "https://www.youtube.com/watch?v=3eIU1IT3NMo"
+      }
+    ]
+  },
+  {
+    "id": "34",
+    "name": "Deadly Crossing (I)",
+    "link": "https://witcher.fandom.com/wiki/Deadly_Crossing",
+    "location": "velen",
+    "type": "encounter",
+    "finishBefore": ["35"],
+    "notes": [
+      {
+        "id": "34.0",
+        "text": "Once you complete 'Deadly Crossing (I), make sure to do 'Deadly Crossing (III)' within a few in game days, otherwise it may disappear."
+      }
+    ]
+  },
+  {
+    "id": "35",
+    "name": "Deadly Crossing (III)",
+    "link": "https://witcher.fandom.com/wiki/Deadly_Crossing",
+    "location": "velen",
+    "type": "encounter",
+    "finishBefore": ["36"],
+    "notes": [
+      {
+        "id": "35.0",
+        "text": "Complete 'Deadly Crossing (III) within a few days of completing 'Deadly Crossing (I), otherwise it may disappear."
+      }
+    ]
+  },
+  {
+    "id": "36",
+    "name": "Highway Robbery",
+    "link": "https://witcher.fandom.com/wiki/Highway_Robbery",
+    "location": "velen",
+    "type": "encounter",
+    "finishBefore": ["PLACEHOLDER"]
+  },
+
+  {
+    "id": "PLACEHOLDER",
+    "name": "PLACEHOLDER",
+    "link": "",
+    "location": "velen",
+    "type": "main"
+  },
+  {
+    "id": "On Thin Ice",
+    "name": "PLACEHOLDER",
+    "link": "",
+    "location": "velen",
+    "type": "main"
+  },
+  {
+    "id": "In the Eternal Fire's Shadow",
+    "name": "PLACEHOLDER",
+    "link": "",
+    "location": "velen",
+    "type": "main"
+  },
+  {
+    "id": "Ghosts of the Past",
+    "name": "PLACEHOLDER",
+    "link": "",
+    "location": "velen",
+    "type": "main"
+  },
+  {
+    "id": "Isle of the Mists",
+    "name": "PLACEHOLDER",
+    "link": "",
+    "location": "velen",
+    "type": "main"
+  },
+  {
+    "id": "Ladies of the Wood",
+    "name": "PLACEHOLDER",
+    "link": "",
+    "location": "velen",
+    "type": "main"
   }
 ]

@@ -1,10 +1,10 @@
 import { useAppController } from "./useAppController";
 import { MainHeader } from "./components/mainHeader";
 import { LoadingIndicator } from "./components/loadingIndicator";
-import { Quest } from "./components/quest/quest";
 import { Controls } from "./components/controls";
 import { ConfirmationDialog } from "./components/confirmationDialog";
 import { Statistics } from "./components/statistics";
+import { QuestsByCategories } from "./components/questsByCategories";
 
 export function App() {
   const {
@@ -38,7 +38,7 @@ export function App() {
           </section>
         ) : null}
 
-        <section>
+        <section className="flex flex-col gap-4">
           <header>
             <h2 className="text-center">Quests</h2>
           </header>
@@ -46,21 +46,11 @@ export function App() {
           {error ? <p className="text-red-500">{error}</p> : null}
 
           {processedQuests ? (
-            <ul className="flex flex-col gap-4">
-              {processedQuests?.map((quest) => (
-                <li key={quest.id}>
-                  <Quest
-                    quest={quest}
-                    onCompletionStateChange={(newState) =>
-                      setQuestCompletionState(quest.id, newState)
-                    }
-                    onNoteCompletionChange={(e) =>
-                      setNoteCompletion(quest.id, e)
-                    }
-                  />
-                </li>
-              ))}
-            </ul>
+            <QuestsByCategories
+              quests={processedQuests}
+              setQuestCompletionState={setQuestCompletionState}
+              setNoteCompletion={setNoteCompletion}
+            />
           ) : null}
         </section>
       </main>

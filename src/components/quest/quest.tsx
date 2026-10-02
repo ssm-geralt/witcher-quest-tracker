@@ -32,7 +32,7 @@ export function Quest(props: QuestProps) {
         <header className="order-2">
           <h3>
             <a href={link} target="_blank" className="underline text-primary">
-              {name} ({level})
+              {name} {level ? `(${level})` : null}
             </a>
           </h3>
         </header>
