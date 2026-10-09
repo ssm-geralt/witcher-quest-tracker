@@ -552,6 +552,14 @@
     ]
   },
   {
+    "name": "Gwent: Velen Players",
+    "link": "https://witcher.fandom.com/wiki/Gwent:_Velen_Players",
+    "location": "velen",
+    "type": "gwent",
+    "level": 1,
+    "isOrdered": true
+  },
+  {
     "name": "Ciri's Room",
     "type": "side",
     "location": "velen",
@@ -760,6 +768,340 @@
     "level": 1,
     "link": "https://witcher.fandom.com/wiki/Races:_Crow%27s_Perch"
   },
+  {
+    "name": "An Invitation from Keira Metz",
+    "link": "https://witcher.fandom.com/wiki/An_Invitation_from_Keira_Metz",
+    "location": "velen",
+    "type": "side",
+    "level": 6,
+    "isOrdered": true
+  },
+  {
+    "name": "A Towerful of Mice",
+    "link": "https://witcher.fandom.com/wiki/A_Towerful_of_Mice",
+    "location": "velen",
+    "type": "side",
+    "level": 6,
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "In 'A Towerful of Mice', you can get the better ending where Annabelle is laid to rest, without doing any investigations. If you speak to Annabelle and then say that you need to look around some more, then try and leave the tower, she will lock the door and attack you.",
+        "link": "https://youtu.be/T2njirbvmUs?t=187"
+      },
+      {
+        "text": "Mysterious female shadow that appears around Fyke Isle when you are sailing. It does not appear before or after the quest 'A Towerful of Mice', only during. There is also a weird transparent object floating near the boat that can react to igni and you'll hear a male and female scream. It seems the shadow and the transparent object appear when Keira is speaking to you with the Xenovox. The likely explanation is that the developers created an invisible npc that Keira can speak through.",
+        "link": "https://youtu.be/Tg20Y3kG4DQ"
+      },
+      {
+        "text": "In 'A Towerful of Mice', you can find a ghostly statue only sometimes and at certain camera angles and appears to be a statue of the virgin Melitele.",
+        "link": "https://youtu.be/Tg20Y3kG4DQ?t=277"
+      },
+      {
+        "text": "Towerful of Mice quest: The Mage experimented on local people as well as rats.",
+        "link": "https://youtu.be/T2njirbvmUs?t=101"
+      },
+      {
+        "text": "In 'Towerful of Mice', before the curse is lifted, all the flames (candles, torches, etc) can not be extinguished.",
+        "link": "https://youtu.be/T2njirbvmUs?t=291"
+      },
+      {
+        "text": "In 'Towerful of Mice', the mage Alexander, refers to Keira Metz in his note and calls her 'The Woman'.",
+        "link": "https://youtu.be/T2njirbvmUs?t=341"
+      },
+      {
+        "text": "During 'A Towerful of Mice', there are some details about Graham, the man that lost his love. Inside Graham's house, you can find a noose, implying he was going to kill himself soon. He has also built an altar for his love inside his hut.",
+        "link": "https://youtu.be/X0RRsK7vIRw?t=266"
+      },
+      {
+        "text": "In 'A Towerful of Mice', you can talk to a man outside Graham's hut to get more information about him.",
+        "link": "https://youtu.be/X0RRsK7vIRw?t=291"
+      },
+      {
+        "text": "'A Towerful of Mice' has 3 haunted spots outside of the tower and 5 inside (one of those 5 being related to the quest).",
+        "isCompleted": false
+      },
+      {
+        "text": "If you release the pesta in 'A Towerful of Mice', the red miasmal from the 'In the Eternal Fire's Shadow' quest will make a comment regarding this.",
+        "link": "https://youtu.be/T2njirbvmUs?t=78"
+      },
+      {
+        "text": "If you didn't go back to see the Pesta killing Graham during 'A Towerful of Mice', the dialogue between you and Keira is slightly altered. If you brought back the bones, the pesta will never disappear from the house and you can't kill it.",
+        "link": "https://youtu.be/X0RRsK7vIRw?t=338"
+      }
+    ]
+  },
+  {
+    "name": "A Favor for a Friend",
+    "link": "https://witcher.fandom.com/wiki/A_Favor_for_a_Friend",
+    "location": "velen",
+    "type": "side",
+    "level": 6,
+    "cutoffFor": ["Lynch Mob"],
+    "notes": [
+      {
+        "text": "During 'A Favor for a Friend' you can find the corpse of the driver of the food cart (connected with 'Devil by the Well')."
+      }
+    ],
+    "isOrdered": true
+  },
+  {
+    "name": "For the Advancement of Learning",
+    "link": "https://witcher.fandom.com/wiki/For_the_Advancement_of_Learning",
+    "location": "velen",
+    "type": "side",
+    "level": 8,
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "For the best ending: spare Keira and send her to Kaer Morhen."
+      },
+      {
+        "text": "The best conversation path is to ask about the notes, \"Radovid never forgets\", \"It's suicide\", and then the fourth dialogue option will let you suggest Kaer Morhen. If you convince her to go to Kaer Morhen, you can then ask for the notes without having to kill her."
+      },
+      {
+        "text": "TODO: #1 If you take the less ideal ending and send Keira to Radovid at the end of this quest, it will unlock a future quest that would not be available otherwise. This future quest is 'A Final Kindness', but is once again part of the bad ending for Keira. Choosing this path will also partially fail the future 'Brothers in Arms: Velen' quest."
+      }
+    ]
+  },
+  {
+    "name": "Defender of the Faith",
+    "link": "https://witcher.fandom.com/wiki/Defender_of_the_Faith",
+    "location": "velen",
+    "type": "side",
+    "level": 10,
+    "notes": [
+      {
+        "text": "'Defender of the Faith' can be started at one of two locations, but it is just one quest."
+      },
+      {
+        "text": "The 3 different types of statues that you can find around Velen can possibly represent the Goddess Melitele in her three forms: a young carefree girl (can be found near the Midcopse signpost or at the second intersection east of Blackbough), a mature pregnant woman (one can be found at the first intersection east of Blackbough), and a hunched old woman (one can be found north of The Orphans of Crookback Bog signpost, just to the east of the burnt/torn down hut). It is possible they can also represent the 3 crones. Based on the quest 'Defender of the Faith', the woman that gives you the quest tells you that the statue is of Verna the Merciful. You can also see the three statues on your way to talk to Thecla during 'Bald Mountain'.",
+        "link": "https://youtu.be/iUaQdhz8krg?t=120"
+      }
+    ]
+  },
+  {
+    "name": "A Dog's Life",
+    "link": "https://witcher.fandom.com/wiki/A_Dog%27s_Life",
+    "location": "velen",
+    "type": "side",
+    "level": 5,
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "Complete immediately, don't let the dog die, and follow it closely afterwards.",
+        "isCompleted": false
+      }
+    ]
+  },
+  {
+    "name": "The Fall of the House of Reardon",
+    "link": "https://witcher.fandom.com/wiki/The_Fall_of_the_House_of_Reardon",
+    "location": "velen",
+    "type": "side",
+    "level": 6,
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "Find Dolores's diary and treasure.",
+        "isCompleted": false
+      },
+      {
+        "text": "Check out the basement with the breakable wall AFTER completing the quest because you can get additional dialogue with Dolores 2 days later. Visit Dolores at the manor two days after completing the quest to get some additional dialogue and then go in the basement and speak with her again once you've found the skeleton. She will then spend some time in the basement crying in front of the skeleton.",
+        "link": "https://youtu.be/2rUGRP3i5rg",
+        "isCompleted": false
+      },
+      {
+        "text": "The skeleton in here might be Dolores's brother and he may have been in love with her."
+      },
+      {
+        "text": "Avoid all of Letho's traps to get unique dialogue with him once you meet."
+      },
+      {
+        "text": "Find a painting of Dolores and her brother in the house.",
+        "link": "https://youtu.be/2rUGRP3i5rg?t=732"
+      }
+    ]
+  },
+  {
+    "name": "Ghosts of the Past",
+    "link": "https://witcher.fandom.com/wiki/Ghosts_of_the_Past",
+    "location": "velen",
+    "type": "side",
+    "level": 6,
+    "isOrdered": true,
+    "cutoffFor": ["Hazardous Goods"],
+    "notes": [
+      {
+        "text": "In 'Ghosts of the Past', choose \"Don't want trouble\" after meeting Vester, then \"his medallions all you need\" so you can send Letho to Kaer Morhen."
+      },
+      {
+        "text": "In 'Ghosts of the Past', you can kill Louis right away after Letho decides to leave him for dead."
+      },
+      {
+        "text": "During 'Ghosts of the Past', when given the choice between \"you're as good as dead\" and \"don't want trouble\" you can hear Letho snoring before selecting the option."
+      }
+    ]
+  },
+  {
+    "name": "Looters (III)",
+    "link": "https://witcher.fandom.com/wiki/Looters",
+    "type": "encounter",
+    "isOrdered": true,
+    "location": "velen",
+    "notes": [
+      {
+        "text": "How to trigger the third looters marker and where to find the other two",
+        "link": "https://www.youtube.com/watch?v=6Fiq6PjXaXc&t=1100s"
+      }
+    ]
+  },
+  {
+    "name": "Ladies of the Wood",
+    "link": "https://witcher.fandom.com/wiki/Ladies_of_the_Wood",
+    "location": "velen",
+    "type": "main",
+    "level": 6,
+    "cutoffFor": ["The Mysterious Passenger"],
+    "notes": [
+      {
+        "text": "There's a 3rd option to complete 'The Whispering Hillock', but you have to find the tree before starting 'Ladies of the Wood'. You can release the spirit this way and still get the good Baron ending."
+      },
+      {
+        "text": "The following doesn't have anything to do with this quest: before freeing Dandelion in the main game, visit the starting point of Blood and Wine to find and loot the drawings of the beast there (Stonecutters' Settlement).",
+        "link": "https://youtu.be/hZOEmwcTJtc?t=576",
+        "isCompleted": false
+      }
+    ]
+  },
+  {
+    "name": "The Whispering Hillock",
+    "link": "https://witcher.fandom.com/wiki/The_Whispering_Hillock",
+    "location": "velen",
+    "type": "main",
+    "level": 5,
+    "notes": [
+      {
+        "text": "In 'The Whispering Hillock', just east of the place of power, behind a rock, you can find the body of a kid.",
+        "isCompleted": false
+      },
+      {
+        "text": "If you did not release the tree spirit, after first talking to the Crones, go back to Downwarren and get some extra dialogue with the man that cut off his ear.",
+        "isCompleted": false
+      }
+    ]
+  },
+  {
+    "name": "Ciri's Story: Fleeing the Bog",
+    "link": "https://witcher.fandom.com/wiki/Ciri%27s_Story:_Fleeing_the_Bog",
+    "location": "velen",
+    "type": "main",
+    "level": 5,
+    "notes": [
+      {
+        "text": "In 'Ciri's Story: Fleeing the Bog', Ciri hides in a tree to escape Imlerith. This may be referencing a part of the Witcher book, Sword of Destiny, in which Geralt tells Ciri a story about how a tomcat that gets lost in a forest, and is chased by a fox and hunters, ends up escaping by climbing a tree.",
+        "link": "https://youtu.be/SaheseNLfzs?t=32"
+      }
+    ]
+  },
+  {
+    "name": "Family Matters (Part 2)",
+    "link": "https://witcher.fandom.com/wiki/Family_Matters",
+    "location": "velen",
+    "type": "main",
+    "level": 5,
+    "notes": [
+      {
+        "text": "Part 2 starts once you've found Tamara and Anna."
+      },
+      {
+        "text": "A very small quest ('A Mysterious Passenger'), which is just dialogue, will be missed if you continue. You need to do most of the Skellige story first in order to get it, so it is not worth it to do 'A Mysterious Passenger'."
+      }
+    ]
+  },
+  {
+    "name": "Ciri's Story: Out of the Shadows",
+    "link": "https://witcher.fandom.com/wiki/Ciri%27s_Story:_Out_of_the_Shadows",
+    "location": "velen",
+    "type": "main",
+    "level": 5,
+    "notes": [
+      {
+        "text": "You can find the place where Ciri fought the Basilisk in 'Ciri's Story: Out of the Shadows' at the forgotten tower west of Heatherton."
+      }
+    ]
+  },
+  {
+    "name": "In Ciri's Footsteps: Velen",
+    "link": "https://witcher.fandom.com/wiki/In_Ciri%27s_Footsteps",
+    "location": "velen",
+    "type": "main"
+  },
+  {
+    "name": "Return to Crookback Bog",
+    "link": "https://witcher.fandom.com/wiki/Return_to_Crookback_Bog",
+    "location": "velen",
+    "type": "side",
+    "level": 9,
+    "isOrdered": true,
+    "cutoffFor": ["Gwent: Velen Players"],
+    "prerequisiteFor": [
+      "Saving Farmer's Daughter From Soldiers (I)",
+      "Saving Farmer's Daughter From Soldiers (II)"
+    ],
+    "notes": [
+      {
+        "text": "In the basement, underneath the crone tapestry, you can find unique voodoo dolls that represent people that the crones have cursed, including Anna, a peasant from Downwarren, and Vivienne from the DLC Blood and Wine quest 'The Warble of a Smitten Knight'.",
+        "isCompleted": false
+      }
+    ]
+  },
+  {
+    "name": "Saving Farmer's Daughter From Soldiers (I)",
+    "link": "https://www.tivaprojects.com/witcher3map/v/index.html",
+    "location": "velen",
+    "type": "encounter",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "Check the linked map for exact location."
+      }
+    ]
+  },
+  {
+    "name": "Saving Farmer's Daughter From Soldiers (II)",
+    "link": "https://www.tivaprojects.com/witcher3map/v/index.html",
+    "location": "velen",
+    "type": "encounter",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "Check the linked map for exact location."
+      }
+    ]
+  },
+  {
+    "name": "Bitter Harvest",
+    "link": "https://witcher.fandom.com/wiki/Bitter_Harvest",
+    "location": "velen",
+    "type": "side",
+    "level": 9,
+    "cutoffFor": ["Thou Shalt Not Pass"],
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "Must be completed when started. Save game before because if Alvin dies, 'Fake Papers' will fail.",
+        "isCompleted": false
+      }
+    ]
+  },
+  {
+    "name": "Fake Papers",
+    "link": "https://witcher.fandom.com/wiki/Fake_Papers",
+    "location": "velen",
+    "type": "side",
+    "level": 1,
+    "cutoffFor": ["Thou Shalt Not Pass", "Bitter Harvest"]
+  },
 
   {
     "id": "On Thin Ice",
@@ -772,16 +1114,8 @@
   {
     "id": "In the Eternal Fire's Shadow",
     "name": "In the Eternal Fire's Shadow",
-    "cutoffFor": ["Funeral Pyres"],
+    "cutoffFor": ["Funeral Pyres", "Defender of the Faith"],
     "link": "",
-    "location": "velen",
-    "type": "main"
-  },
-  {
-    "id": "Ghosts of the Past",
-    "name": "Ghosts of the Past",
-    "link": "",
-    "cutoffFor": ["Hazardous Goods"],
     "location": "velen",
     "type": "main"
   },
@@ -789,15 +1123,17 @@
     "id": "Isle of the Mists",
     "name": "Isle of the Mists",
     "link": "",
-    "cutoffFor": ["Ciri's Room", "Races: Crow's Perch"],
-    "location": "velen",
-    "type": "main"
-  },
-  {
-    "id": "Ladies of the Wood",
-    "name": "Ladies of the Wood",
-    "cutoffFor": ["The Mysterious Passenger"],
-    "link": "",
+    "cutoffFor": [
+      "Ciri's Room",
+      "Races: Crow's Perch",
+      "An Invitation from Keira Metz",
+      "A Towerful of Mice",
+      "A Favor for a Friend",
+      "For the Advancement of Learning",
+      "The Fall of the House of Reardon",
+      "Ghosts of the Past",
+      "Return to Crookback Bog"
+    ],
     "location": "velen",
     "type": "main"
   },
@@ -806,22 +1142,6 @@
     "name": "Calm Before the Storm",
     "prerequisiteFor": ["The Mysterious Passenger"],
     "link": "",
-    "location": "velen",
-    "type": "main"
-  },
-  {
-    "id": "Fake Papers",
-    "name": "Fake Papers",
-    "cutoffFor": ["Thou Shalt Not Pass"],
-    "link": "",
-    "location": "velen",
-    "type": "main"
-  },
-  {
-    "id": "A Favor for a Friend",
-    "name": "A Favor for a Friend",
-    "link": "",
-    "cutoffFor": ["Lynch Mob"],
     "location": "velen",
     "type": "main"
   }
