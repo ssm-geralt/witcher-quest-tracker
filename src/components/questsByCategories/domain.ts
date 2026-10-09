@@ -8,11 +8,12 @@ export interface CategorizedQuests {
 
 export type QuestsByCategoriesProps = {
   quests: Quest[];
+  disabledQuests: Set<string>;
 } & Pick<QuestProps, "onCompletionStateClick" | "onNoteCompletionChange">;
 
 export type QuestsByCategoriesVM = {
   categorizedQuests: CategorizedQuests[];
 } & Pick<
   QuestsByCategoriesProps,
-  "onCompletionStateClick" | "onNoteCompletionChange"
+  "onCompletionStateClick" | "onNoteCompletionChange" | "disabledQuests"
 >;

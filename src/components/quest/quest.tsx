@@ -15,14 +15,17 @@ export function Quest({
     type,
     level,
     finishBefore,
+    prerequisites,
     notes,
   },
   onCompletionStateClick,
   onNoteCompletionChange,
+  disabled,
 }: QuestProps) {
   return (
     <article
-      className="border rounded p-2 flex flex-col gap-2"
+      data-disabled={disabled}
+      className="border rounded p-2 flex flex-col gap-2 data-[disabled=true]:opacity-50"
       id={`quest-${id}`}
     >
       <div className="flex py-2 gap-4 items-center border-b border-white/30">
@@ -43,10 +46,12 @@ export function Quest({
             onClick={onCompletionStateClick}
             data-id={id}
             data-state={completionState ?? "empty"}
+            disabled={disabled}
             className={clsx(
               "inline-block border w-6 h-6 p-1 rounded cursor-pointer",
               "data-[state=success]:bg-green-300 data-[state=success]:text-green-800",
               "data-[state=failure]:bg-red-300 data-[state=failure]:text-red-800",
+              "disabled:invisible",
             )}
           >
             {completionState === "failure" ? (
@@ -59,6 +64,19 @@ export function Quest({
 
         <div className="order-3 text-sm">
           <dl>
+            {prerequisites && prerequisites.length > 0 ? (
+              <div className="flex gap-1">
+                <dt>prerequisites:</dt>
+                <dd>
+                  {prerequisites.map((p) => (
+                    <a key={p.id} href={`#quest-${p.id}`}>
+                      {p.name}
+                    </a>
+                  ))}
+                </dd>
+              </div>
+            ) : null}
+
             {finishBefore && finishBefore.length > 0 ? (
               <div className="flex gap-1">
                 <dt>finish before:</dt>

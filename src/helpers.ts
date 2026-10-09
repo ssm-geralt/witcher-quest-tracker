@@ -216,3 +216,40 @@ export const getNextCompletionState = (
       return "empty";
   }
 };
+
+export const getDisabledQuests = (quests: Quest[]) => {
+  const output = new Set<string>();
+
+  const pairs = quests.reduce<Record<string, string[] | undefined>>(
+    (pairs, { id, prerequisites }) => {
+      prerequisites.forEach((prerequisite) => {
+        const currentPair = pairs[prerequisite.id];
+
+        if (currentPair) {
+          currentPair.push(id);
+          return pairs;
+        }
+
+        pairs[prerequisite.id] = [id];
+      });
+
+      return pairs;
+    },
+    {},
+  );
+
+  quests.forEach(({ id, completionState }) => {
+    if (completionState === "success") {
+      return;
+    }
+
+    const dependents = pairs[id];
+    if (!dependents) {
+      return;
+    }
+
+    dependents.forEach((d) => output.add(d));
+  });
+
+  return output;
+};

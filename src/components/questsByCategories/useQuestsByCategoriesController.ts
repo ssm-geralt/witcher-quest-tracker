@@ -5,8 +5,10 @@ export const useQuestsByCategoriesController = ({
   quests,
   onCompletionStateClick,
   onNoteCompletionChange,
+  disabledQuests,
 }: QuestsByCategoriesProps): QuestsByCategoriesVM => ({
   categorizedQuests: categorizeQuests(quests),
   onCompletionStateClick,
   onNoteCompletionChange,
+  disabledQuests,
 });

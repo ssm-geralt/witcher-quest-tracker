@@ -557,7 +557,8 @@
     "location": "velen",
     "type": "gwent",
     "level": 1,
-    "isOrdered": true
+    "isOrdered": true,
+    "notes": [{ "text": "play the Baron" }]
   },
   {
     "name": "Ciri's Room",
@@ -888,8 +889,7 @@
     "isOrdered": true,
     "notes": [
       {
-        "text": "Complete immediately, don't let the dog die, and follow it closely afterwards.",
-        "isCompleted": false
+        "text": "Complete immediately, don't let the dog die, and follow it closely afterwards."
       }
     ]
   },

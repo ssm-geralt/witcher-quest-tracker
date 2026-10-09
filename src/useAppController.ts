@@ -9,6 +9,7 @@ import { getQuests } from "./data";
 import {
   convertQuestToProgressItem,
   createQuestListWithProgress,
+  getDisabledQuests,
   getIsProgressMade,
   getNextCompletionState,
   loadProgress,
@@ -115,6 +116,10 @@ export const useAppController = (): AppVM => {
     },
   };
 
+  const disabledQuests: AppVM["disabledQuests"] = quests
+    ? getDisabledQuests(quests)
+    : new Set();
+
   useEffect(() => {
     const fetchQuests = async () => {
       try {
@@ -193,5 +198,6 @@ export const useAppController = (): AppVM => {
     onNoteCompletionChange,
     controls,
     confirmationDialog,
+    disabledQuests,
   };
 };

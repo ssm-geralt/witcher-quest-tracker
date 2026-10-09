@@ -4,8 +4,12 @@ import type { QuestsByCategoriesProps } from "./domain";
 import { useQuestsByCategoriesController } from "./useQuestsByCategoriesController";
 
 export function QuestsByCategories(props: QuestsByCategoriesProps) {
-  const { categorizedQuests, onCompletionStateClick, onNoteCompletionChange } =
-    useQuestsByCategoriesController(props);
+  const {
+    categorizedQuests,
+    onCompletionStateClick,
+    onNoteCompletionChange,
+    disabledQuests,
+  } = useQuestsByCategoriesController(props);
 
   return (
     <div className="flex flex-col gap-4">
@@ -23,7 +27,7 @@ export function QuestsByCategories(props: QuestsByCategoriesProps) {
                     <li key={quest.id}>
                       <Quest
                         quest={quest}
-                        disabled={false}
+                        disabled={disabledQuests.has(quest.id)}
                         onCompletionStateClick={onCompletionStateClick}
                         onNoteCompletionChange={onNoteCompletionChange}
                       />
@@ -38,7 +42,7 @@ export function QuestsByCategories(props: QuestsByCategoriesProps) {
                     <li key={quest.id}>
                       <Quest
                         quest={quest}
-                        disabled={false}
+                        disabled={disabledQuests.has(quest.id)}
                         onCompletionStateClick={onCompletionStateClick}
                         onNoteCompletionChange={onNoteCompletionChange}
                       />

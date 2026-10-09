@@ -17,7 +17,9 @@ export const questDataSchema = z.object({
   specialNote: z.object({ text: z.string() }).optional(),
   location: questLocationSchema,
   ignoreLocation: z.boolean().optional(),
+  // finish the given quests before current or they will fail, or be missed
   cutoffFor: z.array(z.string()).optional(),
+  // complete this to make given quests available (currently only success counts)
   prerequisiteFor: z.array(z.string()).optional(),
   isOrdered: z.boolean().optional(),
 });
@@ -46,6 +48,7 @@ export interface AppControllerQuestsState {
 
 export type AppVM = {
   quests?: Quest[];
+  disabledQuests: Set<string>;
   error?: string;
   isLoading: boolean;
   controls: Pick<ControlsProps, "reset">;

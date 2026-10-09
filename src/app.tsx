@@ -15,6 +15,7 @@ export function App() {
     onCompletionStateClick,
     controls,
     confirmationDialog,
+    disabledQuests,
   } = useAppController();
 
   return (
@@ -51,6 +52,7 @@ export function App() {
           {quests ? (
             <QuestsByCategories
               quests={quests}
+              disabledQuests={disabledQuests}
               onCompletionStateClick={onCompletionStateClick}
               onNoteCompletionChange={onNoteCompletionChange}
             />
