@@ -1,42 +1,45 @@
 import { useEffect, useState } from "react";
-import type { AppVM, Progress } from "./domain";
-import { getQuests } from "./data";
 import {
-  questArraySchema,
-  type ProcessedQuest,
-} from "./components/quest/domain";
+  questDataArraySchema,
+  type AppControllerQuestsState,
+  type AppVM,
+  type Progress,
+} from "./domain";
+import { getQuests } from "./data";
 import {
   convertQuestToProgressItem,
   createQuestListWithProgress,
-  isProgressMade,
+  getIsProgressMade,
+  getNextCompletionState,
   loadProgress,
   processQuests,
   saveProgress,
 } from "./helpers";
 
 export const useAppController = (): AppVM => {
-  const [
-    { isLoading, error, processedQuests, rawProcessedQuests },
-    setQuestsState,
-  ] = useState<{
-    processedQuests?: ProcessedQuest[];
-    rawProcessedQuests?: ProcessedQuest[];
-    isLoading: boolean;
-    error?: string;
-  }>({ isLoading: false });
-  const [confirmationDialogProps, setConfirmationDialogProps] = useState<
-    AppVM["confirmationDialogProps"]
+  const [{ isLoading, error, quests, rawQuests }, setQuestsState] =
+    useState<AppControllerQuestsState>({ isLoading: false });
+
+  const [confirmationDialog, setConfirmationDialog] = useState<
+    AppVM["confirmationDialog"]
   >({ isOpen: false });
 
-  const setQuestCompletionState: AppVM["setQuestCompletionState"] = (
-    id,
-    completionState,
-  ) => {
+  const onCompletionStateClick: AppVM["onCompletionStateClick"] = (e) => {
+    const target = e.currentTarget;
+    const previousState = target.dataset.state;
+    const id = target.dataset.id;
+
+    if (!previousState || !id) {
+      return;
+    }
+
+    const newState = getNextCompletionState(previousState);
+
     setQuestsState((prevQuestsState) => ({
       ...prevQuestsState,
-      processedQuests: prevQuestsState.processedQuests?.map((quest) => {
+      quests: prevQuestsState.quests?.map((quest) => {
         if (id === quest.id) {
-          return { ...quest, completionState, isAutoSet: false };
+          return { ...quest, completionState: newState, isAutoSet: false };
         }
 
         return quest;
@@ -44,17 +47,25 @@ export const useAppController = (): AppVM => {
     }));
   };
 
-  const setNoteCompletion: AppVM["setNoteCompletion"] = (id, event) => {
+  const onNoteCompletionChange: AppVM["onNoteCompletionChange"] = (e) => {
+    const target = e.target;
+    const questId = target.dataset.id;
+    const noteIndex = target.value;
+    const isCompleted = target.checked;
+
+    if (!questId || !noteIndex) {
+      return;
+    }
+
     setQuestsState((prevQuestsState) => ({
       ...prevQuestsState,
-      processedQuests: prevQuestsState.processedQuests?.map((quest) => {
-        if (id === quest.id) {
+      quests: prevQuestsState.quests?.map((quest) => {
+        if (questId === quest.id) {
           return {
             ...quest,
-            notes: quest.notes?.map((note) => {
-              const noteId = event.target.value;
-              if (noteId === note.id) {
-                return { ...note, isCompleted: event.target.checked };
+            notes: quest.notes?.map((note, index) => {
+              if (+noteIndex === index) {
+                return { ...note, isCompleted };
               }
               return note;
             }),
@@ -69,11 +80,11 @@ export const useAppController = (): AppVM => {
   const controls: AppVM["controls"] = {
     reset: {
       onClick() {
-        setConfirmationDialogProps({
+        setConfirmationDialog({
           isOpen: true,
           onAnimationEnd: ({ animationName }) => {
             if (animationName === "modal-out") {
-              setConfirmationDialogProps({ isOpen: false });
+              setConfirmationDialog({ isOpen: false });
             }
           },
           data: {
@@ -82,11 +93,9 @@ export const useAppController = (): AppVM => {
               text: "Yes",
               onClick: () => {
                 setQuestsState((prev) =>
-                  prev.rawProcessedQuests
-                    ? { ...prev, processedQuests: rawProcessedQuests }
-                    : prev,
+                  prev.rawQuests ? { ...prev, quests: prev.rawQuests } : prev,
                 );
-                setConfirmationDialogProps((prev) => ({
+                setConfirmationDialog((prev) => ({
                   ...prev,
                   isOpen: false,
                 }));
@@ -95,15 +104,14 @@ export const useAppController = (): AppVM => {
             cancelButton: {
               text: "Cancel",
               onClick: () =>
-                setConfirmationDialogProps((prev) => ({
-                  ...prev,
+                setConfirmationDialog(() => ({
                   isOpen: false,
                 })),
             },
           },
         });
       },
-      disabled: isLoading || !rawProcessedQuests,
+      disabled: isLoading || !rawQuests || rawQuests === quests,
     },
   };
 
@@ -117,35 +125,36 @@ export const useAppController = (): AppVM => {
         }));
 
         const quests = await getQuests();
-
-        const { data, error } = questArraySchema.safeParse(quests);
+        const { data, error } = questDataArraySchema.safeParse(quests);
 
         if (error) {
+          console.error(error.message);
           setQuestsState((prev) => ({
             ...prev,
             isLoading: false,
-            error: error.message,
+            error: "Invalid quest data. Check your console for details.",
           }));
           return;
         }
 
         const progress = loadProgress();
         const processedQuests = processQuests(data);
-        const questWithProgress = progress
-          ? createQuestListWithProgress(processedQuests, progress)
-          : processedQuests;
+        const questWithProgress =
+          progress && progress.length > 0
+            ? createQuestListWithProgress(processedQuests, progress)
+            : processedQuests;
 
         setQuestsState((prev) => ({
           ...prev,
-          processedQuests: questWithProgress,
-          rawProcessedQuests: processedQuests,
+          quests: questWithProgress,
+          rawQuests: processedQuests,
           isLoading: false,
         }));
       } catch {
         setQuestsState((prev) => ({
           ...prev,
           isLoading: false,
-          error: "Failed to load quest data.”",
+          error: "Failed to load quest data.",
         }));
       }
     };
@@ -154,27 +163,35 @@ export const useAppController = (): AppVM => {
   }, []);
 
   useEffect(() => {
-    if (!processedQuests) {
+    if (!quests) {
       return;
     }
 
-    const progress = processedQuests.reduce<Progress>((progress, q) => {
-      if (isProgressMade(q)) {
-        progress.push(convertQuestToProgressItem(q));
+    const progress = quests.reduce<Progress>((progress, q) => {
+      const isProgressMade = getIsProgressMade(q);
+
+      if (!isProgressMade) {
+        return progress;
+      }
+
+      const progressItem = convertQuestToProgressItem(q);
+
+      if (progressItem) {
+        progress.push(progressItem);
       }
       return progress;
     }, []);
 
     saveProgress(progress);
-  }, [processedQuests]);
+  }, [quests]);
 
   return {
-    processedQuests,
-    controls,
     isLoading,
     error,
-    setQuestCompletionState,
-    setNoteCompletion,
-    confirmationDialogProps,
+    quests,
+    onCompletionStateClick,
+    onNoteCompletionChange,
+    controls,
+    confirmationDialog,
   };
 };

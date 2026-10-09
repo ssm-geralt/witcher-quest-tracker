@@ -3,10 +3,10 @@ import { categorizeQuests } from "./helpers";
 
 export const useQuestsByCategoriesController = ({
   quests,
-  setNoteCompletion,
-  setQuestCompletionState,
+  onCompletionStateClick,
+  onNoteCompletionChange,
 }: QuestsByCategoriesProps): QuestsByCategoriesVM => ({
   categorizedQuests: categorizeQuests(quests),
-  setNoteCompletion,
-  setQuestCompletionState,
+  onCompletionStateClick,
+  onNoteCompletionChange,
 });

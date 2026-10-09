@@ -1,20 +1,23 @@
-import type { ProcessedQuest, Quest } from "../quest/domain";
+import type { Quest } from "../quest/domain";
 import type { CategorizedQuests } from "./domain";
 
 export const isQuestOrdered = ({
   finishBefore,
   prerequisites,
   type,
+  isOrdered,
 }: {
+  isOrdered: boolean;
   type: Quest["type"];
   finishBefore?: unknown[];
   prerequisites?: unknown[];
 }) =>
+  isOrdered ||
   (finishBefore && finishBefore.length > 0) ||
   (prerequisites && prerequisites.length > 0) ||
   type === "main";
 
-export const categorizeQuests = (processedQuests: ProcessedQuest[]) =>
+export const categorizeQuests = (processedQuests: Quest[]) =>
   processedQuests?.reduce<CategorizedQuests[]>((output, quest) => {
     const currentCategory = output[output.length - 1];
 

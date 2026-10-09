@@ -1,55 +1,106 @@
-import type { ProcessedQuest, Quest } from "./components/quest/domain";
-import { PROGRESS_LS_KEY } from "./constants";
+import type { Quest } from "./components/quest/domain";
+import { PROGRESS_LS_KEY, questIds } from "./constants";
+import {
+  progressSchema,
+  type Progress,
+  type ProgressItem,
+  type QuestData,
+} from "./domain";
 import lzString from "lz-string";
-import { progressSchema, type Progress, type ProgressItem } from "./domain";
+import type { IdNameObject } from "./shared/domain/IdNameObject";
+import type { QuestCompletionState } from "./shared/domain/questCompletionStateSchema";
 
-export const convertQuestToProgressItem = ({
-  id,
-  completionState,
-  isAutoSet,
-  notes,
-}: Pick<
-  Quest,
-  "id" | "completionState" | "isAutoSet" | "notes"
->): ProgressItem => ({
-  id,
-  completionState,
-  isAutoSet,
-  notes: notes?.reduce<string[]>((ids, { id, isCompleted }) => {
-    if (isCompleted) {
-      ids.push(id);
-    }
-    return ids;
-  }, []),
-});
+export const processQuests = (questDataArray: QuestData[]): Quest[] => {
+  const output: Quest[] = [];
 
-export const createQuestWithProgress = (
-  quest: ProcessedQuest,
-  { completionState, isAutoSet, notes }: Omit<ProgressItem, "id">,
-): ProcessedQuest => ({
-  ...quest,
-  completionState,
-  isAutoSet,
-  notes: quest.notes?.map((n) => ({
-    ...n,
-    isCompleted: notes?.includes(n.id) ? true : n.isCompleted,
-  })),
-});
+  const helper: {
+    prerequisitesFor: Record<string, IdNameObject[] | undefined>;
+    cutoffFor: Record<string, IdNameObject[] | undefined>;
+  } = {
+    prerequisitesFor: {},
+    cutoffFor: {},
+  };
 
-export const createQuestListWithProgress = (
-  quests: ProcessedQuest[],
-  progress: Progress,
-): ProcessedQuest[] =>
-  quests.map((quest) => {
-    const progressItem = progress.find((p) => p.id === quest.id);
-    if (progressItem) {
-      return createQuestWithProgress(quest, progressItem);
-    }
+  questDataArray.forEach(
+    ({
+      name,
+      location,
+      type,
+      ignoreLocation,
+      level,
+      link,
+      specialNote,
+      notes,
+      prerequisiteFor,
+      cutoffFor,
+      isOrdered,
+    }) => {
+      const id = questIds[name] ?? name;
 
-    return quest;
+      if (!questIds[name]) {
+        console.warn(`Id was not found for ${name}`);
+      }
+
+      const currentIdNameObject = { id, name };
+
+      prerequisiteFor?.forEach((pName) => {
+        const pId = questIds[pName] ?? pName;
+
+        if (!questIds[pName]) {
+          console.warn(`Prerequisite id was not found for ${pId}`);
+        }
+
+        const existingPrerequisiteFor = helper.prerequisitesFor[pId];
+
+        if (existingPrerequisiteFor) {
+          existingPrerequisiteFor.push(currentIdNameObject);
+        } else {
+          helper.prerequisitesFor[pId] = [currentIdNameObject];
+        }
+      });
+
+      cutoffFor?.forEach((pName) => {
+        const cId = questIds[pName] ?? pName;
+
+        if (!questIds[pName]) {
+          console.warn(`Cutoff id was not found for ${cId}`);
+        }
+
+        const existingCutoffFor = helper.cutoffFor[cId];
+
+        if (existingCutoffFor) {
+          existingCutoffFor.push(currentIdNameObject);
+        } else {
+          helper.cutoffFor[cId] = [currentIdNameObject];
+        }
+      });
+
+      output.push({
+        id,
+        name,
+        type,
+        location,
+        ignoreLocation: !!ignoreLocation,
+        level,
+        link,
+        specialNote,
+        notes: notes ?? [],
+        finishBefore: [],
+        prerequisites: [],
+        isOrdered: !!isOrdered,
+      });
+    },
+  );
+
+  output.map((quest) => {
+    quest.finishBefore = helper.cutoffFor[quest.id] ?? [];
+    quest.prerequisites = helper.prerequisitesFor[quest.id] ?? [];
   });
 
-export const loadProgress = () => {
+  return output;
+};
+
+export const loadProgress = (): Progress | undefined => {
   const lsItem = localStorage.getItem(PROGRESS_LS_KEY);
   if (!lsItem) {
     return;
@@ -61,12 +112,38 @@ export const loadProgress = () => {
     const jsonParsed = JSON.parse(decompressed);
     return progressSchema.parse(jsonParsed);
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return undefined;
   }
 };
 
-export const isProgressMade = ({
+export const createQuestWithProgress = (
+  quest: Quest,
+  { completionState, isAutoSet, notes }: Omit<ProgressItem, "id">,
+): Quest => ({
+  ...quest,
+  completionState,
+  isAutoSet,
+  notes: quest.notes?.map((n, index) => ({
+    ...n,
+    isCompleted: notes?.includes(index) ? true : n.isCompleted,
+  })),
+});
+
+export const createQuestListWithProgress = (
+  quests: Quest[],
+  progress: Progress,
+): Quest[] =>
+  quests.map((quest) => {
+    const progressItem = progress.find((p) => p.id === quest.id);
+    if (progressItem) {
+      return createQuestWithProgress(quest, progressItem);
+    }
+
+    return quest;
+  });
+
+export const getIsProgressMade = ({
   completionState,
   notes,
 }: Pick<Quest, "completionState" | "notes">) => {
@@ -75,6 +152,31 @@ export const isProgressMade = ({
   }
 
   return !!notes?.some((n) => n.isCompleted);
+};
+
+export const convertQuestToProgressItem = ({
+  id,
+  completionState,
+  isAutoSet,
+  notes,
+}: Pick<Quest, "id" | "completionState" | "isAutoSet" | "notes">):
+  | ProgressItem
+  | undefined => {
+  if (!completionState) {
+    return undefined;
+  }
+
+  return {
+    id,
+    completionState,
+    isAutoSet,
+    notes: notes?.reduce<number[]>((indexes, { isCompleted }, index) => {
+      if (isCompleted) {
+        indexes.push(index);
+      }
+      return indexes;
+    }, []),
+  };
 };
 
 export const saveProgress = (progress: Progress) => {
@@ -98,50 +200,19 @@ export const saveSingleProgressItem = (item: ProgressItem) => {
   saveProgress(savedProgress);
 };
 
-export const processQuests = (quests: Quest[]) => {
-  const output = quests?.reduce<{
-    result: ProcessedQuest[];
-    helper: Record<string, number[] | undefined>;
-  }>(
-    (output, q, index) => {
-      output.helper[q.id]?.forEach((qIndex) => {
-        const dependentItem = output.result[qIndex];
-
-        if (dependentItem) {
-          dependentItem.finishBefore.push({ id: q.id, name: q.name });
-        }
-      });
-      output.helper[q.id] = undefined;
-
-      q.finishBefore?.forEach((beforeId) => {
-        if (output.helper[beforeId]) {
-          output.helper[beforeId].push(index);
-          return;
-        }
-
-        output.helper[beforeId] = [index];
-      });
-
-      output.result.push({ ...q, finishBefore: [] });
-
-      return output;
-    },
-    { result: [], helper: {} },
-  );
-
-  const leftovers = Object.keys(output.helper).reduce<string[]>((acc, key) => {
-    const value = output.helper[key];
-
-    if (value && value.length > 0) {
-      acc.push(key);
-    }
-
-    return acc;
-  }, []);
-
-  if (leftovers.length > 0) {
-    console.log("unmatched 'finishBefore' items", leftovers);
+export const getNextCompletionState = (
+  state?: string,
+): QuestCompletionState => {
+  switch (state) {
+    case undefined:
+      return "success";
+    case "empty":
+      return "success";
+    case "success":
+      return "failure";
+    case "failure":
+      return "empty";
+    default:
+      return "empty";
   }
-
-  return output.result;
 };

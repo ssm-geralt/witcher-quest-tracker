@@ -1,27 +1,18 @@
-import type { ChangeEvent } from "react";
-import type { ProcessedQuest, Quest } from "../quest/domain";
+import type { Quest, QuestProps } from "../quest/domain";
 
 export interface CategorizedQuests {
   location: string;
-  ordered: ProcessedQuest[];
-  unordered: ProcessedQuest[];
+  ordered: Quest[];
+  unordered: Quest[];
 }
 
-export interface QuestsByCategoriesProps {
-  quests: ProcessedQuest[];
-  setQuestCompletionState: (
-    id: string,
-    newCompletionState: Quest["completionState"],
-  ) => void;
-  setNoteCompletion: (
-    id: string,
-    e: ChangeEvent<HTMLInputElement, HTMLInputElement>,
-  ) => void;
-}
+export type QuestsByCategoriesProps = {
+  quests: Quest[];
+} & Pick<QuestProps, "onCompletionStateClick" | "onNoteCompletionChange">;
 
 export type QuestsByCategoriesVM = {
   categorizedQuests: CategorizedQuests[];
 } & Pick<
   QuestsByCategoriesProps,
-  "setQuestCompletionState" | "setNoteCompletion"
+  "onCompletionStateClick" | "onNoteCompletionChange"
 >;

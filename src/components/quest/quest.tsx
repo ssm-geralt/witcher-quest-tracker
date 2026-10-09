@@ -2,27 +2,24 @@ import type { Quest, QuestProps } from "./domain";
 import { CheckmarkIcon } from "../icons/checkmarkIcon";
 import { CrossIcon } from "../icons/crossIcon";
 import clsx from "clsx";
-import { useQuestController } from "./useQuestController";
 import { getLocationName, getQuestTypeName } from "./helper";
 import { Checkbox } from "../checkbox";
 
-export function Quest(props: QuestProps) {
-  const {
-    quest: {
-      id,
-      name,
-      completionState,
-      link,
-      location,
-      type,
-      level,
-      finishBefore,
-      notes,
-    },
-    handleOnCompletionStateChange,
-    onNoteCompletionChange,
-  } = useQuestController(props);
-
+export function Quest({
+  quest: {
+    id,
+    name,
+    completionState,
+    link,
+    location,
+    type,
+    level,
+    finishBefore,
+    notes,
+  },
+  onCompletionStateClick,
+  onNoteCompletionChange,
+}: QuestProps) {
   return (
     <article
       className="border rounded p-2 flex flex-col gap-2"
@@ -31,7 +28,11 @@ export function Quest(props: QuestProps) {
       <div className="flex py-2 gap-4 items-center border-b border-white/30">
         <header className="order-2">
           <h3>
-            <a href={link} target="_blank" className="underline text-primary">
+            <a
+              href={link}
+              target="_blank"
+              className="[[href]]:underline [[href]]:text-primary"
+            >
               {name} {level ? `(${level})` : null}
             </a>
           </h3>
@@ -39,7 +40,8 @@ export function Quest(props: QuestProps) {
 
         <div className="order-1">
           <button
-            onClick={handleOnCompletionStateChange}
+            onClick={onCompletionStateClick}
+            data-id={id}
             data-state={completionState ?? "empty"}
             className={clsx(
               "inline-block border w-6 h-6 p-1 rounded cursor-pointer",
@@ -86,10 +88,10 @@ export function Quest(props: QuestProps) {
       {notes && notes.length > 0 ? (
         <div>
           <ul className="text-sm flex flex-col gap-2 ">
-            {notes.map((note) => (
+            {notes.map((note, index) => (
               <li
                 className="flex items-center gap-2 border-b py-1 border-white/30"
-                key={note.id}
+                key={index}
               >
                 {note.link ? (
                   <a
@@ -106,8 +108,9 @@ export function Quest(props: QuestProps) {
                 {note.isCompleted !== undefined ? (
                   <Checkbox
                     variant="success"
-                    checked={note.isCompleted}
-                    value={note.id}
+                    data-id={id}
+                    value={index}
+                    checked={!!note.isCompleted}
                     onChange={onNoteCompletionChange}
                   />
                 ) : null}

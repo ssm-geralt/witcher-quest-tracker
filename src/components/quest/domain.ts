@@ -1,61 +1,38 @@
 import type { ChangeEvent } from "react";
-import z from "zod";
+import type { IdNameObject } from "../../shared/domain/IdNameObject";
+import type { QuestCompletionState } from "../../shared/domain/questCompletionStateSchema";
+import type { QuestLocation } from "../../shared/domain/questLocation";
+import type { QuestNote } from "../../shared/domain/questNoteSchema";
+import type { QuestType } from "../../shared/domain/questTypeSchema";
 
-export const completionStateSchema = z.enum(["success", "empty", "failure"]);
-
-export const questSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  completionState: completionStateSchema.optional(),
-  type: z.enum([
-    "main",
-    "side",
-    "contract",
-    "treasure",
-    "gwent",
-    "scavenger",
-    "encounter",
-  ]),
-  level: z.number().optional(),
-  link: z.string(),
-  notes: z
-    .array(
-      z.object({
-        id: z.string(),
-        text: z.string(),
-        isCompleted: z.boolean().optional(),
-        link: z.string().optional(),
-      }),
-    )
-    .optional(),
-  specialNote: z.object({ text: z.string() }).optional(),
-  location: z.enum(["whiteOrchard", "vizima", "velen", "skellige"]),
-  ignoreLocation: z.boolean().optional(),
-  finishBefore: z.array(z.string()).optional(),
-  prerequisites: z.array(z.string()).optional(),
-  isAutoSet: z.boolean().optional(),
-});
-
-export const questArraySchema = z.array(questSchema);
-
-export type Quest = z.infer<typeof questSchema>;
-
-export type ProcessedQuest = Omit<Quest, "finishBefore"> & {
-  finishBefore: { id: string; name: string }[];
+export type Quest = {
+  id: string;
+  name: string;
+  completionState?: QuestCompletionState;
+  type: QuestType;
+  level?: number;
+  link?: string;
+  notes: QuestNote[];
+  specialNote?: { text: string };
+  location: QuestLocation;
+  ignoreLocation: boolean;
+  finishBefore: IdNameObject[];
+  prerequisites: IdNameObject[];
+  isOrdered: boolean;
+  isAutoSet?: boolean;
 };
 
 export interface QuestProps {
-  quest: ProcessedQuest;
-  onCompletionStateChange: (newState?: Quest["completionState"]) => void;
+  quest: Quest;
+  disabled: boolean;
+  onCompletionStateClick: (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => void;
   onNoteCompletionChange: (
     e: ChangeEvent<HTMLInputElement, HTMLInputElement>,
   ) => void;
 }
 
 export interface QuestVM {
-  quest: ProcessedQuest;
-  handleOnCompletionStateChange: () => void;
-  onNoteCompletionChange: (
-    e: ChangeEvent<HTMLInputElement, HTMLInputElement>,
-  ) => void;
+  quest: Quest;
 }

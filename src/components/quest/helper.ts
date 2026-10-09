@@ -6,7 +6,6 @@ export const getLocationName = (key: string) => {
       return "Vizima";
     case "velen":
       return "Velen";
-
     default:
       return key;
   }
@@ -28,7 +27,8 @@ export const getQuestTypeName = (key: string) => {
       return "Scavenger Hunt";
     case "encounter":
       return "Chance Encounter";
-
+    case "race":
+      return "Race";
     default:
       return key;
   }

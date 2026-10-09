@@ -4,8 +4,9 @@ import type { QuestsByCategoriesProps } from "./domain";
 import { useQuestsByCategoriesController } from "./useQuestsByCategoriesController";
 
 export function QuestsByCategories(props: QuestsByCategoriesProps) {
-  const { categorizedQuests, setNoteCompletion, setQuestCompletionState } =
+  const { categorizedQuests, onCompletionStateClick, onNoteCompletionChange } =
     useQuestsByCategoriesController(props);
+
   return (
     <div className="flex flex-col gap-4">
       {categorizedQuests?.map(({ location, ordered, unordered }, index) => {
@@ -22,12 +23,9 @@ export function QuestsByCategories(props: QuestsByCategoriesProps) {
                     <li key={quest.id}>
                       <Quest
                         quest={quest}
-                        onCompletionStateChange={(newState) =>
-                          setQuestCompletionState(quest.id, newState)
-                        }
-                        onNoteCompletionChange={(e) =>
-                          setNoteCompletion(quest.id, e)
-                        }
+                        disabled={false}
+                        onCompletionStateClick={onCompletionStateClick}
+                        onNoteCompletionChange={onNoteCompletionChange}
                       />
                     </li>
                   ))}
@@ -40,12 +38,9 @@ export function QuestsByCategories(props: QuestsByCategoriesProps) {
                     <li key={quest.id}>
                       <Quest
                         quest={quest}
-                        onCompletionStateChange={(newState) =>
-                          setQuestCompletionState(quest.id, newState)
-                        }
-                        onNoteCompletionChange={(e) =>
-                          setNoteCompletion(quest.id, e)
-                        }
+                        disabled={false}
+                        onCompletionStateClick={onCompletionStateClick}
+                        onNoteCompletionChange={onNoteCompletionChange}
                       />
                     </li>
                   ))}

@@ -4,6 +4,7 @@ import { useStatisticsController } from "./useStatisticsController";
 export function Statistics(props: StatisticsProps) {
   const { completed, failed, finished, percentage, total } =
     useStatisticsController(props);
+
   return (
     <div>
       <dl>

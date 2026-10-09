@@ -20,12 +20,18 @@ export const useStatisticsController = ({
     },
   );
 
+  const finished = completed + failed;
+
+  const percentage =
+    quests.length > 0 ? ((completed + failed) / quests.length) * 100 : 100;
+
+  const total = quests.length;
+
   return {
     completed,
     failed,
-    finished: completed + failed,
-    percentage:
-      quests.length > 0 ? ((completed + failed) / quests.length) * 100 : 100,
-    total: quests.length,
+    finished,
+    percentage,
+    total,
   };
 };

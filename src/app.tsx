@@ -1,40 +1,43 @@
 import { useAppController } from "./useAppController";
-import { MainHeader } from "./components/mainHeader";
 import { LoadingIndicator } from "./components/loadingIndicator";
+import { MainHeader } from "./components/mainHeader";
+import { QuestsByCategories } from "./components/questsByCategories";
 import { Controls } from "./components/controls";
 import { ConfirmationDialog } from "./components/confirmationDialog";
 import { Statistics } from "./components/statistics";
-import { QuestsByCategories } from "./components/questsByCategories";
 
 export function App() {
   const {
     isLoading,
     error,
-    processedQuests,
-    setQuestCompletionState,
-    setNoteCompletion,
+    quests,
+    onNoteCompletionChange,
+    onCompletionStateClick,
     controls,
-    confirmationDialogProps,
+    confirmationDialog,
   } = useAppController();
 
   return (
     <div className="bg-black text-white min-h-dvh flex flex-col">
       <LoadingIndicator isLoading={isLoading} />
+
       <MainHeader />
+
       <main className="grow px-4">
         <section className="my-4">
           <header>
             <h2 className="text-center">Controls</h2>
           </header>
-          <Controls {...controls} />
+
+          <Controls reset={controls.reset} />
         </section>
 
-        {processedQuests ? (
+        {quests ? (
           <section className="my-4">
             <header>
               <h2 className="text-center">Statistics</h2>
             </header>
-            <Statistics quests={processedQuests} />
+            <Statistics quests={quests} />
           </section>
         ) : null}
 
@@ -43,20 +46,22 @@ export function App() {
             <h2 className="text-center">Quests</h2>
           </header>
 
-          {error ? <p className="text-red-500">{error}</p> : null}
+          {error ? <p className="text-red-500 text-center">{error}</p> : null}
 
-          {processedQuests ? (
+          {quests ? (
             <QuestsByCategories
-              quests={processedQuests}
-              setQuestCompletionState={setQuestCompletionState}
-              setNoteCompletion={setNoteCompletion}
+              quests={quests}
+              onCompletionStateClick={onCompletionStateClick}
+              onNoteCompletionChange={onNoteCompletionChange}
             />
           ) : null}
         </section>
       </main>
 
       <ConfirmationDialog
-        {...confirmationDialogProps}
+        isOpen={confirmationDialog.isOpen}
+        data={confirmationDialog.data}
+        onAnimationEnd={confirmationDialog.onAnimationEnd}
         className="[&_button]:min-w-20"
       />
     </div>

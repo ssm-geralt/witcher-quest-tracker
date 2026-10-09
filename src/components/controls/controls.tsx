@@ -1,10 +1,12 @@
 import { Button } from "../button";
 
+export interface ControlsAction {
+  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  disabled: boolean;
+}
+
 export interface ControlsProps {
-  reset: {
-    onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-    disabled: boolean;
-  };
+  reset: ControlsAction;
 }
 
 export function Controls({ reset }: ControlsProps) {

@@ -17,6 +17,7 @@ export function Button({ className, variant, ...props }: ButtonProps) {
         "cursor-pointer py-1 px-2 border rounded",
         "data-[variant=success]:bg-green-300 data-[variant=success]:text-green-800",
         "data-[variant=failure]:bg-red-300 data-[variant=failure]:text-red-800",
+        "disabled:opacity-50",
         className,
       )}
     />
