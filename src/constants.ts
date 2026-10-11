@@ -71,4 +71,5 @@ export const questIds: Record<string, string | undefined> = {
   "Saving Farmer's Daughter From Soldiers (II)": "67",
   "Bitter Harvest": "68",
   "Fake Papers": "69",
+  "At the Mercy of Strangers Part 2": "70",
 };

@@ -16,6 +16,7 @@ export function Quest({
     level,
     finishBefore,
     prerequisites,
+    disablers,
     notes,
   },
   onCompletionStateClick,
@@ -64,7 +65,7 @@ export function Quest({
 
         <div className="order-3 text-sm">
           <dl>
-            {prerequisites && prerequisites.length > 0 ? (
+            {prerequisites.length > 0 ? (
               <div className="flex gap-1">
                 <dt>prerequisites:</dt>
                 <dd>
@@ -77,7 +78,20 @@ export function Quest({
               </div>
             ) : null}
 
-            {finishBefore && finishBefore.length > 0 ? (
+            {disablers.length > 0 ? (
+              <div className="flex gap-1">
+                <dt>disablers:</dt>
+                <dd>
+                  {disablers.map((d) => (
+                    <a key={d.id} href={`#quest-${d.id}`}>
+                      {d.name}
+                    </a>
+                  ))}
+                </dd>
+              </div>
+            ) : null}
+
+            {finishBefore.length > 0 ? (
               <div className="flex gap-1">
                 <dt>finish before:</dt>
                 <dd>

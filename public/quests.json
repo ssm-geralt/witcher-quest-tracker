@@ -961,7 +961,6 @@
     "location": "velen",
     "type": "main",
     "level": 6,
-    "cutoffFor": ["The Mysterious Passenger"],
     "notes": [
       {
         "text": "There's a 3rd option to complete 'The Whispering Hillock', but you have to find the tree before starting 'Ladies of the Wood'. You can release the spirit this way and still get the good Baron ending."
@@ -983,6 +982,9 @@
       {
         "text": "In 'The Whispering Hillock', just east of the place of power, behind a rock, you can find the body of a kid.",
         "isCompleted": false
+      },
+      {
+        "text": "If you have trouble with the werewolf, use the moon dust bomb to prevent his healing abilities."
       },
       {
         "text": "If you did not release the tree spirit, after first talking to the Crones, go back to Downwarren and get some extra dialogue with the man that cut off his ear.",
@@ -1024,6 +1026,7 @@
     "location": "velen",
     "type": "main",
     "level": 5,
+    "disablerFor": ["The Mysterious Passenger"],
     "notes": [
       {
         "text": "You can find the place where Ciri fought the Basilisk in 'Ciri's Story: Out of the Shadows' at the forgotten tower west of Heatherton."
@@ -1050,8 +1053,7 @@
     ],
     "notes": [
       {
-        "text": "In the basement, underneath the crone tapestry, you can find unique voodoo dolls that represent people that the crones have cursed, including Anna, a peasant from Downwarren, and Vivienne from the DLC Blood and Wine quest 'The Warble of a Smitten Knight'.",
-        "isCompleted": false
+        "text": "In the basement, underneath the crone tapestry, you can find unique voodoo dolls that represent people that the crones have cursed, including Anna, a peasant from Downwarren, and Vivienne from the DLC Blood and Wine quest 'The Warble of a Smitten Knight'."
       }
     ]
   },
@@ -1089,6 +1091,9 @@
     "isOrdered": true,
     "notes": [
       {
+        "text": "First talk to the guy from Fake papers, but do not pay or use axii."
+      },
+      {
         "text": "Must be completed when started. Save game before because if Alvin dies, 'Fake Papers' will fail.",
         "isCompleted": false
       }
@@ -1100,9 +1105,21 @@
     "location": "velen",
     "type": "side",
     "level": 1,
+    "isOrdered": true,
     "cutoffFor": ["Thou Shalt Not Pass", "Bitter Harvest"]
   },
-
+  {
+    "name": "At the Mercy of Strangers Part 2",
+    "type": "encounter",
+    "location": "velen",
+    "isOrdered": true,
+    "link": "https://witcher.fandom.com/wiki/At_the_Mercy_of_Strangers",
+    "notes": [
+      {
+        "text": "Do the second part of the encounter."
+      }
+    ]
+  },
   {
     "id": "On Thin Ice",
     "name": "On Thin Ice",

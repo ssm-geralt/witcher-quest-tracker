@@ -18,6 +18,7 @@ export type Quest = {
   ignoreLocation: boolean;
   finishBefore: IdNameObject[];
   prerequisites: IdNameObject[];
+  disablers: IdNameObject[];
   isOrdered: boolean;
   isAutoSet?: boolean;
 };

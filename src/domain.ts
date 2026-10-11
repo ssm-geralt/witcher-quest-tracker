@@ -17,9 +17,11 @@ export const questDataSchema = z.object({
   specialNote: z.object({ text: z.string() }).optional(),
   location: questLocationSchema,
   ignoreLocation: z.boolean().optional(),
-  // finish the given quests before current or they will fail, or be missed
+  // the given quests will fail if this one is finished before
   cutoffFor: z.array(z.string()).optional(),
-  // complete this to make given quests available (currently only success counts)
+  // the given quests will not be available if this one is finished before (currently only success counts)
+  disablerFor: z.array(z.string()).optional(),
+  // complete this one to make given quests available (currently only success counts)
   prerequisiteFor: z.array(z.string()).optional(),
   isOrdered: z.boolean().optional(),
 });
@@ -28,7 +30,7 @@ export const questDataArraySchema = z.array(questDataSchema);
 
 const progressItem = z.object({
   id: z.string(),
-  completionState: questCompletionStateSchema,
+  completionState: questCompletionStateSchema.optional(),
   isAutoSet: z.boolean().optional(),
   notes: z.array(z.number()).optional(),
 });

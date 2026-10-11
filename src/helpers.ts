@@ -16,9 +16,11 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
   const helper: {
     prerequisitesFor: Record<string, IdNameObject[] | undefined>;
     cutoffFor: Record<string, IdNameObject[] | undefined>;
+    disablerFor: Record<string, IdNameObject[] | undefined>;
   } = {
     prerequisitesFor: {},
     cutoffFor: {},
+    disablerFor: {},
   };
 
   questDataArray.forEach(
@@ -33,6 +35,7 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
       notes,
       prerequisiteFor,
       cutoffFor,
+      disablerFor,
       isOrdered,
     }) => {
       const id = questIds[name] ?? name;
@@ -75,6 +78,22 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
         }
       });
 
+      disablerFor?.forEach((dName) => {
+        const cId = questIds[dName] ?? dName;
+
+        if (!questIds[dName]) {
+          console.warn(`Disabler id was not found for ${cId}`);
+        }
+
+        const existingDisablerFor = helper.disablerFor[cId];
+
+        if (existingDisablerFor) {
+          existingDisablerFor.push(currentIdNameObject);
+        } else {
+          helper.disablerFor[cId] = [currentIdNameObject];
+        }
+      });
+
       output.push({
         id,
         name,
@@ -87,6 +106,7 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
         notes: notes ?? [],
         finishBefore: [],
         prerequisites: [],
+        disablers: [],
         isOrdered: !!isOrdered,
       });
     },
@@ -95,6 +115,7 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
   output.map((quest) => {
     quest.finishBefore = helper.cutoffFor[quest.id] ?? [];
     quest.prerequisites = helper.prerequisitesFor[quest.id] ?? [];
+    quest.disablers = helper.disablerFor[quest.id] ?? [];
   });
 
   return output;
@@ -159,13 +180,10 @@ export const convertQuestToProgressItem = ({
   completionState,
   isAutoSet,
   notes,
-}: Pick<Quest, "id" | "completionState" | "isAutoSet" | "notes">):
-  | ProgressItem
-  | undefined => {
-  if (!completionState) {
-    return undefined;
-  }
-
+}: Pick<
+  Quest,
+  "id" | "completionState" | "isAutoSet" | "notes"
+>): ProgressItem => {
   return {
     id,
     completionState,
@@ -220,30 +238,51 @@ export const getNextCompletionState = (
 export const getDisabledQuests = (quests: Quest[]) => {
   const output = new Set<string>();
 
-  const pairs = quests.reduce<Record<string, string[] | undefined>>(
-    (pairs, { id, prerequisites }) => {
+  const helper = quests.reduce<{
+    prerequisites: Record<string, string[] | undefined>;
+    disablers: Record<string, string[] | undefined>;
+  }>(
+    (pairs, { id, prerequisites, disablers }) => {
       prerequisites.forEach((prerequisite) => {
-        const currentPair = pairs[prerequisite.id];
+        const currentPair = pairs.prerequisites[prerequisite.id];
 
         if (currentPair) {
           currentPair.push(id);
-          return pairs;
+          return;
         }
 
-        pairs[prerequisite.id] = [id];
+        pairs.prerequisites[prerequisite.id] = [id];
+      });
+
+      disablers.forEach((disabler) => {
+        const currentPair = pairs.disablers[disabler.id];
+        if (currentPair) {
+          currentPair.push(id);
+          return;
+        }
+        pairs.disablers[disabler.id] = [id];
       });
 
       return pairs;
     },
-    {},
+    { prerequisites: {}, disablers: {} },
   );
 
   quests.forEach(({ id, completionState }) => {
+    // disablers
     if (completionState === "success") {
+      const disabledItems = helper.disablers[id];
+
+      if (!disabledItems) {
+        return;
+      }
+
+      disabledItems.forEach((d) => output.add(d));
       return;
     }
 
-    const dependents = pairs[id];
+    // prerequisites
+    const dependents = helper.prerequisites[id];
     if (!dependents) {
       return;
     }
