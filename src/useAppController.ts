@@ -78,6 +78,39 @@ export const useAppController = (): AppVM => {
     }));
   };
 
+  const onPathChange: AppVM["onPathChange"] = (e) => {
+    const target = e.target;
+    const questId = target.dataset.id;
+    const pathId = target.dataset.path;
+    const value = target.value;
+
+    if (!questId || !pathId) {
+      return;
+    }
+
+    setQuestsState((prevQuestsState) => ({
+      ...prevQuestsState,
+      quests: prevQuestsState.quests?.map((quest) => {
+        if (questId === quest.id) {
+          const newSelectedPaths = quest.selectedPaths.filter(
+            (sp) => !(sp.name === pathId),
+          );
+
+          if (value !== "empty") {
+            newSelectedPaths.push({ name: pathId, optionName: value });
+          }
+
+          return {
+            ...quest,
+            selectedPaths: newSelectedPaths,
+          };
+        }
+
+        return quest;
+      }),
+    }));
+  };
+
   const controls: AppVM["controls"] = {
     reset: {
       onClick() {
@@ -196,6 +229,7 @@ export const useAppController = (): AppVM => {
     quests,
     onCompletionStateClick,
     onNoteCompletionChange,
+    onPathChange,
     controls,
     confirmationDialog,
     disabledQuests,

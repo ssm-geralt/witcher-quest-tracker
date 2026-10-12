@@ -9,11 +9,17 @@ export interface CategorizedQuests {
 export type QuestsByCategoriesProps = {
   quests: Quest[];
   disabledQuests: Set<string>;
-} & Pick<QuestProps, "onCompletionStateClick" | "onNoteCompletionChange">;
+} & Pick<
+  QuestProps,
+  "onCompletionStateClick" | "onNoteCompletionChange" | "onPathChange"
+>;
 
 export type QuestsByCategoriesVM = {
   categorizedQuests: CategorizedQuests[];
 } & Pick<
   QuestsByCategoriesProps,
-  "onCompletionStateClick" | "onNoteCompletionChange" | "disabledQuests"
+  | "onCompletionStateClick"
+  | "onNoteCompletionChange"
+  | "onPathChange"
+  | "disabledQuests"
 >;

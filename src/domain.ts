@@ -2,11 +2,13 @@ import z from "zod";
 import { questTypeSchema } from "./shared/domain/questTypeSchema";
 import { questNoteSchema } from "./shared/domain/questNoteSchema";
 import { questCompletionStateSchema } from "./shared/domain/questCompletionStateSchema";
-import { questLocationSchema } from "./shared/domain/questLocation";
+import { questLocationSchema } from "./shared/domain/questLocationSchema";
 import type { Quest } from "./components/quest/domain";
 import type { QuestsByCategoriesProps } from "./components/questsByCategories/domain";
 import type { ControlsProps } from "./components/controls";
 import type { ConfirmationDialogProps } from "./components/confirmationDialog";
+import { questPathOptionSchema } from "./shared/domain/questPathOptionSchema";
+import { QuestPathSchema } from "./shared/domain/questPathSchema";
 
 export const questDataSchema = z.object({
   name: z.string(),
@@ -17,6 +19,7 @@ export const questDataSchema = z.object({
   specialNote: z.object({ text: z.string() }).optional(),
   location: questLocationSchema,
   ignoreLocation: z.boolean().optional(),
+  pathOptions: z.array(questPathOptionSchema).optional(),
   // the given quests will fail if this one is finished before
   cutoffFor: z.array(z.string()).optional(),
   // the given quests will not be available if this one is finished before (currently only success counts)
@@ -33,6 +36,7 @@ const progressItem = z.object({
   completionState: questCompletionStateSchema.optional(),
   isAutoSet: z.boolean().optional(),
   notes: z.array(z.number()).optional(),
+  selectedPaths: z.array(QuestPathSchema).optional(),
 });
 
 export const progressSchema = z.array(progressItem);
@@ -60,5 +64,5 @@ export type AppVM = {
   >;
 } & Pick<
   QuestsByCategoriesProps,
-  "onCompletionStateClick" | "onNoteCompletionChange"
+  "onCompletionStateClick" | "onNoteCompletionChange" | "onPathChange"
 >;

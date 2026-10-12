@@ -6,9 +6,11 @@ export const useQuestsByCategoriesController = ({
   onCompletionStateClick,
   onNoteCompletionChange,
   disabledQuests,
+  onPathChange,
 }: QuestsByCategoriesProps): QuestsByCategoriesVM => ({
   categorizedQuests: categorizeQuests(quests),
   onCompletionStateClick,
   onNoteCompletionChange,
   disabledQuests,
+  onPathChange,
 });

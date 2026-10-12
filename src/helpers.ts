@@ -37,6 +37,7 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
       cutoffFor,
       disablerFor,
       isOrdered,
+      pathOptions,
     }) => {
       const id = questIds[name] ?? name;
 
@@ -108,6 +109,8 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
         prerequisites: [],
         disablers: [],
         isOrdered: !!isOrdered,
+        pathOptions: pathOptions ?? [],
+        selectedPaths: [],
       });
     },
   );
@@ -140,7 +143,12 @@ export const loadProgress = (): Progress | undefined => {
 
 export const createQuestWithProgress = (
   quest: Quest,
-  { completionState, isAutoSet, notes }: Omit<ProgressItem, "id">,
+  {
+    completionState,
+    isAutoSet,
+    notes,
+    selectedPaths,
+  }: Omit<ProgressItem, "id">,
 ): Quest => ({
   ...quest,
   completionState,
@@ -149,6 +157,7 @@ export const createQuestWithProgress = (
     ...n,
     isCompleted: notes?.includes(index) ? true : n.isCompleted,
   })),
+  selectedPaths: selectedPaths ?? [],
 });
 
 export const createQuestListWithProgress = (
@@ -167,8 +176,13 @@ export const createQuestListWithProgress = (
 export const getIsProgressMade = ({
   completionState,
   notes,
-}: Pick<Quest, "completionState" | "notes">) => {
+  selectedPaths,
+}: Pick<Quest, "completionState" | "notes" | "selectedPaths">) => {
   if (completionState !== undefined) {
+    return true;
+  }
+
+  if (selectedPaths.length > 0) {
     return true;
   }
 
@@ -180,9 +194,10 @@ export const convertQuestToProgressItem = ({
   completionState,
   isAutoSet,
   notes,
+  selectedPaths,
 }: Pick<
   Quest,
-  "id" | "completionState" | "isAutoSet" | "notes"
+  "id" | "completionState" | "isAutoSet" | "notes" | "selectedPaths"
 >): ProgressItem => {
   return {
     id,
@@ -194,6 +209,7 @@ export const convertQuestToProgressItem = ({
       }
       return indexes;
     }, []),
+    selectedPaths: selectedPaths.length > 0 ? selectedPaths : undefined,
   };
 };
 

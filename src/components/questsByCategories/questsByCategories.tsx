@@ -8,6 +8,7 @@ export function QuestsByCategories(props: QuestsByCategoriesProps) {
     categorizedQuests,
     onCompletionStateClick,
     onNoteCompletionChange,
+    onPathChange,
     disabledQuests,
   } = useQuestsByCategoriesController(props);
 
@@ -30,6 +31,7 @@ export function QuestsByCategories(props: QuestsByCategoriesProps) {
                         disabled={disabledQuests.has(quest.id)}
                         onCompletionStateClick={onCompletionStateClick}
                         onNoteCompletionChange={onNoteCompletionChange}
+                        onPathChange={onPathChange}
                       />
                     </li>
                   ))}
@@ -45,6 +47,7 @@ export function QuestsByCategories(props: QuestsByCategoriesProps) {
                         disabled={disabledQuests.has(quest.id)}
                         onCompletionStateClick={onCompletionStateClick}
                         onNoteCompletionChange={onNoteCompletionChange}
+                        onPathChange={onPathChange}
                       />
                     </li>
                   ))}

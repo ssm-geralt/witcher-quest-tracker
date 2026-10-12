@@ -261,6 +261,15 @@
     "location": "vizima",
     "level": 2,
     "link": "https://witcher.fandom.com/wiki/Imperial_Audience",
+    "pathOptions": [
+      {
+        "name": "Letho",
+        "options": [
+          { "name": "Letho was spared" },
+          { "name": "Letho was killed" }
+        ]
+      }
+    ],
     "notes": [
       {
         "text": "Best choices are: spared Aryan, sided with Vernon, saved Triss, saved Sile, spared Letho."
@@ -852,6 +861,16 @@
     "type": "side",
     "level": 8,
     "isOrdered": true,
+    "pathOptions": [
+      {
+        "name": "Keira",
+        "options": [
+          { "name": "Keira was spared and sent to Kaer Morhen" },
+          { "name": "Keira was spared and sent to Radovid" },
+          { "name": "Keira was killed" }
+        ]
+      }
+    ],
     "notes": [
       {
         "text": "For the best ending: spare Keira and send her to Kaer Morhen."
@@ -860,7 +879,7 @@
         "text": "The best conversation path is to ask about the notes, \"Radovid never forgets\", \"It's suicide\", and then the fourth dialogue option will let you suggest Kaer Morhen. If you convince her to go to Kaer Morhen, you can then ask for the notes without having to kill her."
       },
       {
-        "text": "TODO: #1 If you take the less ideal ending and send Keira to Radovid at the end of this quest, it will unlock a future quest that would not be available otherwise. This future quest is 'A Final Kindness', but is once again part of the bad ending for Keira. Choosing this path will also partially fail the future 'Brothers in Arms: Velen' quest."
+        "text": "If you take the less ideal ending and send Keira to Radovid at the end of this quest, it will unlock a future quest that would not be available otherwise. This future quest is 'A Final Kindness', but is once again part of the bad ending for Keira. Choosing this path will also partially fail the future 'Brothers in Arms: Velen' quest."
       }
     ]
   },

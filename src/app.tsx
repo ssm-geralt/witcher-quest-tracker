@@ -16,6 +16,7 @@ export function App() {
     controls,
     confirmationDialog,
     disabledQuests,
+    onPathChange,
   } = useAppController();
 
   return (
@@ -55,6 +56,7 @@ export function App() {
               disabledQuests={disabledQuests}
               onCompletionStateClick={onCompletionStateClick}
               onNoteCompletionChange={onNoteCompletionChange}
+              onPathChange={onPathChange}
             />
           ) : null}
         </section>

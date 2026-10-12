@@ -4,6 +4,7 @@ import { CrossIcon } from "../icons/crossIcon";
 import clsx from "clsx";
 import { getLocationName, getQuestTypeName } from "./helper";
 import { Checkbox } from "../checkbox";
+import { Select } from "../select";
 
 export function Quest({
   quest: {
@@ -18,9 +19,12 @@ export function Quest({
     prerequisites,
     disablers,
     notes,
+    pathOptions,
+    selectedPaths,
   },
   onCompletionStateClick,
   onNoteCompletionChange,
+  onPathChange,
   disabled,
 }: QuestProps) {
   return (
@@ -115,6 +119,37 @@ export function Quest({
             </div>
           </dl>
         </div>
+
+        {pathOptions.length > 0 ? (
+          <div className="order-4 ml-auto">
+            {pathOptions.map(({ name, options }, index) => {
+              const optionId = `option-${id}-${index}`;
+              const selectedPath = selectedPaths.find((sp) => sp.name === name);
+              return (
+                <div key={name} className="w-45 max-w-full">
+                  <label htmlFor={optionId} className="block text-sm">
+                    {name}
+                  </label>
+                  <Select
+                    id={optionId}
+                    data-id={id}
+                    data-path={name}
+                    value={selectedPath?.optionName ?? "empty"}
+                    onChange={onPathChange}
+                    title={selectedPath?.optionName}
+                  >
+                    <option value="empty">Not selected</option>
+                    {options.map(({ name: optionName }) => (
+                      <option key={`${name}-${optionName}`} value={optionName}>
+                        {optionName}
+                      </option>
+                    ))}
+                  </Select>
+                </div>
+              );
+            })}
+          </div>
+        ) : null}
       </div>
 
       {notes && notes.length > 0 ? (
