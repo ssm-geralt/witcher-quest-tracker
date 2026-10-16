@@ -92,6 +92,7 @@
     "type": "side",
     "location": "whiteOrchard",
     "level": 1,
+    "cutoffs": ["Lilac and Gooseberries Part 2"],
     "link": "https://witcher.fandom.com/wiki/Twisted_Firestarter"
   },
   {
@@ -108,14 +109,16 @@
         "text": "Thaler's monocle dialogue is now fixed in the next gen update. Make sure to pick up the monocle in 'A Frying Pan, Spick and Span', so you can return it to Thaler in 'A Deadly Plot'.",
         "isCompleted": false
       }
-    ]
+    ],
+    "cutoff": ["Lilac and Gooseberries Part 2"]
   },
   {
     "name": "Precious Cargo",
     "type": "side",
     "location": "whiteOrchard",
     "level": 1,
-    "link": "https://witcher.fandom.com/wiki/Precious_Cargo"
+    "link": "https://witcher.fandom.com/wiki/Precious_Cargo",
+    "cutoffs": ["Lilac and Gooseberries Part 2"]
   },
   {
     "name": "Missing in Action",
@@ -127,7 +130,8 @@
       {
         "text": "During 'Missing in Action' you can see that Dune is missing a couple fingers."
       }
-    ]
+    ],
+    "cutoffs": ["Lilac and Gooseberries Part 2"]
   },
   {
     "name": "Devil by the Well",
@@ -140,7 +144,8 @@
       {
         "text": "Visit Tomira after Devil by the Well for more lore about the fate of the villagers. Tomira is the herbalist woman you will meet during 'The Beast of White Orchard' and 'On Death's Bed'."
       }
-    ]
+    ],
+    "cutoffs": ["On Thin Ice"]
   },
   {
     "name": "On Death's Bed",
@@ -158,7 +163,8 @@
       {
         "text": "Lena's fate is determined in the Nilfgaardian camp later on in the game. I've put a reminder next to some quests that are closer to that area."
       }
-    ]
+    ],
+    "cutoffs": ["Lilac and Gooseberries Part 2"]
   },
   {
     "name": "The Beast of White Orchard",
@@ -189,13 +195,6 @@
     "location": "whiteOrchard",
     "level": 1,
     "link": "https://witcher.fandom.com/wiki/Lilac_and_Gooseberries",
-    "cutoffFor": [
-      "Twisted Firestarter",
-      "A Frying Pan, Spick and Span",
-      "Precious Cargo",
-      "Missing in Action",
-      "On Death's Bed"
-    ],
     "notes": [
       {
         "text": "Spawn a chort by killing a bunch of cows.",
@@ -332,7 +331,8 @@
       {
         "text": "After burning the bodies, when you visit the priest, avoid triggering the start of Bitter harvest."
       }
-    ]
+    ],
+    "cutoffs": ["In the Eternal Fire's Shadow"]
   },
   {
     "name": "At the Mercy of Strangers Part 1",
@@ -441,7 +441,8 @@
         "isCompleted": false,
         "link": "https://www.youtube.com/watch?v=5D6rsORwqXc&list=PLgHgYXIqVlYb0UtbPpQmlVbbomM92PNEv&t=348s"
       }
-    ]
+    ],
+    "cutoffs": ["Ghosts of the Past"]
   },
   {
     "name": "Caravan Attack",
@@ -567,14 +568,16 @@
     "type": "gwent",
     "level": 1,
     "isOrdered": true,
-    "notes": [{ "text": "play the Baron" }]
+    "notes": [{ "text": "Play Gwent with the Baron" }],
+    "cutoffs": ["Return to Crookback Bog"]
   },
   {
     "name": "Ciri's Room",
     "type": "side",
     "location": "velen",
     "level": 5,
-    "link": "https://witcher.fandom.com/wiki/Ciri%27s_Room"
+    "link": "https://witcher.fandom.com/wiki/Ciri%27s_Room",
+    "cutoffs": ["Isle of the Mists"]
   },
   {
     "name": "The Mysterious Passenger",
@@ -591,7 +594,9 @@
         "text": "The Mysterious Passenger is a very short quest that just involves dialogue on Uma, so doesn't really matter if you miss it. If you do the quests in the intended order this will not be started therefore it's not going to show a red mark in the quest tracker.",
         "link": "https://www.youtube.com/watch?v=3eIU1IT3NMo"
       }
-    ]
+    ],
+    "disablers": ["Ciri's Story: Out of the Shadows"],
+    "prerequisites": ["Calm Before the Storm"]
   },
   {
     "name": "Deadly Crossing (I)",
@@ -673,7 +678,8 @@
         "text": "Once you have completed 'A Princess in Distress' and have dealt with the botchling, after following the lumberkin, you can go to the Oxenfurt gate when trying to find Tamara (but don't proceed to find Tamara yet because you can have a unique interaction with the Baron first), and you can trigger the 'Thou Shalt Not Pass' quest. Once you get this quest started, return to the Baron to aquire the pass from him. Once you do this, then you can do 'Bitter Harvest' and 'Fake Papers', but it is suggested to do these two quests when you are a higher level since you will have to ensure someone is protected and kept alive in 'Bitter Harvest'.",
         "isCompleted": false
       }
-    ]
+    ],
+    "cutoffs": ["Bitter Harvest", "Fake Papers"]
   },
   {
     "name": "Death By Fire",
@@ -713,7 +719,8 @@
         "text": "Spare the man being hanged.",
         "isCompleted": false
       }
-    ]
+    ],
+    "cutoffs": ["A Favor for a Friend"]
   },
   {
     "name": "Ciri's Story: The Race",
@@ -776,7 +783,8 @@
     "type": "race",
     "location": "velen",
     "level": 1,
-    "link": "https://witcher.fandom.com/wiki/Races:_Crow%27s_Perch"
+    "link": "https://witcher.fandom.com/wiki/Races:_Crow%27s_Perch",
+    "cutoffs": ["Isle of the Mists"]
   },
   {
     "name": "An Invitation from Keira Metz",
@@ -784,7 +792,8 @@
     "location": "velen",
     "type": "side",
     "level": 6,
-    "isOrdered": true
+    "isOrdered": true,
+    "cutoffs": ["Isle of the Mists"]
   },
   {
     "name": "A Towerful of Mice",
@@ -838,7 +847,8 @@
         "text": "If you didn't go back to see the Pesta killing Graham during 'A Towerful of Mice', the dialogue between you and Keira is slightly altered. If you brought back the bones, the pesta will never disappear from the house and you can't kill it.",
         "link": "https://youtu.be/X0RRsK7vIRw?t=338"
       }
-    ]
+    ],
+    "cutoffs": ["Isle of the Mists"]
   },
   {
     "name": "A Favor for a Friend",
@@ -846,13 +856,13 @@
     "location": "velen",
     "type": "side",
     "level": 6,
-    "cutoffFor": ["Lynch Mob"],
     "notes": [
       {
         "text": "During 'A Favor for a Friend' you can find the corpse of the driver of the food cart (connected with 'Devil by the Well')."
       }
     ],
-    "isOrdered": true
+    "isOrdered": true,
+    "cutoffs": ["Isle of the Mists"]
   },
   {
     "name": "For the Advancement of Learning",
@@ -881,7 +891,8 @@
       {
         "text": "If you take the less ideal ending and send Keira to Radovid at the end of this quest, it will unlock a future quest that would not be available otherwise. This future quest is 'A Final Kindness', but is once again part of the bad ending for Keira. Choosing this path will also partially fail the future 'Brothers in Arms: Velen' quest."
       }
-    ]
+    ],
+    "cutoffs": ["Isle of the Mists"]
   },
   {
     "name": "Defender of the Faith",
@@ -897,7 +908,8 @@
         "text": "The 3 different types of statues that you can find around Velen can possibly represent the Goddess Melitele in her three forms: a young carefree girl (can be found near the Midcopse signpost or at the second intersection east of Blackbough), a mature pregnant woman (one can be found at the first intersection east of Blackbough), and a hunched old woman (one can be found north of The Orphans of Crookback Bog signpost, just to the east of the burnt/torn down hut). It is possible they can also represent the 3 crones. Based on the quest 'Defender of the Faith', the woman that gives you the quest tells you that the statue is of Verna the Merciful. You can also see the three statues on your way to talk to Thecla during 'Bald Mountain'.",
         "link": "https://youtu.be/iUaQdhz8krg?t=120"
       }
-    ]
+    ],
+    "cutoffs": ["In the Eternal Fire's Shadow"]
   },
   {
     "name": "A Dog's Life",
@@ -939,7 +951,8 @@
         "text": "Find a painting of Dolores and her brother in the house.",
         "link": "https://youtu.be/2rUGRP3i5rg?t=732"
       }
-    ]
+    ],
+    "cutoffs": ["Isle of the Mists"]
   },
   {
     "name": "Ghosts of the Past",
@@ -948,7 +961,6 @@
     "type": "side",
     "level": 6,
     "isOrdered": true,
-    "cutoffFor": ["Hazardous Goods"],
     "notes": [
       {
         "text": "In 'Ghosts of the Past', choose \"Don't want trouble\" after meeting Vester, then \"his medallions all you need\" so you can send Letho to Kaer Morhen."
@@ -959,7 +971,8 @@
       {
         "text": "During 'Ghosts of the Past', when given the choice between \"you're as good as dead\" and \"don't want trouble\" you can hear Letho snoring before selecting the option."
       }
-    ]
+    ],
+    "cutoffs": ["Isle of the Mists"]
   },
   {
     "name": "Looters (III)",
@@ -1045,7 +1058,6 @@
     "location": "velen",
     "type": "main",
     "level": 5,
-    "disablerFor": ["The Mysterious Passenger"],
     "notes": [
       {
         "text": "You can find the place where Ciri fought the Basilisk in 'Ciri's Story: Out of the Shadows' at the forgotten tower west of Heatherton."
@@ -1065,16 +1077,12 @@
     "type": "side",
     "level": 9,
     "isOrdered": true,
-    "cutoffFor": ["Gwent: Velen Players"],
-    "prerequisiteFor": [
-      "Saving Farmer's Daughter From Soldiers (I)",
-      "Saving Farmer's Daughter From Soldiers (II)"
-    ],
     "notes": [
       {
         "text": "In the basement, underneath the crone tapestry, you can find unique voodoo dolls that represent people that the crones have cursed, including Anna, a peasant from Downwarren, and Vivienne from the DLC Blood and Wine quest 'The Warble of a Smitten Knight'."
       }
-    ]
+    ],
+    "cutoffs": ["Isle of the Mists"]
   },
   {
     "name": "Saving Farmer's Daughter From Soldiers (I)",
@@ -1086,7 +1094,8 @@
       {
         "text": "Check the linked map for exact location."
       }
-    ]
+    ],
+    "prerequisites": ["Return to Crookback Bog"]
   },
   {
     "name": "Saving Farmer's Daughter From Soldiers (II)",
@@ -1098,7 +1107,8 @@
       {
         "text": "Check the linked map for exact location."
       }
-    ]
+    ],
+    "prerequisites": ["Return to Crookback Bog"]
   },
   {
     "name": "Bitter Harvest",
@@ -1106,7 +1116,6 @@
     "location": "velen",
     "type": "side",
     "level": 9,
-    "cutoffFor": ["Thou Shalt Not Pass"],
     "isOrdered": true,
     "notes": [
       {
@@ -1116,7 +1125,8 @@
         "text": "Must be completed when started. Save game before because if Alvin dies, 'Fake Papers' will fail.",
         "isCompleted": false
       }
-    ]
+    ],
+    "cutoffs": ["Fake Papers"]
   },
   {
     "name": "Fake Papers",
@@ -1124,8 +1134,7 @@
     "location": "velen",
     "type": "side",
     "level": 1,
-    "isOrdered": true,
-    "cutoffFor": ["Thou Shalt Not Pass", "Bitter Harvest"]
+    "isOrdered": true
   },
   {
     "name": "At the Mercy of Strangers Part 2",
@@ -1142,7 +1151,6 @@
   {
     "id": "On Thin Ice",
     "name": "On Thin Ice",
-    "cutoffFor": ["Devil by the Well"],
     "link": "",
     "location": "velen",
     "type": "main"
@@ -1150,7 +1158,6 @@
   {
     "id": "In the Eternal Fire's Shadow",
     "name": "In the Eternal Fire's Shadow",
-    "cutoffFor": ["Funeral Pyres", "Defender of the Faith"],
     "link": "",
     "location": "velen",
     "type": "main"
@@ -1159,24 +1166,12 @@
     "id": "Isle of the Mists",
     "name": "Isle of the Mists",
     "link": "",
-    "cutoffFor": [
-      "Ciri's Room",
-      "Races: Crow's Perch",
-      "An Invitation from Keira Metz",
-      "A Towerful of Mice",
-      "A Favor for a Friend",
-      "For the Advancement of Learning",
-      "The Fall of the House of Reardon",
-      "Ghosts of the Past",
-      "Return to Crookback Bog"
-    ],
     "location": "velen",
     "type": "main"
   },
   {
     "id": "Calm Before the Storm",
     "name": "Calm Before the Storm",
-    "prerequisiteFor": ["The Mysterious Passenger"],
     "link": "",
     "location": "velen",
     "type": "main"

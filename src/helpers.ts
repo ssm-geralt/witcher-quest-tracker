@@ -10,17 +10,30 @@ import lzString from "lz-string";
 import type { IdNameObject } from "./shared/domain/IdNameObject";
 import type { QuestCompletionState } from "./shared/domain/questCompletionStateSchema";
 
+export const covertNameToIdNameObject = (
+  name: string,
+  logReason?: string,
+): IdNameObject => {
+  const id = questIds[name] ?? name;
+
+  if (!questIds[name]) {
+    console.warn(`${logReason}: id was not found for ${name}`);
+  }
+
+  return { id, name };
+};
+
 export const processQuests = (questDataArray: QuestData[]): Quest[] => {
   const output: Quest[] = [];
 
   const helper: {
     prerequisitesFor: Record<string, IdNameObject[] | undefined>;
-    cutoffFor: Record<string, IdNameObject[] | undefined>;
-    disablerFor: Record<string, IdNameObject[] | undefined>;
+    cutoffsFor: Record<string, IdNameObject[] | undefined>;
+    disablersFor: Record<string, IdNameObject[] | undefined>;
   } = {
     prerequisitesFor: {},
-    cutoffFor: {},
-    disablerFor: {},
+    cutoffsFor: {},
+    disablersFor: {},
   };
 
   questDataArray.forEach(
@@ -33,9 +46,9 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
       link,
       specialNote,
       notes,
-      prerequisiteFor,
-      cutoffFor,
-      disablerFor,
+      cutoffs,
+      prerequisites,
+      disablers,
       isOrdered,
       pathOptions,
     }) => {
@@ -47,53 +60,56 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
 
       const currentIdNameObject = { id, name };
 
-      prerequisiteFor?.forEach((pName) => {
-        const pId = questIds[pName] ?? pName;
+      const processedPrerequisites: IdNameObject[] =
+        prerequisites?.map((p) => {
+          const processedPrerequisite = covertNameToIdNameObject(
+            p,
+            "Prerequisites",
+          );
 
-        if (!questIds[pName]) {
-          console.warn(`Prerequisite id was not found for ${pId}`);
-        }
+          const existingPrerequisiteFor =
+            helper.prerequisitesFor[processedPrerequisite.id];
 
-        const existingPrerequisiteFor = helper.prerequisitesFor[pId];
+          if (existingPrerequisiteFor) {
+            existingPrerequisiteFor.push(currentIdNameObject);
+          } else {
+            helper.prerequisitesFor[processedPrerequisite.id] = [
+              currentIdNameObject,
+            ];
+          }
 
-        if (existingPrerequisiteFor) {
-          existingPrerequisiteFor.push(currentIdNameObject);
-        } else {
-          helper.prerequisitesFor[pId] = [currentIdNameObject];
-        }
-      });
+          return processedPrerequisite;
+        }) ?? [];
 
-      cutoffFor?.forEach((pName) => {
-        const cId = questIds[pName] ?? pName;
+      const precessedCutoffs: IdNameObject[] =
+        cutoffs?.map((c) => {
+          const processedCutoff = covertNameToIdNameObject(c, "Cutoffs");
 
-        if (!questIds[pName]) {
-          console.warn(`Cutoff id was not found for ${cId}`);
-        }
+          const existingCutoffFor = helper.cutoffsFor[processedCutoff.id];
 
-        const existingCutoffFor = helper.cutoffFor[cId];
+          if (existingCutoffFor) {
+            existingCutoffFor.push(currentIdNameObject);
+          } else {
+            helper.cutoffsFor[processedCutoff.id] = [currentIdNameObject];
+          }
 
-        if (existingCutoffFor) {
-          existingCutoffFor.push(currentIdNameObject);
-        } else {
-          helper.cutoffFor[cId] = [currentIdNameObject];
-        }
-      });
+          return processedCutoff;
+        }) ?? [];
 
-      disablerFor?.forEach((dName) => {
-        const cId = questIds[dName] ?? dName;
+      const precessedDisablers: IdNameObject[] =
+        disablers?.map((d) => {
+          const processedDisabler = covertNameToIdNameObject(d, "Disablers");
 
-        if (!questIds[dName]) {
-          console.warn(`Disabler id was not found for ${cId}`);
-        }
+          const existingDisablerFor = helper.disablersFor[processedDisabler.id];
 
-        const existingDisablerFor = helper.disablerFor[cId];
+          if (existingDisablerFor) {
+            existingDisablerFor.push(currentIdNameObject);
+          } else {
+            helper.disablersFor[processedDisabler.id] = [currentIdNameObject];
+          }
 
-        if (existingDisablerFor) {
-          existingDisablerFor.push(currentIdNameObject);
-        } else {
-          helper.disablerFor[cId] = [currentIdNameObject];
-        }
-      });
+          return processedDisabler;
+        }) ?? [];
 
       output.push({
         id,
@@ -105,20 +121,26 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
         link,
         specialNote,
         notes: notes ?? [],
-        finishBefore: [],
-        prerequisites: [],
-        disablers: [],
         isOrdered: !!isOrdered,
+
         pathOptions: pathOptions ?? [],
         selectedPaths: [],
+
+        cutoffs: precessedCutoffs,
+        prerequisites: processedPrerequisites,
+        disablers: precessedDisablers,
+
+        cutoffFor: [],
+        prerequisiteFor: [],
+        disablerFor: [],
       });
     },
   );
 
   output.map((quest) => {
-    quest.finishBefore = helper.cutoffFor[quest.id] ?? [];
-    quest.prerequisites = helper.prerequisitesFor[quest.id] ?? [];
-    quest.disablers = helper.disablerFor[quest.id] ?? [];
+    quest.cutoffFor = helper.cutoffsFor[quest.id] ?? [];
+    quest.prerequisiteFor = helper.prerequisitesFor[quest.id] ?? [];
+    quest.disablerFor = helper.disablersFor[quest.id] ?? [];
   });
 
   return output;
@@ -251,59 +273,29 @@ export const getNextCompletionState = (
   }
 };
 
-export const getDisabledQuests = (quests: Quest[]) => {
+export const getDisabledQuests = (
+  quests: Pick<Quest, "completionState" | "disablerFor" | "prerequisiteFor">[],
+) => {
   const output = new Set<string>();
 
-  const helper = quests.reduce<{
-    prerequisites: Record<string, string[] | undefined>;
-    disablers: Record<string, string[] | undefined>;
-  }>(
-    (pairs, { id, prerequisites, disablers }) => {
-      prerequisites.forEach((prerequisite) => {
-        const currentPair = pairs.prerequisites[prerequisite.id];
-
-        if (currentPair) {
-          currentPair.push(id);
-          return;
-        }
-
-        pairs.prerequisites[prerequisite.id] = [id];
-      });
-
-      disablers.forEach((disabler) => {
-        const currentPair = pairs.disablers[disabler.id];
-        if (currentPair) {
-          currentPair.push(id);
-          return;
-        }
-        pairs.disablers[disabler.id] = [id];
-      });
-
-      return pairs;
-    },
-    { prerequisites: {}, disablers: {} },
-  );
-
-  quests.forEach(({ id, completionState }) => {
+  quests.forEach(({ completionState, disablerFor, prerequisiteFor }) => {
     // disablers
     if (completionState === "success") {
-      const disabledItems = helper.disablers[id];
-
-      if (!disabledItems) {
+      if (disablerFor.length === 0) {
         return;
       }
 
-      disabledItems.forEach((d) => output.add(d));
+      disablerFor.forEach((d) => output.add(d.id));
       return;
     }
 
     // prerequisites
-    const dependents = helper.prerequisites[id];
-    if (!dependents) {
+
+    if (prerequisiteFor.length === 0) {
       return;
     }
 
-    dependents.forEach((d) => output.add(d));
+    prerequisiteFor.forEach((p) => output.add(p.id));
   });
 
   return output;

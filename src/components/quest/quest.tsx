@@ -15,12 +15,17 @@ export function Quest({
     location,
     type,
     level,
-    finishBefore,
-    prerequisites,
-    disablers,
     notes,
     pathOptions,
     selectedPaths,
+
+    cutoffs,
+    prerequisites,
+    disablers,
+
+    cutoffFor,
+    disablerFor,
+    prerequisiteFor,
   },
   onCompletionStateClick,
   onNoteCompletionChange,
@@ -70,12 +75,13 @@ export function Quest({
         <div className="order-3 text-sm">
           <dl>
             {prerequisites.length > 0 ? (
-              <div className="flex gap-1">
+              <div className="flex gap-1 text-blue-500">
                 <dt>prerequisites:</dt>
                 <dd>
-                  {prerequisites.map((p) => (
+                  {prerequisites.map((p, i) => (
                     <a key={p.id} href={`#quest-${p.id}`}>
                       {p.name}
+                      {i === prerequisites.length - 1 ? "" : ", "}
                     </a>
                   ))}
                 </dd>
@@ -83,25 +89,69 @@ export function Quest({
             ) : null}
 
             {disablers.length > 0 ? (
-              <div className="flex gap-1">
+              <div className="flex gap-1 text-blue-500">
                 <dt>disablers:</dt>
                 <dd>
-                  {disablers.map((d) => (
+                  {disablers.map((d, i) => (
                     <a key={d.id} href={`#quest-${d.id}`}>
                       {d.name}
+                      {i === disablers.length - 1 ? "" : ", "}
                     </a>
                   ))}
                 </dd>
               </div>
             ) : null}
 
-            {finishBefore.length > 0 ? (
-              <div className="flex gap-1">
+            {cutoffs.length > 0 ? (
+              <div className="flex gap-1 text-blue-500">
                 <dt>finish before:</dt>
                 <dd>
-                  {finishBefore.map((fb) => (
-                    <a key={fb.id} href={`#quest-${fb.id}`}>
-                      {fb.name}
+                  {cutoffs.map((c, i) => (
+                    <a key={c.id} href={`#quest-${c.id}`}>
+                      {c.name}
+                      {i === cutoffs.length - 1 ? "" : ", "}
+                    </a>
+                  ))}
+                </dd>
+              </div>
+            ) : null}
+
+            {prerequisiteFor.length > 0 ? (
+              <div className="flex gap-1 text-red-500">
+                <dt>prerequisite for:</dt>
+                <dd>
+                  {prerequisiteFor.map((p, i) => (
+                    <a key={p.id} href={`#quest-${p.id}`}>
+                      {p.name}
+                      {i === prerequisiteFor.length - 1 ? "" : ", "}
+                    </a>
+                  ))}
+                </dd>
+              </div>
+            ) : null}
+
+            {disablerFor.length > 0 ? (
+              <div className="flex gap-1 text-red-500">
+                <dt>disabler for:</dt>
+                <dd>
+                  {disablerFor.map((d, i) => (
+                    <a key={d.id} href={`#quest-${d.id}`}>
+                      {d.name}
+                      {i === disablerFor.length - 1 ? "" : ", "}
+                    </a>
+                  ))}
+                </dd>
+              </div>
+            ) : null}
+
+            {cutoffFor.length > 0 ? (
+              <div className="flex gap-1 text-red-500">
+                <dt>finish after:</dt>
+                <dd>
+                  {cutoffFor.map((c, i) => (
+                    <a key={c.id} href={`#quest-${c.id}`}>
+                      {c.name}
+                      {i === cutoffFor.length - 1 ? "" : ", "}
                     </a>
                   ))}
                 </dd>

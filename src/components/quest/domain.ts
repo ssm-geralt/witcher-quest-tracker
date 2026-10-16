@@ -18,9 +18,22 @@ export type Quest = {
   specialNote?: { text: string };
   location: QuestLocation;
   ignoreLocation: boolean;
-  finishBefore: IdNameObject[];
+
+  // this quest will fail if any of the given quests are finished before
+  cutoffs: IdNameObject[];
+  // the given quests will fail if this one is finished before
+  cutoffFor: IdNameObject[];
+
+  // complete given quests to make this one available (currently only success counts)
   prerequisites: IdNameObject[];
+  // complete this one to make given quests available (currently only success counts)
+  prerequisiteFor: IdNameObject[];
+
+  // this quest will not be available if any of the given quests is finished before (currently only success counts)
   disablers: IdNameObject[];
+  // the given quests will not be available if this one is finished before (currently only success counts)
+  disablerFor: IdNameObject[];
+
   isOrdered: boolean;
   isAutoSet?: boolean;
   pathOptions: QuestPathOption[];

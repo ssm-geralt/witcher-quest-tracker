@@ -20,13 +20,11 @@ export const questDataSchema = z.object({
   location: questLocationSchema,
   ignoreLocation: z.boolean().optional(),
   pathOptions: z.array(questPathOptionSchema).optional(),
-  // the given quests will fail if this one is finished before
-  cutoffFor: z.array(z.string()).optional(),
-  // the given quests will not be available if this one is finished before (currently only success counts)
-  disablerFor: z.array(z.string()).optional(),
-  // complete this one to make given quests available (currently only success counts)
-  prerequisiteFor: z.array(z.string()).optional(),
   isOrdered: z.boolean().optional(),
+
+  cutoffs: z.array(z.string()).optional(),
+  disablers: z.array(z.string()).optional(),
+  prerequisites: z.array(z.string()).optional(),
 });
 
 export const questDataArraySchema = z.array(questDataSchema);
