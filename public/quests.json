@@ -596,7 +596,7 @@
       }
     ],
     "disablers": ["Ciri's Story: Out of the Shadows"],
-    "prerequisites": ["Calm Before the Storm"]
+    "prerequisites": [[{ "name": "Calm Before the Storm" }]]
   },
   {
     "name": "Deadly Crossing (I)",
@@ -972,7 +972,15 @@
         "text": "During 'Ghosts of the Past', when given the choice between \"you're as good as dead\" and \"don't want trouble\" you can hear Letho snoring before selecting the option."
       }
     ],
-    "cutoffs": ["Isle of the Mists"]
+    "cutoffs": ["Isle of the Mists"],
+    "prerequisites": [
+      [
+        {
+          "name": "Imperial Audience",
+          "paths": [[{ "name": "Letho", "option": "Letho was spared" }]]
+        }
+      ]
+    ]
   },
   {
     "name": "Looters (III)",
@@ -1095,7 +1103,7 @@
         "text": "Check the linked map for exact location."
       }
     ],
-    "prerequisites": ["Return to Crookback Bog"]
+    "prerequisites": [[{ "name": "Return to Crookback Bog" }]]
   },
   {
     "name": "Saving Farmer's Daughter From Soldiers (II)",
@@ -1108,7 +1116,7 @@
         "text": "Check the linked map for exact location."
       }
     ],
-    "prerequisites": ["Return to Crookback Bog"]
+    "prerequisites": [[{ "name": "Return to Crookback Bog" }]]
   },
   {
     "name": "Bitter Harvest",
@@ -1175,5 +1183,33 @@
     "link": "",
     "location": "velen",
     "type": "main"
+  },
+  {
+    "id": "A Final Kindness",
+    "name": "A Final Kindness",
+    "link": "",
+    "location": "velen",
+    "type": "main",
+    "prerequisites": [
+      [
+        {
+          "name": "For the Advancement of Learning",
+          "state": "empty"
+        }
+      ],
+      [
+        {
+          "name": "For the Advancement of Learning",
+          "paths": [
+            [
+              {
+                "name": "Keira",
+                "option": "Keira was spared and sent to Radovid"
+              }
+            ]
+          ]
+        }
+      ]
+    ]
   }
 ]

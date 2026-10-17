@@ -7,6 +7,13 @@ import type { QuestType } from "../../shared/domain/questTypeSchema";
 import type { QuestPathOption } from "../../shared/domain/questPathOptionSchema";
 import type { QuestPath } from "../../shared/domain/questPathSchema";
 
+export type QuestDependencyRuleSet = {
+  id: string;
+  name: string;
+  state: QuestCompletionState;
+  paths: { name: string; option: string }[][];
+}[][];
+
 export type Quest = {
   id: string;
   name: string;
@@ -19,20 +26,23 @@ export type Quest = {
   location: QuestLocation;
   ignoreLocation: boolean;
 
+  // this quest will not be available if any of the given quests is finished before (only success counts)
+  disablers: IdNameObject[];
+  // the given quests will not be available if this one is finished before (only success counts)
+  disablerFor: IdNameObject[];
+
+  // disablers and prerequisites may overlap. disablers handle simpler cases,
+  // while prerequisites handle more complex ones.
+  //
+  // set of rules that make this quest available
+  prerequisites: QuestDependencyRuleSet;
+  // this quest is part of the rules that makes the given ones available
+  prerequisiteFor: IdNameObject[];
+
   // this quest will fail if any of the given quests are finished before
   cutoffs: IdNameObject[];
   // the given quests will fail if this one is finished before
   cutoffFor: IdNameObject[];
-
-  // complete given quests to make this one available (currently only success counts)
-  prerequisites: IdNameObject[];
-  // complete this one to make given quests available (currently only success counts)
-  prerequisiteFor: IdNameObject[];
-
-  // this quest will not be available if any of the given quests is finished before (currently only success counts)
-  disablers: IdNameObject[];
-  // the given quests will not be available if this one is finished before (currently only success counts)
-  disablerFor: IdNameObject[];
 
   isOrdered: boolean;
   isAutoSet?: boolean;

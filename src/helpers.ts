@@ -1,4 +1,4 @@
-import type { Quest } from "./components/quest/domain";
+import type { Quest, QuestDependencyRuleSet } from "./components/quest/domain";
 import { PROGRESS_LS_KEY, questIds } from "./constants";
 import {
   progressSchema,
@@ -27,9 +27,9 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
   const output: Quest[] = [];
 
   const helper: {
+    disablersFor: Record<string, IdNameObject[] | undefined>;
     prerequisitesFor: Record<string, IdNameObject[] | undefined>;
     cutoffsFor: Record<string, IdNameObject[] | undefined>;
-    disablersFor: Record<string, IdNameObject[] | undefined>;
   } = {
     prerequisitesFor: {},
     cutoffsFor: {},
@@ -60,27 +60,6 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
 
       const currentIdNameObject = { id, name };
 
-      const processedPrerequisites: IdNameObject[] =
-        prerequisites?.map((p) => {
-          const processedPrerequisite = covertNameToIdNameObject(
-            p,
-            "Prerequisites",
-          );
-
-          const existingPrerequisiteFor =
-            helper.prerequisitesFor[processedPrerequisite.id];
-
-          if (existingPrerequisiteFor) {
-            existingPrerequisiteFor.push(currentIdNameObject);
-          } else {
-            helper.prerequisitesFor[processedPrerequisite.id] = [
-              currentIdNameObject,
-            ];
-          }
-
-          return processedPrerequisite;
-        }) ?? [];
-
       const precessedCutoffs: IdNameObject[] =
         cutoffs?.map((c) => {
           const processedCutoff = covertNameToIdNameObject(c, "Cutoffs");
@@ -109,6 +88,37 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
           }
 
           return processedDisabler;
+        }) ?? [];
+
+      const processedPrerequisites: Quest["prerequisites"] =
+        prerequisites?.map((questsRule) => {
+          return questsRule.map((questRule) => {
+            const { id: questRuleId } = covertNameToIdNameObject(
+              questRule.name,
+              "Prerequisites",
+            );
+
+            const existingPrerequisiteFor =
+              helper.prerequisitesFor[questRuleId];
+            const isAlreadyAdded = !!existingPrerequisiteFor?.some(
+              ({ id }) => id === currentIdNameObject.id,
+            );
+
+            if (existingPrerequisiteFor && !isAlreadyAdded) {
+              existingPrerequisiteFor.push(currentIdNameObject);
+            }
+
+            if (!existingPrerequisiteFor) {
+              helper.prerequisitesFor[questRuleId] = [currentIdNameObject];
+            }
+
+            return {
+              ...questRule,
+              id: questRuleId,
+              paths: questRule.paths ?? [],
+              state: questRule.state ?? "success",
+            };
+          });
         }) ?? [];
 
       output.push({
@@ -273,29 +283,83 @@ export const getNextCompletionState = (
   }
 };
 
+export const validateDependencyRule = (
+  ruleSet: QuestDependencyRuleSet,
+  map: Map<string, Pick<Quest, "completionState" | "selectedPaths">>,
+): boolean => {
+  let isValid = ruleSet.length === 0;
+
+  for (const rule of ruleSet) {
+    let isRuleValid = true;
+
+    for (const questRuleItem of rule) {
+      const connectedQuest = map.get(questRuleItem.id);
+
+      if (!connectedQuest) {
+        isRuleValid = false;
+        break;
+      }
+
+      if (questRuleItem.state !== connectedQuest.completionState) {
+        isRuleValid = false;
+        break;
+      }
+
+      let isRuleItemValid = questRuleItem.paths.length === 0;
+      for (const pathRule of questRuleItem.paths) {
+        let isPathRuleValid = true;
+
+        for (const pathItemRule of pathRule) {
+          isPathRuleValid = connectedQuest.selectedPaths.some(
+            ({ name, optionName }) =>
+              pathItemRule.name === name && pathItemRule.option === optionName,
+          );
+
+          if (!isPathRuleValid) {
+            break;
+          }
+        }
+
+        if (isPathRuleValid) {
+          isRuleItemValid = true;
+          break;
+        }
+      }
+
+      if (!isRuleItemValid) {
+        isRuleValid = false;
+        break;
+      }
+    }
+
+    if (isRuleValid) {
+      isValid = true;
+      break;
+    }
+  }
+
+  return isValid;
+};
+
 export const getDisabledQuests = (
-  quests: Pick<Quest, "completionState" | "disablerFor" | "prerequisiteFor">[],
+  quests: Pick<
+    Quest,
+    "completionState" | "disablerFor" | "prerequisites" | "id" | "selectedPaths"
+  >[],
 ) => {
   const output = new Set<string>();
 
-  quests.forEach(({ completionState, disablerFor, prerequisiteFor }) => {
-    // disablers
+  // using a map to make lookups faster
+  const map = new Map(quests.map((q) => [q.id, q]));
+  quests.forEach(({ completionState, disablerFor, prerequisites, id }) => {
     if (completionState === "success") {
-      if (disablerFor.length === 0) {
-        return;
-      }
-
       disablerFor.forEach((d) => output.add(d.id));
-      return;
     }
 
-    // prerequisites
-
-    if (prerequisiteFor.length === 0) {
-      return;
+    const isDisabled = !validateDependencyRule(prerequisites, map);
+    if (isDisabled) {
+      output.add(id);
     }
-
-    prerequisiteFor.forEach((p) => output.add(p.id));
   });
 
   return output;

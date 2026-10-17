@@ -10,6 +10,30 @@ import type { ConfirmationDialogProps } from "./components/confirmationDialog";
 import { questPathOptionSchema } from "./shared/domain/questPathOptionSchema";
 import { QuestPathSchema } from "./shared/domain/questPathSchema";
 
+export const dependencyRuleSetSchema = z.array(
+  // #dependencyRuleSchema
+  z.array(
+    // #questRuleItemSchema
+    z.object({
+      name: z.string(),
+      // state is optional. no state is mapped to success.
+      state: questCompletionStateSchema.optional(),
+      // paths is optional. no paths means state is enough.
+      // otherwise it needs the state with the given paths selected.
+      // #pathRuleSetSchema
+      paths: z
+        .array(
+          // #pathRuleSchema
+          z.array(
+            // #pathRuleItemSchema
+            z.object({ name: z.string(), option: z.string() }),
+          ),
+        )
+        .optional(),
+    }),
+  ),
+);
+
 export const questDataSchema = z.object({
   name: z.string(),
   type: questTypeSchema,
@@ -24,7 +48,7 @@ export const questDataSchema = z.object({
 
   cutoffs: z.array(z.string()).optional(),
   disablers: z.array(z.string()).optional(),
-  prerequisites: z.array(z.string()).optional(),
+  prerequisites: dependencyRuleSetSchema.optional(),
 });
 
 export const questDataArraySchema = z.array(questDataSchema);

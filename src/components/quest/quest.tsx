@@ -75,15 +75,24 @@ export function Quest({
         <div className="order-3 text-sm">
           <dl>
             {prerequisites.length > 0 ? (
-              <div className="flex gap-1 text-blue-500">
+              <div className="flex flex-col gap-1 text-blue-500">
                 <dt>prerequisites:</dt>
-                <dd>
-                  {prerequisites.map((p, i) => (
-                    <a key={p.id} href={`#quest-${p.id}`}>
-                      {p.name}
-                      {i === prerequisites.length - 1 ? "" : ", "}
-                    </a>
-                  ))}
+                <dd className="flex pl-5 flex-col gap-1">
+                  {prerequisites.map((quests) =>
+                    quests.map(({ id, name, state, paths }) => (
+                      <a key={id} href={`#quest-${id}`}>
+                        - {name}
+                        {state !== "success" ? ` with ${state} state` : ""}
+                        {paths.length > 0
+                          ? ` with chosen paths: ${paths
+                              .map((ors) =>
+                                ors.map(({ option }) => option).join(" AND "),
+                              )
+                              .join(" OR ")}`
+                          : ""}
+                      </a>
+                    )),
+                  )}
                 </dd>
               </div>
             ) : null}
