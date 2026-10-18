@@ -39,8 +39,10 @@ export type Quest = {
   // this quest is part of the rules that makes the given ones available
   prerequisiteFor: IdNameObject[];
 
-  // this quest will fail if any of the given quests are finished before
-  cutoffs: IdNameObject[];
+  // cutoffs are event based while prerequisite and disablers are state based. this
+  // is because users can override cutoffs.
+  // this quest will fail if any of the given quests are finished before.
+  cutoffs: QuestDependencyRuleSet;
   // the given quests will fail if this one is finished before
   cutoffFor: IdNameObject[];
 

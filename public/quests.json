@@ -92,7 +92,7 @@
     "type": "side",
     "location": "whiteOrchard",
     "level": 1,
-    "cutoffs": ["Lilac and Gooseberries Part 2"],
+    "cutoffs": [[{ "name": "Lilac and Gooseberries Part 2" }]],
     "link": "https://witcher.fandom.com/wiki/Twisted_Firestarter"
   },
   {
@@ -110,7 +110,7 @@
         "isCompleted": false
       }
     ],
-    "cutoff": ["Lilac and Gooseberries Part 2"]
+    "cutoffs": [[{ "name": "Lilac and Gooseberries Part 2" }]]
   },
   {
     "name": "Precious Cargo",
@@ -118,7 +118,7 @@
     "location": "whiteOrchard",
     "level": 1,
     "link": "https://witcher.fandom.com/wiki/Precious_Cargo",
-    "cutoffs": ["Lilac and Gooseberries Part 2"]
+    "cutoffs": [[{ "name": "Lilac and Gooseberries Part 2" }]]
   },
   {
     "name": "Missing in Action",
@@ -131,7 +131,7 @@
         "text": "During 'Missing in Action' you can see that Dune is missing a couple fingers."
       }
     ],
-    "cutoffs": ["Lilac and Gooseberries Part 2"]
+    "cutoffs": [[{ "name": "Lilac and Gooseberries Part 2" }]]
   },
   {
     "name": "Devil by the Well",
@@ -145,7 +145,7 @@
         "text": "Visit Tomira after Devil by the Well for more lore about the fate of the villagers. Tomira is the herbalist woman you will meet during 'The Beast of White Orchard' and 'On Death's Bed'."
       }
     ],
-    "cutoffs": ["On Thin Ice"]
+    "cutoffs": [[{ "name": "On Thin Ice" }]]
   },
   {
     "name": "On Death's Bed",
@@ -164,7 +164,7 @@
         "text": "Lena's fate is determined in the Nilfgaardian camp later on in the game. I've put a reminder next to some quests that are closer to that area."
       }
     ],
-    "cutoffs": ["Lilac and Gooseberries Part 2"]
+    "cutoffs": [[{ "name": "Lilac and Gooseberries Part 2" }]]
   },
   {
     "name": "The Beast of White Orchard",
@@ -332,7 +332,7 @@
         "text": "After burning the bodies, when you visit the priest, avoid triggering the start of Bitter harvest."
       }
     ],
-    "cutoffs": ["In the Eternal Fire's Shadow"]
+    "cutoffs": [[{ "name": "In the Eternal Fire's Shadow" }]]
   },
   {
     "name": "At the Mercy of Strangers Part 1",
@@ -442,7 +442,7 @@
         "link": "https://www.youtube.com/watch?v=5D6rsORwqXc&list=PLgHgYXIqVlYb0UtbPpQmlVbbomM92PNEv&t=348s"
       }
     ],
-    "cutoffs": ["Ghosts of the Past"]
+    "cutoffs": [[{ "name": "Ghosts of the Past" }]]
   },
   {
     "name": "Caravan Attack",
@@ -569,7 +569,7 @@
     "level": 1,
     "isOrdered": true,
     "notes": [{ "text": "Play Gwent with the Baron" }],
-    "cutoffs": ["Return to Crookback Bog"]
+    "cutoffs": [[{ "name": "Return to Crookback Bog" }]]
   },
   {
     "name": "Ciri's Room",
@@ -577,7 +577,7 @@
     "location": "velen",
     "level": 5,
     "link": "https://witcher.fandom.com/wiki/Ciri%27s_Room",
-    "cutoffs": ["Isle of the Mists"]
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
   },
   {
     "name": "The Mysterious Passenger",
@@ -679,7 +679,7 @@
         "isCompleted": false
       }
     ],
-    "cutoffs": ["Bitter Harvest", "Fake Papers"]
+    "cutoffs": [[{ "name": "Bitter Harvest" }, { "name": "Fake Papers" }]]
   },
   {
     "name": "Death By Fire",
@@ -720,7 +720,7 @@
         "isCompleted": false
       }
     ],
-    "cutoffs": ["A Favor for a Friend"]
+    "cutoffs": [[{ "name": "A Favor for a Friend" }]]
   },
   {
     "name": "Ciri's Story: The Race",
@@ -784,7 +784,7 @@
     "location": "velen",
     "level": 1,
     "link": "https://witcher.fandom.com/wiki/Races:_Crow%27s_Perch",
-    "cutoffs": ["Isle of the Mists"]
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
   },
   {
     "name": "An Invitation from Keira Metz",
@@ -793,7 +793,7 @@
     "type": "side",
     "level": 6,
     "isOrdered": true,
-    "cutoffs": ["Isle of the Mists"]
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
   },
   {
     "name": "A Towerful of Mice",
@@ -848,7 +848,7 @@
         "link": "https://youtu.be/X0RRsK7vIRw?t=338"
       }
     ],
-    "cutoffs": ["Isle of the Mists"]
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
   },
   {
     "name": "A Favor for a Friend",
@@ -862,7 +862,7 @@
       }
     ],
     "isOrdered": true,
-    "cutoffs": ["Isle of the Mists"]
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
   },
   {
     "name": "For the Advancement of Learning",
@@ -892,7 +892,7 @@
         "text": "If you take the less ideal ending and send Keira to Radovid at the end of this quest, it will unlock a future quest that would not be available otherwise. This future quest is 'A Final Kindness', but is once again part of the bad ending for Keira. Choosing this path will also partially fail the future 'Brothers in Arms: Velen' quest."
       }
     ],
-    "cutoffs": ["Isle of the Mists"]
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
   },
   {
     "name": "Defender of the Faith",
@@ -909,7 +909,7 @@
         "link": "https://youtu.be/iUaQdhz8krg?t=120"
       }
     ],
-    "cutoffs": ["In the Eternal Fire's Shadow"]
+    "cutoffs": [[{ "name": "In the Eternal Fire's Shadow" }]]
   },
   {
     "name": "A Dog's Life",
@@ -952,7 +952,7 @@
         "link": "https://youtu.be/2rUGRP3i5rg?t=732"
       }
     ],
-    "cutoffs": ["Isle of the Mists"]
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
   },
   {
     "name": "Ghosts of the Past",
@@ -972,7 +972,7 @@
         "text": "During 'Ghosts of the Past', when given the choice between \"you're as good as dead\" and \"don't want trouble\" you can hear Letho snoring before selecting the option."
       }
     ],
-    "cutoffs": ["Isle of the Mists"],
+    "cutoffs": [[{ "name": "Isle of the Mists" }]],
     "prerequisites": [
       [
         {
@@ -1090,7 +1090,7 @@
         "text": "In the basement, underneath the crone tapestry, you can find unique voodoo dolls that represent people that the crones have cursed, including Anna, a peasant from Downwarren, and Vivienne from the DLC Blood and Wine quest 'The Warble of a Smitten Knight'."
       }
     ],
-    "cutoffs": ["Isle of the Mists"]
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
   },
   {
     "name": "Saving Farmer's Daughter From Soldiers (I)",
@@ -1134,7 +1134,7 @@
         "isCompleted": false
       }
     ],
-    "cutoffs": ["Fake Papers"]
+    "cutoffs": [[{ "name": "Fake Papers" }]]
   },
   {
     "name": "Fake Papers",
@@ -1207,6 +1207,30 @@
                 "option": "Keira was spared and sent to Radovid"
               }
             ]
+          ]
+        }
+      ]
+    ]
+  },
+  {
+    "id": "Brothers In Arms: Velen",
+    "name": "Brothers In Arms: Velen",
+    "link": "",
+    "location": "velen",
+    "type": "main",
+    "cutoffs": [
+      [{ "name": "For the Advancement of Learning", "state": "failure" }],
+      [
+        {
+          "name": "For the Advancement of Learning",
+          "path": [[{ "name": "", "option": "Keira was killed" }]]
+        }
+      ],
+      [
+        {
+          "name": "For the Advancement of Learning",
+          "path": [
+            [{ "name": "", "option": "Keira was spared and sent to Radovid" }]
           ]
         }
       ]

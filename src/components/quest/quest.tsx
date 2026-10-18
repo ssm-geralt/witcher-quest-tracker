@@ -56,12 +56,10 @@ export function Quest({
             onClick={onCompletionStateClick}
             data-id={id}
             data-state={completionState ?? "empty"}
-            disabled={disabled}
             className={clsx(
               "inline-block border w-6 h-6 p-1 rounded cursor-pointer",
               "data-[state=success]:bg-green-300 data-[state=success]:text-green-800",
               "data-[state=failure]:bg-red-300 data-[state=failure]:text-red-800",
-              "disabled:invisible",
             )}
           >
             {completionState === "failure" ? (
@@ -112,15 +110,24 @@ export function Quest({
             ) : null}
 
             {cutoffs.length > 0 ? (
-              <div className="flex gap-1 text-blue-500">
+              <div className="flex flex-col gap-1 text-blue-500">
                 <dt>finish before:</dt>
-                <dd>
-                  {cutoffs.map((c, i) => (
-                    <a key={c.id} href={`#quest-${c.id}`}>
-                      {c.name}
-                      {i === cutoffs.length - 1 ? "" : ", "}
-                    </a>
-                  ))}
+                <dd className="flex pl-5 flex-col gap-1">
+                  {cutoffs.map((quests) =>
+                    quests.map(({ id, name, state, paths }) => (
+                      <a key={id} href={`#quest-${id}`}>
+                        - {name}
+                        {state !== "success" ? ` with ${state} state` : ""}
+                        {paths.length > 0
+                          ? ` with chosen paths: ${paths
+                              .map((ors) =>
+                                ors.map(({ option }) => option).join(" AND "),
+                              )
+                              .join(" OR ")}`
+                          : ""}
+                      </a>
+                    )),
+                  )}
                 </dd>
               </div>
             ) : null}

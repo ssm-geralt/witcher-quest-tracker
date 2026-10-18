@@ -60,19 +60,34 @@ export const processQuests = (questDataArray: QuestData[]): Quest[] => {
 
       const currentIdNameObject = { id, name };
 
-      const precessedCutoffs: IdNameObject[] =
-        cutoffs?.map((c) => {
-          const processedCutoff = covertNameToIdNameObject(c, "Cutoffs");
+      const precessedCutoffs: Quest["cutoffs"] =
+        cutoffs?.map((questsRule) => {
+          return questsRule.map((questRule) => {
+            const { id: questRuleId } = covertNameToIdNameObject(
+              questRule.name,
+              "Cutoffs",
+            );
 
-          const existingCutoffFor = helper.cutoffsFor[processedCutoff.id];
+            const existingCutoffFor = helper.cutoffsFor[questRuleId];
+            const isAlreadyAdded = !!existingCutoffFor?.some(
+              ({ id }) => id === currentIdNameObject.id,
+            );
 
-          if (existingCutoffFor) {
-            existingCutoffFor.push(currentIdNameObject);
-          } else {
-            helper.cutoffsFor[processedCutoff.id] = [currentIdNameObject];
-          }
+            if (existingCutoffFor && !isAlreadyAdded) {
+              existingCutoffFor.push(currentIdNameObject);
+            }
 
-          return processedCutoff;
+            if (!existingCutoffFor) {
+              helper.cutoffsFor[questRuleId] = [currentIdNameObject];
+            }
+
+            return {
+              ...questRule,
+              id: questRuleId,
+              paths: questRule.paths ?? [],
+              state: questRule.state ?? "success",
+            };
+          });
         }) ?? [];
 
       const precessedDisablers: IdNameObject[] =

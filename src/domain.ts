@@ -46,7 +46,7 @@ export const questDataSchema = z.object({
   pathOptions: z.array(questPathOptionSchema).optional(),
   isOrdered: z.boolean().optional(),
 
-  cutoffs: z.array(z.string()).optional(),
+  cutoffs: dependencyRuleSetSchema.optional(),
   disablers: z.array(z.string()).optional(),
   prerequisites: dependencyRuleSetSchema.optional(),
 });
