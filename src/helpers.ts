@@ -283,7 +283,7 @@ export const getNextCompletionState = (
   }
 };
 
-export const validateDependencyRule = (
+export const validateDependencyRuleSet = (
   ruleSet: QuestDependencyRuleSet,
   map: Map<string, Pick<Quest, "completionState" | "selectedPaths">>,
 ): boolean => {
@@ -300,7 +300,7 @@ export const validateDependencyRule = (
         break;
       }
 
-      if (questRuleItem.state !== connectedQuest.completionState) {
+      if (questRuleItem.state !== (connectedQuest.completionState ?? "empty")) {
         isRuleValid = false;
         break;
       }
@@ -351,12 +351,13 @@ export const getDisabledQuests = (
 
   // using a map to make lookups faster
   const map = new Map(quests.map((q) => [q.id, q]));
+
   quests.forEach(({ completionState, disablerFor, prerequisites, id }) => {
     if (completionState === "success") {
       disablerFor.forEach((d) => output.add(d.id));
     }
 
-    const isDisabled = !validateDependencyRule(prerequisites, map);
+    const isDisabled = !validateDependencyRuleSet(prerequisites, map);
     if (isDisabled) {
       output.add(id);
     }
