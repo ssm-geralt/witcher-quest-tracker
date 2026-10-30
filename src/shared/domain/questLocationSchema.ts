@@ -4,6 +4,7 @@ export const questLocationSchema = z.enum([
   "whiteOrchard",
   "vizima",
   "velen",
+  "novigrad",
   "skellige",
 ]);
 

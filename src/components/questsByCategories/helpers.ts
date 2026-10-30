@@ -7,18 +7,27 @@ export const isQuestOrdered = ({
   type,
   isOrdered,
   disablers,
+  cutoffFor,
+  disablerFor,
+  prerequisiteFor,
 }: {
   isOrdered: boolean;
   type: Quest["type"];
   cutoffs: unknown[];
   prerequisites: unknown[];
   disablers: unknown[];
+  cutoffFor: unknown[];
+  disablerFor: unknown[];
+  prerequisiteFor: unknown[];
 }) =>
   isOrdered ||
   type === "main" ||
   cutoffs.length > 0 ||
   prerequisites.length > 0 ||
-  disablers.length > 0;
+  disablers.length > 0 ||
+  cutoffFor.length > 0 ||
+  disablerFor.length > 0 ||
+  prerequisiteFor.length > 0;
 
 export const categorizeQuests = (processedQuests: Quest[]) =>
   processedQuests?.reduce<CategorizedQuests[]>((output, quest) => {

@@ -9,6 +9,7 @@ export const questTypeSchema = z.enum([
   "scavenger",
   "encounter",
   "race",
+  "fistfight",
 ]);
 
 export type QuestType = z.infer<typeof questTypeSchema>;

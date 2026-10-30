@@ -6,6 +6,10 @@ export const getLocationName = (key: string) => {
       return "Vizima";
     case "velen":
       return "Velen";
+    case "novigrad":
+      return "Novigrad/Oxenfurt";
+    case "skellige":
+      return "Skellige";
     default:
       return key;
   }
@@ -29,6 +33,8 @@ export const getQuestTypeName = (key: string) => {
       return "Chance Encounter";
     case "race":
       return "Race";
+    case "fistfight":
+      return "Fistfight";
     default:
       return key;
   }

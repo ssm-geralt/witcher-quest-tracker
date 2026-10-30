@@ -1157,15 +1157,1638 @@
     ]
   },
   {
-    "id": "On Thin Ice",
-    "name": "On Thin Ice",
-    "link": "",
+    "name": "Love's Cruel Snares",
+    "type": "side",
     "location": "velen",
-    "type": "main"
+    "level": 10,
+    "link": "https://witcher.fandom.com/wiki/Love's_Cruel_Snares",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "For this quest to become available, you need to clear both the boatyard abandoned site (between Refugees' Camp and Condyle) and the pirate base on the peninsula west of it of all pirates."
+      },
+      {
+        "text": "In 'Love's Cruel Snares', if you refuse to help the woman, she will venture out herself and ends up getting killed by the wild dogs."
+      },
+      {
+        "text": "In 'Love's Cruel Snares', once the quest is completed, and you wait a few days, if you go to the spot where the man died, you will find the woman and it looks like she is eating the body. This happens to be in an area of Velen where there are many cannibals.",
+        "link": "https://youtu.be/xZh9Ck9MxQY?t=196"
+      }
+    ]
   },
   {
-    "id": "In the Eternal Fire's Shadow",
+    "name": "The Merry Widow",
+    "type": "contract",
+    "location": "velen",
+    "level": 10,
+    "link": "https://witcher.fandom.com/wiki/Contract:_The_Merry_Widow",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "After the Merry Widow contract is complete, wait a day or 2 and head back to the area you fought the grave hag. You will see 2 statues that change places when you enter and exit the crypt. Their faces change as well the further away you move from them. This is a reference to a Doctor Who episode."
+      }
+    ]
+  },
+  {
+    "name": "Witcher Wannabe",
+    "type": "side",
+    "location": "velen",
+    "level": 10,
+    "link": "https://witcher.fandom.com/wiki/Witcher_Wannabe",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "To begin this quest, complete 'The Merry Widow' and then wait at least 5 in game days for 'Witcher Wannabe' to appear."
+      },
+      {
+        "text": "After Witcher Wannabe, if you lie and DON'T expose him as a wannabe witcher, you can get him to work off his failure with the village elder. You can find the wannabe witcher working in a small field at the southern entrance (southeast of the signpost) a day or so later. He is still wearing the witcher medallion."
+      }
+    ],
+    "prerequisites": [[{ "name": "The Merry Widow" }]]
+  },
+  {
+    "name": "The Truth is in the Stars",
+    "type": "side",
+    "location": "velen",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/The_Truth_is_in_the_Stars",
+    "notes": [
+      {
+        "text": "During 'The Truth is in the Stars', you can find a 'man killing' rabbit.",
+        "link": "https://youtu.be/vqT-ag4Bhdg?t=554"
+      }
+    ]
+  },
+  {
+    "name": "Fool's Gold",
+    "type": "side",
+    "location": "velen",
+    "level": 6,
+    "link": "https://witcher.fandom.com/wiki/Fools'_Gold",
+    "notes": [
+      {
+        "text": "There is a man that you can find in Velen, just north-east of Lurtch. Normally, he will immediately attack you, but if you can get close to his hut while he is still inside, you can see him eating a dead body. He seems to have killed a man, his wife, and their dog, while leaving the fish on the stove untouched and instead, consuming the bodies.",
+        "isCompleted": false,
+        "link": "https://youtu.be/2XtIwLqkJ0o?t=356"
+      },
+      {
+        "text": "During Fool's Gold, follow Yontek and you will see him do some magic spells."
+      },
+      {
+        "text": "For the quest Fool's Gold, return to the village after the quest is complete to get some rare dialogue about the caretaker from Hearts of Stone.",
+        "link": "https://youtu.be/eWdTzQJR01s?t=121"
+      },
+      {
+        "text": "During 'Fool's Gold', you can find a symbol in the pig's temple that looks like the symbol the crones placed on Anna's hand. This might imply that the crones were involved in the pig curse.",
+        "link": "https://youtu.be/MxlvbAilMio?t=251"
+      },
+      {
+        "text": "During 'Fool's Gold', Igor the pig can actually eat the horn of plenty that can potentially be given to you by Gaunter O'Dimm if you side with him and choose that specific reward during Hearts of Stone.",
+        "link": "https://youtu.be/MxlvbAilMio?t=270"
+      }
+    ]
+  },
+  {
+    "name": "Wild at Heart",
+    "type": "side",
+    "location": "velen",
+    "level": 7,
+    "link": "https://witcher.fandom.com/wiki/Wild_at_Heart",
+    "notes": [
+      {
+        "text": "In 'Wild at Heart', if you spare Margrit and kill Niellen, you can receive a key to unlock the chest in the cabin upstairs. You can also find Margrit in the cabin crying."
+      }
+    ]
+  },
+  {
+    "name": "Forefathers' Eve",
+    "type": "side",
+    "location": "velen",
+    "level": 7,
+    "link": "https://witcher.fandom.com/wiki/Forefathers'_Eve"
+  },
+  {
+    "name": "A Greedy God",
+    "type": "side",
+    "location": "velen",
+    "level": 7,
+    "link": "https://witcher.fandom.com/wiki/A_Greedy_God",
+    "notes": [
+      {
+        "text": "The Eye of Nehaleni is needed to complete this quest."
+      },
+      {
+        "text": "During 'A Greedy God' dispel the ruins around the back and speak to the Allgod before speaking with the peasants in order to get additional dialogue. If you spared him, come back to the area 2 days later to find the peasants praying and the Allgod grumbling. If you killed him, follow the peasants back to their homes and you will see them praying to another god."
+      }
+    ],
+    "prerequisites": [[{ "name": "Wandering in the Dark" }]]
+  },
+  {
+    "name": "Last Rites",
+    "type": "side",
+    "location": "velen",
+    "level": 9,
+    "link": "https://witcher.fandom.com/wiki/Last_Rites",
+    "notes": [
+      {
+        "text": "To trigger Last Rites quest, repair the shrines around Velen (Defender of the Faith quest) and appear at night. Do not meditate in close proximity. Next to the grave, use Keira's lamp to get a unique scene."
+      }
+    ],
+    "prerequisites": [[{ "name": "Defender of the Faith" }]]
+  },
+  {
+    "name": "Blood Ties",
+    "type": "side",
+    "location": "velen",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/Blood_Ties",
+    "notes": [
+      {
+        "text": "Lena's fate (from the Swallow potion - 'On Death's Bed') is determined in the Nilfgaardian camp.",
+        "link": "https://www.youtube.com/watch?v=kNG9mWShCP4"
+      }
+    ]
+  },
+  {
+    "name": "The Volunteer",
+    "type": "side",
+    "location": "velen",
+    "level": 13,
+    "link": "https://witcher.fandom.com/wiki/The_Volunteer",
+    "notes": [
+      {
+        "text": "In The Volunteer, Trollolo's painting is actually much better than Geralt's."
+      }
+    ]
+  },
+  {
+    "name": "Woodland Beast",
+    "type": "contract",
+    "location": "velen",
+    "level": 6,
+    "link": "https://witcher.fandom.com/wiki/Contract:_Woodland_Beast",
+    "notes": [
+      {
+        "text": "If you decide to let the Scoia'tael be, but inform the captain about them, you can later be ambushed by Vernossiel, the leader of the Scoia'tael group, close to the Glory Gate signpost."
+      }
+    ]
+  },
+  {
+    "name": "Patrol Gone Missing",
+    "type": "contract",
+    "location": "velen",
+    "level": 7,
+    "link": "https://witcher.fandom.com/wiki/Contract:_Patrol_Gone_Missing",
+    "notes": [
+      {
+        "text": "You can investigate further to find a cave with bodies and get a better dialog outcome.",
+        "isCompleted": false
+      },
+      {
+        "text": "There is a Nilfgaardian area called The House of Respite that you can only enter while wearing Nilfgaardian attire (can be the formal clothes). In this area, there is a section that you can't enter."
+      },
+      {
+        "text": "In the House of Respite area in the Nilfgaardian camp, once you get in using Nilfgaardian armor, you can loot a chest with more Nilfgaardian armor, as well as a helmet that is next to the chest. This helmet can be put on as a mask in the inventory menu, and it appears as a helmet with the Nilfgaardian wings in-game. If you turn on the alternative nilfgaardian armor in the main menu option settings, your Geralt will be wearing the Season 1 Netflix Nilfgaardian Armor set.",
+        "isCompleted": false,
+        "link": "https://youtu.be/xg7n597DLBI?t=15"
+      }
+    ]
+  },
+  {
+    "name": "Shrieker",
+    "type": "contract",
+    "location": "velen",
+    "level": 8,
+    "link": "https://witcher.fandom.com/wiki/Contract:_Shrieker",
+    "notes": [
+      {
+        "text": "In 'Contract: Shrieker', you can talk to the boy, Symko, one final time to grant him some solace after you complete the quest. If you kill the goats nearby, the boy will temporarily be uninteractable and won't speak with you until you go away and come back.",
+        "isCompleted": false,
+        "link": "https://youtu.be/hw2YgSXbGfU?t=403"
+      }
+    ]
+  },
+  {
+    "name": "Jenny O' the Woods",
+    "type": "contract",
+    "location": "velen",
+    "level": 10,
+    "link": "https://witcher.fandom.com/wiki/Contract:_Jenny_o%27_the_Woods",
+    "notes": [
+      {
+        "text": "If you are not over leveled, be prepared for one of the most challenging fight in the game."
+      }
+    ]
+  },
+  {
+    "name": "Swamp Thing",
+    "type": "contract",
+    "location": "velen",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/Contract:_Swamp_Thing",
+    "notes": [
+      {
+        "text": "During the Contract Swamp Thing, you will meet Leslav. He seems to have read a notice about peat and its different properties. You can find this notice in the village of Lindenvale in Crookback Bog before speaking with him. After completing the quest, you can find another notice that is looking for peat diggers now that the Bog is clear.",
+        "link": "https://youtu.be/X0RRsK7vIRw?t=595"
+      }
+    ]
+  },
+  {
+    "name": "Queen Zuleyka's Treasure",
+    "type": "treasure",
+    "location": "velen",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Queen_Zuleyka's_Treasure"
+  },
+  {
+    "name": "Lost Goods",
+    "type": "treasure",
+    "location": "velen",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Lost_Goods"
+  },
+  {
+    "name": "Out of the Frying Pan, Into the Fire",
+    "type": "treasure",
+    "location": "velen",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Out_of_the_Frying_Pan,_into_the_Fire"
+  },
+  {
+    "name": "Sunken Treasure",
+    "type": "treasure",
+    "location": "velen",
+    "level": 4,
+    "link": "https://witcher.fandom.com/wiki/Sunken_Treasure"
+  },
+  {
+    "name": "An Unfortunate Turn of Events",
+    "type": "treasure",
+    "location": "velen",
+    "level": 4,
+    "link": "https://witcher.fandom.com/wiki/An_Unfortunate_Turn_of_Events"
+  },
+  {
+    "name": "Sunken Chest",
+    "type": "treasure",
+    "location": "velen",
+    "level": 4,
+    "link": "https://witcher.fandom.com/wiki/Sunken_Chest"
+  },
+  {
+    "name": "Hidden from the World",
+    "type": "treasure",
+    "location": "velen",
+    "level": 7,
+    "link": "https://witcher.fandom.com/wiki/Hidden_from_the_World"
+  },
+  {
+    "name": "The Dead Have No Defense",
+    "type": "treasure",
+    "location": "velen",
+    "level": 9,
+    "link": "https://witcher.fandom.com/wiki/The_Dead_Have_No_Defense",
+    "notes": [
+      {
+        "text": "You can find a man playing the flute in a boat near the docks south of Byways."
+      }
+    ]
+  },
+  {
+    "name": "The Things Men Do For Coin...",
+    "type": "treasure",
+    "location": "velen",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/The_Things_Men_Do_For_Coin..."
+  },
+  {
+    "name": "Don't Play With Gods",
+    "type": "treasure",
+    "location": "velen",
+    "level": 15,
+    "link": "https://witcher.fandom.com/wiki/Don't_Play_with_the_Gods",
+    "notes": [
+      {
+        "text": "After clearing the abandoned village in the Mire Landing (Cestersover), you can run into a stuttering character from the Witcher 1 (South of Byways).",
+        "link": "https://youtu.be/eWdTzQJR01s?t=722"
+      },
+      {
+        "text": "South of Byways, you can hear some interesting ambient dialogue that is likely referring to the botchling.",
+        "link": "https://youtu.be/hw2YgSXbGfU?t=708"
+      },
+      {
+        "text": "Interesting dead tree south west of Fyke Isle. It has many buried metal faces surrounding it, along with a chest that cannot be accessed.",
+        "link": "https://youtu.be/MxlvbAilMio?t=487"
+      }
+    ]
+  },
+  {
+    "name": "A Costly Mistake",
+    "type": "treasure",
+    "location": "velen",
+    "level": 18,
+    "link": "https://witcher.fandom.com/wiki/A_Costly_Mistake"
+  },
+  {
+    "name": "A Warm Welcome",
+    "type": "encounter",
+    "location": "novigrad",
+    "ignoreLocation": true,
+    "isOrdered": true,
+    "link": "https://witcher.fandom.com/wiki/A_Warm_Welcome",
+    "notes": [
+      {
+        "text": "The peasant you save will tell you where Witcher George's Griffin diagrams are."
+      }
+    ]
+  },
+  {
+    "name": "Griffin School Gear (Basic)",
+    "type": "scavenger",
+    "location": "velen",
+    "level": 11,
+    "link": "https://witcher.fandom.com/wiki/Griffin_School_Gear",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "In the Abandoned Tower, West of Heatherton, you can find two chests that are somewhat hidden.",
+        "isCompleted": false,
+        "link": "https://youtu.be/ylwltZ9b_qE?t=1"
+      }
+    ]
+  },
+  {
+    "name": "Fists of Fury: Velen",
+    "type": "fistfight",
+    "location": "velen",
+    "level": 11,
+    "link": "https://witcher.fandom.com/wiki/Fists_of_Fury:_Velen",
+    "notes": [
+      {
+        "text": "You can speak to Fishgulper in front of Lindenvale's inn after the fight in Fists of Fury: Velen and give him some money for his family."
+      }
+    ]
+  },
+  {
+    "name": "Racists of Novigrad (I)",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/Racists_of_Novigrad",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "Visit crematorium (north of Oxenfurt Gate) at night to have it feel creepier. Listen to more dialogue during the day and meet an apothecary that was in the Witcher 2.",
+        "link": "https://youtu.be/CiijenGdZWY?t=642"
+      }
+    ]
+  },
+  {
+    "name": "A Walk on the Waterfront",
+    "type": "side",
+    "location": "novigrad",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/A_Walk_on_the_Waterfront",
+    "notes": [
+      {
+        "text": "Complete immediately when encountered."
+      },
+      {
+        "text": "Don't let Ginter die."
+      },
+      {
+        "text": "Find Odrin at Novigrad's docks @6:06 (Merchant beside him sells 250 empty bottles).",
+        "link": "https://youtu.be/CiijenGdZWY?t=366"
+      }
+    ],
+    "cutoffs": [[{ "name": "Count Reuven's Treasure" }]]
+  },
+  {
+    "name": "Warehouse of Woe",
+    "type": "side",
+    "location": "novigrad",
+    "level": 13,
+    "link": "https://witcher.fandom.com/wiki/Warehouse_of_Woe",
+    "isOrdered": true,
+    "notes": [{ "text": "Complete immediately when encountered." }]
+  },
+  {
+    "name": "Strumpet in Distress",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/Strumpet_in_Distress",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "Brief interaction between a role playing couple outside the Novigrad docks @4:01 (this is time sensitive and will fail once you've passed by the area).",
+        "link": "https://youtu.be/WPcwNlJuvp8?t=241"
+      }
+    ]
+  },
+  {
+    "name": "Racists of Novigrad (II)",
+    "type": "encounter",
+    "location": "novigrad",
+    "prerequisites": [[{ "name": "Racists of Novigrad (I)" }]],
+    "cutoffs": [[{ "name": "An Elusive Thief" }]]
+  },
+  {
+    "name": "Karmic Justice",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/Karmic_Justice",
+    "notes": [
+      {
+        "text": "If Karmic Justice isn't triggering, meditate until it's between 10pm and 1am. It may only occur at these times."
+      }
+    ],
+    "cutoffs": [[{ "name": "Count Reuven's Treasure" }]]
+  },
+  {
+    "name": "Face Me if You Dare (II)",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/Face_Me_if_You_Dare!",
+    "isOrdered": true
+  },
+  {
+    "name": "Drunken Rabble",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/Drunken_Rabble",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "Meditate until it's between 6pm and 8pm."
+      },
+      {
+        "text": "Find the drunk barber in Novigrad @15:30 (He will give you the wrong haircut the first time around).",
+        "link": "https://youtu.be/QaMeclEc3_w?t=930"
+      }
+    ]
+  },
+  {
+    "name": "Gwent: Playing Innkeeps",
+    "type": "gwent",
+    "location": "novigrad",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Gwent:_Playing_Innkeeps",
+    "notes": [
+      {
+        "text": "Play Olivier in Novigrad begore doing Now or Never."
+      }
+    ],
+    "cutoffs": [[{ "name": "Now or Never" }]]
+  },
+  {
+    "name": "Pyres of Novigrad",
+    "type": "main",
+    "location": "novigrad",
+    "level": 10,
+    "link": "https://witcher.fandom.com/wiki/Pyres_of_Novigrad",
+    "notes": [
+      {
+        "text": "In the quest log you may find a temporary failed task, because you can either follow a thief or ask the beggars. This failed task will disappear once the quest is done. "
+      },
+      {
+        "text": "Here are 4 locations in Novigrad that have hidden loot. Just West of the Southern Gate in Novigrad, you can find and loot two hidden chests. North West of Electors' Square, you can find a chest near the rock wall. There is a shipwreck West of Hierarch Square where you can find 2 chests and a body to loot. On a small island West of Electors' Square, you can loot a chest.",
+        "isCompleted": false,
+        "link": "https://youtu.be/0U08CldI4C4?t=2"
+      },
+      {
+        "text": "Armorer in Hierarch Square in Novigrad that says top notch swords now actually sells a few good swords, two of which are actually in promos and trailers for the game. He'll stop saying \"top notch swords\" once you buy them.",
+        "isCompleted": false
+      },
+      {
+        "text": "Find Triss's Witcher 2 outfit in her home as well as writings/paintings outside of Triss's house."
+      },
+      {
+        "text": "In Pyres of Novigrad, don't approach too quickly, otherwise you'll miss Menge's speech.",
+        "link": "https://youtu.be/BYmT2IDy3QY?t=23"
+      },
+      {
+        "text": "In Pyres of Novigrad, if you pull out your sword while fighting the looters, they will instantly cower. When you go in the house, you will find the Rose of Remembrance, which is from the Witcher 2.",
+        "isCompleted": false
+      },
+      {
+        "text": "In Pyres of Novigrad, you can find scriptures/writings in certain spots outside of the house the looters are at.",
+        "link": "https://youtu.be/BYmT2IDy3QY?t=117"
+      },
+      {
+        "text": "In Pyres of Novigrad, there are 4 beggars you can speak with (the addled one is the only one that knows), or you can follow the thieves and get some interesting dialogue (they can lead you into a trap if they know you're following). Follow the thieves to get the location and then you can go back to the beggars to get the password.",
+        "link": "https://youtu.be/BYmT2IDy3QY?t=177"
+      },
+      {
+        "text": "In Pyres of Novigrad, you can enter the Putrid Grove through the sewers which gets a key that may not be available after this quest.",
+        "link": "https://youtu.be/BYmT2IDy3QY?t=569"
+      },
+      {
+        "text": "In Pyres of Novigrad, when in the Putrid Grove, there is some interesting ambient dialogue that you can find and a good saddle bag.",
+        "link": "https://youtu.be/BYmT2IDy3QY?t=674"
+      },
+      {
+        "text": "It is possible for Geralt to carry around a copy of the Kama Sutra with him if he has the right saddle (Zerrikanian saddlebags). You can also find this book on one of the people you save from the witch hunters on the outskirts of Novigrad and on a mage named Carduin. You can buy the Zerrikanian saddlebags from the merchant in the Putrid Grove.",
+        "link": "https://youtu.be/ShqU6LaDT7M?t=61"
+      },
+      {
+        "text": "In Pyres of Novigrad, when doing the rat catching with Triss, the merchant will pay the full amount upfront since he believes he will get it back off your corpse."
+      },
+      {
+        "text": "Buy jade figurine and lizard figurine from merchant in Gildorf right AFTER meeting Triss for the first time. The lizard figurine can start the 'Of Dairy and Darkness' quest.",
+        "isCompleted": false
+      },
+      {
+        "text": "You can get the Elven crossbow from a merchant on the Gildorf market square in Novigrad near St. Gregory's Bridge (part of the elite crossbow set).",
+        "isCompleted": false
+      },
+      {
+        "text": "Before starting 'Carnal Sins', you can meet the dwarf that ends up dead. Try to find him during 'Pyres of Novigrad', since the area will be blocked off during 'Carnal Sins' and possibly many quests before it. Also, in this area, you can find an interesting statue and patients that talk about the murder before it happens. They will also talk about the murder at the beginning of the 'Carnal Sins' quest.",
+        "link": "https://youtu.be/QaMeclEc3_w?t=714"
+      }
+    ]
+  },
+  {
+    "name": "Suspicious Shakedown",
+    "type": "encounter",
+    "location": "novigrad",
+    "level": 10,
+    "link": "https://witcher.fandom.com/wiki/Suspicious_Shakedown",
+    "prerequisites": [[{ "name": "Pyres of Novigrad" }]]
+  },
+  {
+    "name": "Witch Hunter Raids (I)",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/Witch_Hunter_Raids",
+    "notes": [
+      {
+        "text": "Witch Hunter Raids, find a unique encounter near Glory Gate @0:45. A bunch of witch hunters knocking on a door (available after the rat catching part of the Pyres of Novigrad quest with Triss, but unavailable after you help the mages out of Novigrad).",
+        "link": "https://youtu.be/sGkTAgeY3Qw?t=45"
+      },
+      {
+        "text": "Crazy cat lady outside of Novigrad has a diary that can start the hunt for the feline armor. You can follow her around and she'll say odd things. She also says she can't sleep and can be found outside at night. If you wait until around 10pm, leave the area slightly and come back, you will find a lot of dead rats near all of the cats.",
+        "link": "https://youtu.be/SxcC8VvDA-0?t=74"
+      },
+      {
+        "text": "The schedule of Ciri's performer friends are quite elaborate. Valdo is the first to get up and sits by the bank. The group set up the stage throughout the day before the performance at night.",
+        "link": "https://youtu.be/Z0f8MjdKAf4?t=476"
+      },
+      {
+        "text": "Romantic bench outside of Novigrad @2:00 (meditate to see multiple couples come by).",
+        "link": "https://youtu.be/CiijenGdZWY?t=117"
+      }
+    ],
+    "prerequisites": [[{ "name": "Pyres of Novigrad" }]],
+    "cutoffs": [[{ "name": "Now or Never" }]]
+  },
+  {
+    "name": "The Flame of Hatred (I)",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/The_Flame_of_Hatred",
+    "isOrdered": true
+  },
+  {
+    "name": "Never Trust Children (I)",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/Never_Trust_Children",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "This quest is proximity sensitive and will fail if you leave the area."
+      }
+    ]
+  },
+  {
+    "name": "Hidden Messages of the Nilfgaardian Kind",
+    "type": "side",
+    "location": "novigrad",
+    "level": 8,
+    "link": "https://witcher.fandom.com/wiki/Hidden_Messages_of_the_Nilfgaardian_Kind",
+    "prerequisites": [[{ "name": "Never Trust Children (I)" }]]
+  },
+  {
+    "name": "The Flame of Hatred (II)",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/The_Flame_of_Hatred",
+    "isOrdered": true
+  },
+  {
+    "name": "Novigrad Dreaming",
+    "type": "main",
+    "location": "novigrad",
+    "level": 7,
+    "link": "https://witcher.fandom.com/wiki/Novigrad_Dreaming",
+    "pathOptions": [
+      {
+        "name": "Sarah",
+        "options": [
+          { "name": "Sarah was allowed to stay" },
+          { "name": "Sarah was smoked out" }
+        ]
+      }
+    ],
+    "notes": [
+      {
+        "text": "If you want the secondary quest 'Haunted House', then you must let Sarah stay in the house."
+      },
+      {
+        "text": "If you smoke Sarah out of the house, you will run into her again much later on with Johnny, but you won't be able to access the 'Haunted House' quest. The better option is to let her stay. In case you wanted to watch the video of her with Johnny later on in the game, check the video link. There are spoilers in the video.",
+        "link": "https://youtu.be/jimpnTMldbY"
+      }
+    ]
+  },
+  {
+    "name": "Haunted House",
+    "type": "side",
+    "location": "novigrad",
+    "level": 7,
+    "link": "https://witcher.fandom.com/wiki/Haunted_House_(quest)",
+    "notes": [
+      {
+        "text": "You can find the notice a few days later on the notice board in Hierarch Square."
+      }
+    ],
+    "prerequisites": [
+      [
+        {
+          "name": "Novigrad Dreaming",
+          "paths": [
+            [{ "name": "Sarah", "option": "Sarah was allowed to stay" }]
+          ]
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Broken Flowers",
+    "type": "main",
+    "location": "novigrad",
+    "level": 11,
+    "link": "https://witcher.fandom.com/wiki/Broken_Flowers",
+    "pathOptions": [
+      {
+        "name": "Fencing",
+        "options": [
+          { "name": "Won both fights against Rosa and accepted the lessons" }
+        ]
+      }
+    ],
+    "notes": [
+      {
+        "text": "Speak to Zoltan about the different women once you have read Dandelion's planner, but before talking to any of the women. There is extra dialogue when doing this."
+      },
+      {
+        "text": "When meeting with Vespula during 'Broken Flowers', if you run away once the bandits start attacking, when you return, Vespula will be bloodied up and will have a unique scene.",
+        "link": "https://youtu.be/uCp1CLtjto8?t=761"
+      },
+      {
+        "text": "During 'Broken Flowers', when picking a horse, choose the gray mare (Cantarella), and you will get a reference to Cahir (if Aryan is alive for this playthrough)."
+      },
+      {
+        "text": "During 'Broken Flowers', if you make your own way to the Vegelbuds' residence for the horse race, you can overhear La Valette and Voorhis talking (if Aryan is alive).",
+        "link": "https://youtu.be/uCp1CLtjto8?t=383"
+      },
+      {
+        "text": "When trying to find Molly during 'Broken Flowers', the Baroness La Valette will have a different reaction to you depending on if you killed her son Aryan in the Witcher 2 game. She will either be extremely pleasant or she will be rude to you and will not join you for the races. Morvran Voorhis will also have more to say about Aryan's demise and what happened since then if you killed Aryan. Molly becomes a noble lady if Aryan is dead instead of being a servant otherwise.",
+        "link": "https://youtu.be/uCp1CLtjto8?t=49"
+      },
+      {
+        "text": "During 'Broken Flowers', as you approach the Nilfgaardian Embassy, before speaking with Rosa var Attre, you can see a message written on one of the walls.",
+        "link": "https://youtu.be/uCp1CLtjto8?t=520"
+      },
+      {
+        "text": "In 'Broken Flowers', you can tell the guard that you are the new cook. You can go up to the door and get additional dialogue about asking for Rosa. If you say you are the swordplay instructor, he'll just let you in, but the other two pieces of dialogue are better since you'll have to go around the back to get inside. Saying you are the cook makes the soldier not want to let you in, but after you find an alternate way in, he will make a comment saying how Geralt said he was the new cook and that Geralt is lying. Rosa defends you and plays along.",
+        "isCompleted": false,
+        "link": "https://youtu.be/uCp1CLtjto8?t=580"
+      },
+      {
+        "text": "During 'Broken Flowers', before speaking with Rosa var Attre, find a dead body behind the house.",
+        "isCompleted": false,
+        "link": "https://youtu.be/uCp1CLtjto8?t=566"
+      },
+      {
+        "text": "During 'Broken Flowers', when meeting with Marabella, say that you can't wait, and you'll get a funny exchange with the kids."
+      },
+      {
+        "text": "If you released the mother of the crones during 'The Whispering Hillock', you can find a list of the children's names from Crookback Bog in Marabella's hut during 'Broken Flowers'.",
+        "link": "https://youtu.be/uCp1CLtjto8?t=1092"
+      },
+      {
+        "text": "After the Vegelbud race during 'Broken Flowers', once you speak to Molly, you will have the option of returning to Novigrad on your own, or joining La Valette and Morvran Voorhis. Choose to join them because when you return, Morvran will sit on a bench and you can speak to him to get some unique dialogue.",
+        "link": "https://youtu.be/zGL0uKJWHiw?t=581"
+      },
+      {
+        "text": "The ending with each of the women in 'Broken Flowers' will change slightly depending on the order that you see each of them.",
+        "link": "https://youtu.be/uCp1CLtjto8?t=854"
+      },
+      {
+        "text": "Make sure to challenge Zoltan to gwent right at the end of 'Broken Flowers'. You can play him again later, but it's during a quest later on, so might as well get his card now and start 'Gwent: Old Pals'.",
+        "isCompleted": false
+      }
+    ]
+  },
+  {
+    "name": "Fencing Lessons",
+    "type": "side",
+    "location": "novigrad",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/Fencing_Lessons",
+    "notes": [
+      {
+        "text": "During 'Fencing Lessons', if you let her win the sword match, she will have some unique dialogue and will call herself the Black Bruxa.",
+        "link": "https://youtu.be/uCp1CLtjto8?t=697"
+      },
+      { "text": "The seven cats inn actually has seven cats." }
+    ],
+    "prerequisites": [
+      [
+        {
+          "name": "Broken Flowers",
+          "paths": [
+            [
+              {
+                "name": "Fencing",
+                "option": "Won both fights against Rosa and accepted the lessons"
+              }
+            ]
+          ]
+        }
+      ]
+    ],
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
+  },
+  {
+    "name": "The Dwarven Document Dilemma",
+    "type": "side",
+    "location": "novigrad",
+    "level": 2,
+    "link": "https://witcher.fandom.com/wiki/The_Dwarven_Document_Dilemma",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "'The Dwarven Document Dilemma' may not be able to be triggered if you have started 'Fencing Lessons' but have not yet completed it."
+      }
+    ]
+  },
+  {
+    "name": "Get Junior",
+    "type": "main",
+    "location": "novigrad",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/Get_Junior",
+    "notes": [
+      {
+        "text": "You should create a save before starting if you wish to make all checkmarks green."
+      },
+      {
+        "text": "Here is a video detailing the Gangs of Novigrad and Get Junior quests and how to achieve all green checkmarks for the objectives. Do this after the bathhouse scene with Reuven/Dijkstra. It's suggested to not bring up Dandelion during the bathhouse scene so you can focus on these quests first. During the video, there's a part when you speak with Ivor. Consider doing a save here and trying out the fight in the pit just to see the scenes that play out, but then reload your save before, since you don't want to actually go in the pits, and continue with what the video describes."
+      },
+      {
+        "text": "In order to not fail any of the parts of 'Get Junior' and 'The Gangs of Novigrad', follow this reddit post guide.",
+        "link": "https://www.reddit.com/r/Witcher3/comments/pl6ref/get_junior_and_gangs_of_novigrad_no_failures_all/"
+      }
+    ]
+  },
+  {
+    "name": "The Gangs of Novigrad",
+    "type": "side",
+    "location": "novigrad",
+    "level": 9,
+    "link": "https://witcher.fandom.com/wiki/The_Gangs_of_Novigrad",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "There is a special way to make this NOT fail after Get Junior (note added to that quest), otherwise this will fail once you meet Roche's contact during a later part of 'Get Junior'."
+      }
+    ]
+  },
+  {
+    "name": "Ciri's Story: Visiting Junior",
+    "type": "main",
+    "location": "novigrad",
+    "level": 9,
+    "link": "https://witcher.fandom.com/wiki/Ciri%27s_Story:_Visiting_Junior",
+    "notes": [
+      {
+        "text": "How to get Ciri's sword in the next gen edition during 'Ciri's Story: Visiting Junior'. Once you get to your stash, make sure to 'drop' your sword. Afterwards, you can go to the brothel to get a funny interaction. Follow the video to know how to finish the quest once you drop the sword in your stash. When you are Geralt, you can loot the sword that is dropped near the stash. This may have been fixed, so you might not be able to drop the sword anymore, but you can still do the brothel interaction. With the most recent update (4.01), you unfortunately can't do any of these unique situations, but you can still view the video to see how it used to happen.",
+        "link": "https://youtu.be/eNkHbjYQDRY"
+      }
+    ]
+  },
+  {
+    "name": "A Favor for Radovid",
+    "type": "main",
+    "location": "novigrad",
+    "level": 9,
+    "link": "https://witcher.fandom.com/wiki/A_Favor_for_Radovid",
+    "notes": [
+      {
+        "text": "In Oxenfurt, talk to Carduin next to Radovid's ship if Triss was saved in the Witcher 2.",
+        "isCompleted": false,
+        "link": "https://youtu.be/WTXPru7ET74?t=177"
+      }
+    ]
+  },
+  {
+    "name": "Honor Among Thieves",
+    "type": "side",
+    "location": "novigrad",
+    "level": 9,
+    "link": "https://witcher.fandom.com/wiki/Honor_Among_Thieves",
+    "isOrdered": true
+  },
+  {
+    "name": "The Apiarian Phantom",
+    "type": "contract",
+    "location": "novigrad",
+    "level": 14,
+    "link": "https://witcher.fandom.com/wiki/Contract:_The_Apiarian_Phantom",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "If you saved Rico during 'Get Junior', then Geralt will mention him to the family during 'Apiarian Phantom'."
+      },
+      {
+        "text": "In Honeyfill Meadworks, you can find many halfling sized items in and around the house."
+      },
+      {
+        "text": "One of the halflings in the northern end of Honeyfill Meadows will say \"Don't dare call me Bagginson\" which references Bilbo and Frodo Baggins from the Lord of the Rings."
+      }
+    ]
+  },
+  {
+    "name": "Strangers in the Night",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/Strangers_in_the_Night_(The_Witcher_3)",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "In 'Strangers in the Night', the merchant may in fact be a Nilfgaardian spy because the soldier finds Nilfgaard currency on the merchant's body afterwards."
+      }
+    ]
+  },
+  {
+    "name": "A Barnful of Trouble",
+    "type": "side",
+    "location": "novigrad",
+    "level": 11,
+    "link": "https://witcher.fandom.com/wiki/A_Barnful_of_Trouble",
+    "isOrdered": true,
+    "notes": [{ "text": "Complete immediately when started." }]
+  },
+  {
+    "name": "An Eye for an Eye",
+    "type": "side",
+    "location": "novigrad",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/An_Eye_for_an_Eye",
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
+  },
+  {
+    "name": "Count Reuven's Treasure",
+    "type": "main",
+    "location": "novigrad",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/Count_Reuven's_Treasure",
+    "notes": [
+      {
+        "text": "You need to ask about the treasure, otherwise you will get a red mark in 'A Poet Under Pressure'"
+      },
+      {
+        "text": "In 'Count Reuven's Treasure', if you ask about the treasure first, without angering the guards or giving up the charade with Triss, you will find the key to Reuven's treasure which makes Dijkstra happy. You won't get info on Dandelion, but you'll be able to get that later anyways."
+      },
+      {
+        "text": "During 'Count Reuven's Treasure', you can help Triss burn the place down with igni."
+      }
+    ]
+  },
+  {
+    "name": "The Play's the Thing",
+    "type": "main",
+    "location": "novigrad",
+    "level": 11,
+    "link": "https://witcher.fandom.com/wiki/The_Play's_the_Thing",
+    "notes": [
+      {
+        "text": "During 'The Play's the Thing', when you are recruiting jugglers from the performing troupe called the Puffins, they ask you to get rid of some thugs outside. What you can actually do is get rid of the thugs before even talking with the Puffins and you will get a different scene. This optional objective is also the only time Geralt will say 'Shit happens'. You will also get some funny dialogue if you try and bribe the thugs and then refuse to fight, but this only occurs if you see the puffins first and then see the gang.",
+        "link": "https://youtu.be/g2yEfwNcS9c?t=497"
+      }
+    ]
+  },
+  {
+    "name": "A Poet Under Pressure",
+    "type": "main",
+    "location": "novigrad",
+    "level": 13,
+    "link": "https://witcher.fandom.com/wiki/A_Poet_Under_Pressure",
+    "notes": [
+      {
+        "text": "In 'A Poet Under Pressure', when you talk with Dijkstra, he will give you either 3, 4, or 6 men depending on the different dialogue choices and only if you helped him get his treasure."
+      },
+      {
+        "text": "Loot more items while following the trail (Dandelion's perfume, wrong path, Dandelion's ring, his writings).",
+        "isCompleted": false,
+        "link": "https://youtu.be/CiijenGdZWY?t=808"
+      },
+      {
+        "text": "In 'A Poet Under Pressure', both the painting and ring can be given to Dandelion or kept for yourself. Additionally, they can be stored in your stash, and still be given to Dandelion, creating duplicates of them."
+      },
+      {
+        "text": "After receiving the portrait of Hierarch Hemmelfart, you can give it to Dandelion and he will eventually have it up on a wall (above the door that is straight ahead as you walk in to the Rosemary and Thyme @11:20).",
+        "link": "https://youtu.be/6Fiq6PjXaXc?t=680"
+      }
+    ]
+  },
+  {
+    "name": "Ciri's Story: Breakneck Speed",
+    "type": "main",
+    "location": "novigrad",
+    "level": 11,
+    "link": "https://witcher.fandom.com/wiki/Ciri%27s_Story:_Breakneck_Speed"
+  },
+  {
+    "name": "In Ciri's Footsteps: Novigrad",
+    "type": "main",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/In_Ciri%27s_Footsteps"
+  },
+  {
+    "name": "A Dangerous Game",
+    "type": "side",
+    "location": "novigrad",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/A_Dangerous_Game",
+    "notes": [
+      {
+        "text": "Take the Gwent cards during 'A Dangerous Game' because after this, they can only be found from the Prison Warden in the quest 'The Great Escape'.",
+        "isCompleted": false
+      },
+      {
+        "text": "When chasing Duke, you can do the quest 'A Tome Entombed' while in the sewers. It's easy to miss, but not missable since you can go back in the sewers at another time."
+      },
+      {
+        "text": "In 'A Dangerous Game', when Geralt says \"Zed's dead\", it is a reference to the movie Pulp Fiction."
+      },
+      {
+        "text": "Collect the Green Statuette at Caesar's.",
+        "isCompleted": false
+      }
+    ],
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
+  },
+  {
+    "name": "A Tome Entombed",
+    "type": "side",
+    "location": "novigrad",
+    "level": 13,
+    "link": "https://witcher.fandom.com/wiki/A_Tome_Entombed",
+    "isOrdered": true,
+    "notes": [
+      {
+        "text": "You can find this during 'A Dangerous Game' when you are chasing after Duke. As long as you have access to the sewers, you can access this quest later on as well."
+      }
+    ]
+  },
+  {
+    "name": "Cabaret",
+    "type": "side",
+    "location": "novigrad",
+    "level": 14,
+    "link": "https://witcher.fandom.com/wiki/Cabaret",
+    "notes": [
+      {
+        "text": "During Cabaret, after recruiting Polly and before finishing the quest with the placards, speak with Dandelion and you will have some unique dialogue.",
+        "link": "https://youtu.be/6Fiq6PjXaXc"
+      },
+      {
+        "text": "You can find Polly teaching the girls how to dance after hiring her in the 'Cabaret' quest."
+      }
+    ],
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
+  },
+  {
+    "name": "Face Me if You Dare (III)",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/Face_Me_if_You_Dare!",
+    "isOrdered": true
+  },
+  {
+    "name": "The Nobleman Statuette",
+    "type": "side",
+    "location": "novigrad",
+    "level": 14,
+    "link": "https://witcher.fandom.com/wiki/The_Nobleman_Statuette",
+    "notes": [
+      { "text": "Buy from a merchant at Gildorf." },
+      {
+        "text": "Ideally complete before 'Now or Never', but it can still be done up until 'Final Preparations'."
+      }
+    ],
+    "cutoffs": [[{ "name": "Final Preparations" }]]
+  },
+  {
+    "name": "The Soldier Statuette",
+    "type": "side",
+    "location": "novigrad",
+    "level": 14,
+    "link": "https://witcher.fandom.com/wiki/The_Soldier_Statuette",
+    "notes": [
+      {
+        "text": "Found during the 'A Dangerous Game' quest."
+      },
+      {
+        "text": "Ideally complete before 'Now or Never', but it can still be done up until 'Final Preparations'."
+      }
+    ],
+    "cutoffs": [[{ "name": "Final Preparations" }]]
+  },
+  {
+    "name": "Races: The Great Erasmus Vegelbud Memorial Derby",
+    "type": "race",
+    "location": "velen",
+    "ignoreLocation": true,
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Race:_The_Great_Erasmus_Vegelbud_Memorial_Derby",
+    "notes": [
+      {
+        "text": "This race can only be found after or during most of 'Get Junior'. The start of the quest is found in Novigrad, but the race itself takes place in Velen near the Vegelbud residence. BEFORE starting the race, meet with Triss just to get some unique dialogue about Ingrid Vegelbud (don't start 'A Matter of Life and Death' yet) and THEN you can go do the 'Races: The Great Erasmus Vegelbud Memorial Derby'."
+      }
+    ],
+    "prerequisites": [[{ "name": "Get Junior" }]]
+  },
+  {
+    "name": "A Matter of Life and Death",
+    "type": "side",
+    "location": "novigrad",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/A_Matter_of_Life_and_Death_(The_Witcher_3)",
+    "isOrdered": true,
+    "cutoffs": [[{ "name": "Isle of the Mists" }]],
+    "notes": [
+      {
+        "text": "If you complete 'Redania's Most Wanted' first, you can get dialogue about the crystal from Triss, BUT if you want to have all green objectives complete, then you should NOT speak to Triss about the crystal, and should only speak to Yen about it. For some reason, even if you don't speak to Triss about it, it will still be marked as successful in the quest objectives."
+      },
+      {
+        "text": "In 'A Matter of Life and Death', when you meet Triss at her home, you will notice that the building is slanted. The house next to it is also crooked. There is an actual reason for this and you can hear it from the repair workers working on fixing the houses. Whoever was living next to Triss's house, tried to dig a tunnel all the way to Vivaldi's bank. The tunnel caved in and the houses sunk as a result.",
+        "link": "https://youtu.be/2ZBzsBpS8zw?t=15"
+      },
+      {
+        "text": "You can get new dialogue with Triss about Ingrid Vegelbud if you have not yet met Lady Vegelbud.",
+        "link": "https://youtu.be/knCGJGZ0Swk?t=212"
+      },
+      {
+        "text": "As you are looking for the guy in the blue tunic during 'A Matter of Life and Death', you can find Triss in an alleyway. Once you find the guy, don't accept quite yet. You can return to Triss in the Alley to get a bit of extra dialogue.",
+        "link": "https://youtu.be/uvLonDEL-Nk?t=35"
+      },
+      {
+        "text": "There are 2 other guys with blue tunics that you can talk to during 'A Matter of Life and Death'."
+      },
+      {
+        "text": "Some dialogue with Triss that you may have missed while conversing with her during the Masquerade quest.",
+        "link": "https://youtu.be/ShqU6LaDT7M?t=183"
+      },
+      {
+        "text": "During the Masquerade quest, there is a reference to the movie 'Pretty Woman' at the beginning of the quest when a man refers to Triss as Vivian and mentions another man named Edward.",
+        "link": "https://youtu.be/ShqU6LaDT7M?t=119"
+      },
+      {
+        "text": "Find 3 unique people at the Masquerade @7:20 (Dijkstra, La Valette, and some dancing women with some men behind some bushes, etc.). Make sure to get the Dandelion Gwent card during this quest, otherwise you will not get a chance to get it later on.",
+        "isCompleted": false,
+        "link": "https://youtu.be/8jWoKdnvRo0?t=440"
+      },
+      {
+        "text": "In 'A Matter of Life and Death', you can run into a random drunk, Moritz, and Morvran Voorhis as well."
+      }
+    ]
+  },
+  {
+    "name": "Witch Hunter Raids (II)",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://www.tivaprojects.com/witcher3map/v/index.html",
+    "notes": [
+      {
+        "text": "Check the linked map for the exact location.",
+        "link": "https://www.reddit.com/r/witcher/comments/vc6gc8/cant_believe_i_just_found_this_random_encounter/"
+      }
+    ],
+    "prerequisites": [[{ "name": "A Matter of Life and Death" }]],
+    "cutoffs": [[{ "name": "Now or Never" }]]
+  },
+  {
+    "name": "Novigrad, Closed City I",
+    "type": "side",
+    "location": "novigrad",
+    "level": 11,
+    "link": "https://www.tivaprojects.com/witcher3map/v/index.html",
+    "notes": [
+      {
+        "text": "Near the large temple of the eternal fire, in northern Novigrad, you will hear the bells ringing every day at noon. You can also hear the bells from the central square.",
+        "link": "https://youtu.be/2XtIwLqkJ0o?t=575"
+      }
+    ],
+    "prerequisites": [
+      [
+        { "name": "A Matter of Life and Death" },
+        { "name": "Count Reuven's Treasure" }
+      ]
+    ]
+  },
+  {
+    "name": "Novigrad, Closed City II",
+    "type": "side",
+    "location": "novigrad",
+    "level": 1,
+    "link": "https://www.tivaprojects.com/witcher3map/v/index.html",
+    "prerequisites": [
+      [
+        { "name": "A Matter of Life and Death" },
+        { "name": "Count Reuven's Treasure" }
+      ]
+    ]
+  },
+  {
+    "name": "Carnal Sins",
+    "type": "side",
+    "location": "novigrad",
+    "level": 16,
+    "link": "https://witcher.fandom.com/wiki/Carnal_Sins",
+    "notes": [
+      {
+        "text": "If you found the dwarf during 'Pyres of Novigrad', this is the quest that you will find his dead body."
+      },
+      {
+        "text": "There is a unique scene at the gate of the morgue in Novigrad after the serial killer attacks Priscilla. When you are with Von Gratz during 'Carnal Sins', tell him you are not ready to go just yet after Priscilla is attacked. Then head to the gate and interact with the guard to get a cutscene.",
+        "isCompleted": false,
+        "link": "https://youtu.be/ShqU6LaDT7M?t=752"
+      },
+      {
+        "text": "In the 'Carnal Sins' quest, inspect corpse genitals twice for a unique line."
+      },
+      {
+        "text": "Crippled Kate's has no female clients and only 1 male worker."
+      },
+      {
+        "text": "During Carnal Sins, you can take Reverend Nathaniel's poker, but make sure to choose the correct dialogue to get correct information first. It keeps its heated glow when using it.",
+        "isCompleted": false,
+        "link": "https://youtu.be/aDxSDptPgtQ?t=160"
+      }
+    ],
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
+  },
+  {
     "name": "In the Eternal Fire's Shadow",
+    "type": "side",
+    "location": "velen",
+    "level": 15,
+    "link": "https://witcher.fandom.com/wiki/In_the_Eternal_Fire%27s_Shadow",
+    "ignoreLocation": true,
+    "notes": [
+      {
+        "text": "Make sure you have completed Keira's quest, 'Magic Lamp', so that you have the lamp that can reveal ghosts in this quest."
+      },
+      {
+        "text": "'In the Eternal Fire's Shadow', you can deal with the bandits in the Devil's Pit before speaking with the deacon, and Geralt will respond with some unique dialogue saying that they were already dealt with."
+      },
+      {
+        "text": "In the Eternal Fire's Shadow has multiple endings and you can see them in this video.",
+        "link": "https://www.youtube.com/watch?v=jCvo5fedols"
+      },
+      {
+        "text": "In the Eternal Fire's Shadow, if you die during combat, you'll get a unique death scene.",
+        "link": "https://youtu.be/UDk_z5rOatA?t=60"
+      },
+      {
+        "text": "During 'In the Eternal Fire's Shadow', there are a couple references to 'Funeral Pyres' if you had completed it beforehand.",
+        "link": "https://youtu.be/jCvo5fedols?t=500"
+      },
+      {
+        "text": "The spectre in 'In the Eternal Fire's Shadow' will mention the pesta from 'A Towerful of Mice' if you brought the bones to Graham.",
+        "link": "https://youtu.be/jCvo5fedols?t=533"
+      },
+      {
+        "text": "If you get one of the good endings for 'In the Eternal Fire's Shadow', you will see a dog in Devil's Pit named Kal. This is likely a reference to Henry Cavill's dog who is also named Kal.",
+        "link": "https://youtu.be/jCvo5fedols?t=552"
+      },
+      {
+        "text": "'In the Eternal Fire's Shadow', if you refuse to bring down the deacon and refuse to tell the deacon the specifics of what happened, the deacon will be grateful and will ask for your name. Geralt responds by saying 'Reinald' and the deacon then names the hospital he creates using Reinald's name, even though he thinks he's using Geralt's name."
+      },
+      {
+        "text": "'In the Eternal Fire's Shadow', there is a closed off building near the top of Devil's Pit. If you get the good ending where the area becomes populated with people, this building will become open with a merchant inside."
+      }
+    ],
+    "prerequisites": [[{ "name": "Magic Lamp" }]]
+  },
+  {
+    "name": "Now or Never",
+    "type": "side",
+    "location": "novigrad",
+    "level": 14,
+    "link": "https://witcher.fandom.com/wiki/Now_or_Never",
+    "notes": [
+      {
+        "text": "When Triss leaves her Novigrad residence during the 'Now or Never' quest, her landlords can be seen rummaging through her things (before you join up with Triss)."
+      },
+      {
+        "text": "During 'Now or Never' when saving Berthold and Annise, you can speak with their landlords on the main floor before you leave the house. You can punch the man.",
+        "isCompleted": false
+      },
+      {
+        "text": "If you saved Moritz after 'A Matter of Life and Death', you can find him with the other mages during 'Now or Never'."
+      },
+      {
+        "text": "During the quest 'Now or Never', when you are underground in the tunnels, you will come across a hidden library, which happens to be directly under the actual city library.",
+        "link": "https://youtu.be/2ZBzsBpS8zw?t=161"
+      }
+    ],
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
+  },
+  {
+    "name": "A Deadly Plot",
+    "type": "side",
+    "location": "novigrad",
+    "level": 14,
+    "link": "https://witcher.fandom.com/wiki/A_Deadly_Plot",
+    "notes": [
+      {
+        "text": "Thaler's monocle dialogue is now fixed in the next gen update. If you picked up the monocle in the quest 'A Frying Pan, Spick and Span', you can return it to Thaler in 'A Deadly Plot'.",
+        "isCompleted": false
+      },
+      {
+        "text": "The Passiflora innkeeper might be the only vendor that sells cucumbers and bananas."
+      },
+      {
+        "text": "The Passiflora has some rich female clients and several male workers."
+      }
+    ],
+    "cutoffs": [[{ "name": "Isle of the Mists" }]]
+  },
+  {
+    "name": "Gwent: Playing Thaler",
+    "type": "gwent",
+    "location": "novigrad",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Gwent:_Playing_Thaler",
+    "notes": [
+      {
+        "text": "This quest appears right after you escort Thaler back to his wagon in 'A Deadly Plot'."
+      }
+    ],
+    "isOrdered": true,
+    "prerequisites": [[{ "name": "A Deadly Plot" }]]
+  },
+  {
+    "name": "The Most Truest of Basilisks",
+    "type": "encounter",
+    "location": "novigrad",
+    "link": "https://witcher.fandom.com/wiki/The_Most_Truest_of_Basilisks",
+    "isOrdered": true,
+    "notes": [
+      { "text": "This quest will only appear between 7am and 6pm." },
+      {
+        "text": "In The Most Truest of Basilisks, once the fight begins, the Beast Tamer will take off running towards Novigrad Gate where he will cower in fear behind a small building. Geralt can follow him until he stops running, but will not be able to interact with him."
+      }
+    ]
+  },
+  {
+    "name": "Message from an Old Friend",
+    "type": "side",
+    "location": "novigrad",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Message_from_an_Old_Friend"
+  },
+  {
+    "name": "Empty Coop",
+    "type": "side",
+    "location": "novigrad",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Empty_Coop",
+    "notes": [
+      {
+        "text": "During Empty Coop, you can persuade the old lady to take in the children at the end of the quest. After a couple weeks in game, or after completing one or two quests, you can return to the hut and hear some dialogue between the old lady and the children."
+      }
+    ]
+  },
+  {
+    "name": "Hey, You Wanna Look at My Stuff?",
+    "type": "side",
+    "location": "novigrad",
+    "level": 6,
+    "link": "https://witcher.fandom.com/wiki/Hey,_You_Wanna_Look_at_my_Stuff%3F",
+    "notes": [
+      {
+        "text": "There is a potential God of War reference, which is a man that somewhat looks similar to Kratos. It most likely is not a reference to Kratos since the character model is not as muscular, but he is bald, pale, and has red marks where the blades of chaos would be. It's on the beached ship directly north of the Novigrad Docks and South West of Electors' Square. The link will show you an image.",
+        "link": "https://ibb.co/cXTrfHq"
+      }
+    ]
+  },
+  {
+    "name": "Novigrad Hospitality",
+    "type": "side",
+    "location": "novigrad",
+    "level": 8,
+    "link": "https://witcher.fandom.com/wiki/Novigrad_Hospitality"
+  },
+  {
+    "name": "Of Dairy and Darkness",
+    "type": "side",
+    "location": "novigrad",
+    "level": 9,
+    "link": "https://witcher.fandom.com/wiki/Of_Dairy_and_Darkness",
+    "notes": [
+      {
+        "text": "Purchase the lizard figurine from the merchant in Gildorf to begin the quest."
+      },
+      {
+        "text": "The lever at the top of Aeramas's residence simulates a 'light switch' that essentially turns off the sun for a few seconds. The mage was testing this and the lever has no other functional purpose for the quest.",
+        "isCompleted": false
+      },
+      {
+        "text": "In the quest, 'Of Dairy and Darkness', you will eventually receive The Emmentaler sword. What you may not have noticed, is that it can be dismantled into cheese.",
+        "link": "https://youtu.be/-FOLXMoBy4c?t=931"
+      }
+    ]
+  },
+  {
+    "name": "Spooked Mare",
+    "type": "side",
+    "location": "novigrad",
+    "level": 12,
+    "link": "https://witcher.fandom.com/wiki/Spooked_Mare",
+    "specialNote": {
+      "text": "Very buggy: the quest may show red and restart automatically. Save before starting; finish it before restarting manually."
+    },
+    "notes": [
+      {
+        "text": "This quest is a buggy quest. Red marks may appear during the quest that are resolved to green when you finish."
+      },
+      {
+        "text": "During Spooked Mare, bring the wrong horse to make the horse master happier and give you more coins.",
+        "link": "https://youtu.be/XFXGpAHcRYc?t=792"
+      }
+    ]
+  },
+  {
+    "name": "Black Pearl",
+    "type": "side",
+    "location": "novigrad",
+    "level": 13,
+    "link": "https://witcher.fandom.com/wiki/Black_Pearl_(quest)"
+  },
+  {
+    "name": "Little Red",
+    "type": "side",
+    "location": "novigrad",
+    "level": 15,
+    "link": "https://witcher.fandom.com/wiki/Little_Red_(quest)"
+  },
+  {
+    "name": "A Feast for Crows",
+    "type": "side",
+    "location": "novigrad",
+    "level": 20,
+    "link": "https://witcher.fandom.com/wiki/A_Feast_for_Crows"
+  },
+  {
+    "name": "Of Swords and Dumplings",
+    "type": "side",
+    "location": "novigrad",
+    "level": 24,
+    "link": "https://witcher.fandom.com/wiki/Of_Swords_and_Dumplings",
+    "notes": [
+      {
+        "text": "The sword you get from 'Of Swords and Dumplings' now levels up with your character."
+      },
+      {
+        "text": "During 'Of Swords and Dumplings', if you sided with Iorveth in the Witcher 2, you will be able to persuade the dwarf to let you in without bribes or axii.",
+        "link": "https://youtu.be/ie2F8NBo8ng?t=107"
+      },
+      {
+        "text": "After finishing 'Of Swords and Dumplings' with Hattori, you can have a bit of follow-up in Skellige. If you go to Urialla Harbor, you can run into Sukrus, his brother in law, and the rival sword merchant they took from Novigrad. You can overhear them and it seems they intend to start a business again. You can't interact with them though.",
+        "link": "https://youtu.be/ie2F8NBo8ng?t=26"
+      }
+    ]
+  },
+  {
+    "name": "An Elusive Thief",
+    "type": "contract",
+    "location": "novigrad",
+    "level": 13,
+    "link": "https://witcher.fandom.com/wiki/Contract:_An_Elusive_Thief",
+    "notes": [
+      {
+        "text": "If you want to be able to craft all of the possible decoctions, you must kill the doppler, since this is the only opportunity to get a doppler mutagen for the doppler decoction."
+      }
+    ]
+  },
+  {
+    "name": "The White Lady",
+    "type": "contract",
+    "location": "novigrad",
+    "level": 16,
+    "link": "https://witcher.fandom.com/wiki/Contract:_The_White_Lady"
+  },
+  {
+    "name": "Doors Slamming Shut",
+    "type": "contract",
+    "location": "novigrad",
+    "level": 24,
+    "link": "https://witcher.fandom.com/wiki/Contract:_Doors_Slamming_Shut",
+    "notes": [
+      {
+        "text": "During Doors Slamming Shut, if you say you are from the School of the Griffin, you can haggle for more money.",
+        "isCompleted": false,
+        "link": "https://youtu.be/6Fiq6PjXaXc?t=1195"
+      },
+      {
+        "text": "During the contract: Doors Slamming Shut, Kurt Dysart (the quest giver) will die at a later time if the supports break when fighting the elemental. If they do not break, or only one breaks, Kurt will survive. If you break the pillars, when you return to the house, you will get an extra cutscene where you learn he actually died. Use the strategy @13:49 to fight the elemental in the corner to try and prevent the supports from breaking.",
+        "isCompleted": false,
+        "link": "https://youtu.be/6Fiq6PjXaXc?t=727"
+      }
+    ]
+  },
+  {
+    "name": "Lord of the Wood",
+    "type": "contract",
+    "location": "novigrad",
+    "level": 25,
+    "link": "https://witcher.fandom.com/wiki/Contract:_Lord_of_the_Wood",
+    "notes": [
+      {
+        "text": "In the Cunny of the Goose brothel, there is a secret area behind a curtain @14:13 (you can't go into this area, but you can observe it from a window outside).",
+        "link": "https://youtu.be/3FdhKhC6kGY?t=853"
+      },
+      {
+        "text": "When doing the 'Lord of the Wood', after speaking with the Dwarf, when exiting the building, you will see a murder of crows leaving. The leshen has them as spies and will now know you are coming."
+      }
+    ]
+  },
+  {
+    "name": "Coast of Wrecks",
+    "type": "treasure",
+    "location": "novigrad",
+    "level": 13,
+    "link": "https://witcher.fandom.com/wiki/Coast_of_Wrecks_(quest)"
+  },
+  {
+    "name": "Battlefield Loot",
+    "type": "treasure",
+    "location": "novigrad",
+    "level": 20,
+    "link": "https://witcher.fandom.com/wiki/Battlefield_Loot"
+  },
+  {
+    "name": "Cat School Gear (Basic)",
+    "type": "scavenger",
+    "location": "novigrad",
+    "level": 17,
+    "link": "https://witcher.fandom.com/wiki/Cat_School_Gear",
+    "notes": [
+      {
+        "text": "Talk to the widow from 'The White Lady' to prevent a red mark on that quest (the two quests are overlapping)."
+      },
+      {
+        "text": "Crazy cat lady outside of Novigrad has a diary that can start the hunt for the feline armor. You can follow her around and she'll say odd things.",
+
+        "link": "https://youtu.be/SxcC8VvDA-0?t=74"
+      }
+    ]
+  },
+  {
+    "name": "Cat School Part 1",
+    "type": "scavenger",
+    "location": "novigrad",
+    "level": 23,
+    "link": "https://witcher.fandom.com/wiki/Cat_School_Gear"
+  },
+  {
+    "name": "Gwent: Collect 'em All! (Novigrad)",
+    "type": "gwent",
+    "location": "novigrad",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Collect_'Em_All"
+  },
+  {
+    "name": "Gwent: Big City Players",
+    "type": "gwent",
+    "location": "novigrad",
+    "level": 1,
+    "link": "https://witcher.fandom.com/wiki/Gwent:_Big_City_Players",
+    "notes": [
+      {
+        "text": "In 'Gwent: Big City Players', don't face Marquise Serenity until after you've met Dijkstra, otherwise the quest will complete without facing Dijkstra (though you can still face him and acquire his card). If you face her though, it shouldn't prevent you from finding all the Gwent cards, it just allows the Big City Players quest to continue without finishing too early."
+      }
+    ]
+  },
+  {
+    "name": "Gwent: High Stakes",
+    "type": "gwent",
+    "location": "novigrad",
+    "level": 26,
+    "link": "https://witcher.fandom.com/wiki/High_Stakes",
+    "notes": [
+      {
+        "text": "You must win the tournament to get the missable cards and beat Tybalt to unlock the missable achievement Gwent Master."
+      }
+    ]
+  },
+  {
+    "name": "Fists of Fury: Novigrad",
+    "type": "fistfight",
+    "location": "novigrad",
+    "level": 23,
+    "link": "https://witcher.fandom.com/wiki/Fists_of_Fury:_Novigrad"
+  },
+  {
+    "name": "Mysterious Tracks",
+    "type": "contract",
+    "location": "velen",
+    "level": 20,
+    "link": "https://witcher.fandom.com/wiki/Contract:_Mysterious_Tracks"
+  },
+  {
+    "name": "The Mystery of the Byways Murders",
+    "type": "contract",
+    "location": "velen",
+    "level": 22,
+    "link": "https://witcher.fandom.com/wiki/Contract:_The_Mystery_of_the_Byways_Murders",
+    "notes": [
+      {
+        "text": "In 'Contract: The Mystery of the Byways Murders', you can get different amounts of pay depending on who you speak to first and what you say. To get the most coin, talk to the officer Milan first before going to Bywaters so that you can haggle for more gold. When at the village and after rescuing the two survivors, say 'I'm nosy' to Bytomir so that he doesn't know you were already hired to take care of the monster since he won't pay you if he knows you were hired. Once you kill the monster (after examining the soldiers' bodies, following the scent, and going into the tunnels under the hut), Bytomir will reward you with 210 coins. You can then return to Milan to collect the reward from him as well.",
+        "isCompleted": false
+      }
+    ]
+  },
+  {
+    "name": "Phantom of the Trade Route",
+    "type": "contract",
+    "location": "velen",
+    "level": 23,
+    "link": "https://witcher.fandom.com/wiki/Contract:_Phantom_of_the_Trade_Route"
+  },
+  {
+    "name": "Blood Gold",
+    "type": "treasure",
+    "location": "velen",
+    "level": 18,
+    "link": "https://witcher.fandom.com/wiki/Blood_Gold"
+  },
+  {
+    "name": "Tough Luck",
+    "type": "treasure",
+    "location": "velen",
+    "level": 18,
+    "link": "https://witcher.fandom.com/wiki/Tough_Luck"
+  },
+  {
+    "name": "A Plea Ignored",
+    "type": "treasure",
+    "location": "velen",
+    "level": 28,
+    "link": "https://witcher.fandom.com/wiki/A_Plea_Ignored"
+  },
+  {
+    "name": "Dowry",
+    "type": "treasure",
+    "location": "velen",
+    "level": 32,
+    "link": "https://witcher.fandom.com/wiki/Dowry"
+  },
+  {
+    "name": "Griffin School Part 1",
+    "type": "scavenger",
+    "location": "velen",
+    "level": 18,
+    "link": "https://witcher.fandom.com/wiki/Griffin_School_Gear"
+  },
+  {
+    "name": "Griffin School Part 2",
+    "type": "scavenger",
+    "location": "velen",
+    "level": 18,
+    "link": "https://witcher.fandom.com/wiki/Griffin_School_Gear"
+  },
+  {
+    "name": "Wolf School Part 1",
+    "type": "scavenger",
+    "location": "velen",
+    "level": 21,
+    "link": "https://witcher.fandom.com/wiki/Wolf_School_Gear"
+  },
+  {
+    "name": "Cat School Part 2",
+    "type": "scavenger",
+    "location": "velen",
+    "level": 23,
+    "link": "https://witcher.fandom.com/wiki/Cat_School_Gear"
+  },
+  {
+    "id": "On Thin Ice",
+    "name": "On Thin Ice",
     "link": "",
     "location": "velen",
     "type": "main"
