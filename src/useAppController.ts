@@ -16,10 +16,13 @@ import {
   processQuests,
   saveProgress,
 } from "./helpers";
+import { useScrollRestoration } from "./hooks/useScrollRestoration";
 
 export const useAppController = (): AppVM => {
   const [{ isLoading, error, quests, rawQuests }, setQuestsState] =
     useState<AppControllerQuestsState>({ isLoading: false });
+
+  useScrollRestoration({ enabled: quests !== undefined });
 
   const [confirmationDialog, setConfirmationDialog] = useState<
     AppVM["confirmationDialog"]
