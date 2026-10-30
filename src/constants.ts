@@ -1,5 +1,7 @@
 export const PROGRESS_LS_KEY = "progress";
 
+export const IS_COMPLETED_VISIBLE_LS_KEY = "isCompletedVisible";
+
 export const questIds: Record<string, string | undefined> = {
   "Kaer Morhen": "0",
   "Lilac and Gooseberries Part 1": "1",

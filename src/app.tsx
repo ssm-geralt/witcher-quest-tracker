@@ -17,6 +17,8 @@ export function App() {
     confirmationDialog,
     disabledQuests,
     onPathChange,
+    isCompletedVisible,
+    onIsCompletedVisibleChange,
   } = useAppController();
 
   return (
@@ -31,7 +33,11 @@ export function App() {
             <h2 className="text-center">Controls</h2>
           </header>
 
-          <Controls reset={controls.reset} />
+          <Controls
+            reset={controls.reset}
+            isCompletedVisible={isCompletedVisible}
+            onIsCompletedVisibleChange={onIsCompletedVisibleChange}
+          />
         </section>
 
         {quests ? (
@@ -57,6 +63,7 @@ export function App() {
               onCompletionStateClick={onCompletionStateClick}
               onNoteCompletionChange={onNoteCompletionChange}
               onPathChange={onPathChange}
+              isCompletedVisible={isCompletedVisible}
             />
           ) : null}
         </section>

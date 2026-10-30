@@ -1,7 +1,8 @@
+import type { QuestCompletionState } from "../../shared/domain/questCompletionStateSchema";
 import type { Quest } from "../quest/domain";
 import type { CategorizedQuests } from "./domain";
 
-export const isQuestOrdered = ({
+export const getIsQuestOrdered = ({
   cutoffs,
   prerequisites,
   type,
@@ -33,7 +34,7 @@ export const categorizeQuests = (processedQuests: Quest[]) =>
   processedQuests?.reduce<CategorizedQuests[]>((output, quest) => {
     const currentCategory = output[output.length - 1];
 
-    const isOrdered = isQuestOrdered(quest);
+    const isOrdered = getIsQuestOrdered(quest);
 
     if (
       currentCategory &&
@@ -56,3 +57,14 @@ export const categorizeQuests = (processedQuests: Quest[]) =>
 
     return output;
   }, []);
+
+export const getIsQuestFullyCompleted = ({
+  completionState,
+  notes,
+}: {
+  completionState?: QuestCompletionState;
+  notes: { isCompleted?: boolean }[];
+}) =>
+  completionState !== "empty" &&
+  completionState !== undefined &&
+  notes.every(({ isCompleted }) => isCompleted || isCompleted === undefined);

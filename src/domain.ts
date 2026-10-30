@@ -87,4 +87,5 @@ export type AppVM = {
 } & Pick<
   QuestsByCategoriesProps,
   "onCompletionStateClick" | "onNoteCompletionChange" | "onPathChange"
->;
+> &
+  Pick<ControlsProps, "onIsCompletedVisibleChange" | "isCompletedVisible">;

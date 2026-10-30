@@ -7,10 +7,12 @@ export const useQuestsByCategoriesController = ({
   onNoteCompletionChange,
   disabledQuests,
   onPathChange,
+  isCompletedVisible,
 }: QuestsByCategoriesProps): QuestsByCategoriesVM => ({
   categorizedQuests: categorizeQuests(quests),
   onCompletionStateClick,
   onNoteCompletionChange,
   disabledQuests,
   onPathChange,
+  isCompletedVisible,
 });

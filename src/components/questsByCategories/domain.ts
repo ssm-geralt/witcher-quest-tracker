@@ -9,6 +9,7 @@ export interface CategorizedQuests {
 export type QuestsByCategoriesProps = {
   quests: Quest[];
   disabledQuests: Set<string>;
+  isCompletedVisible: boolean;
 } & Pick<
   QuestProps,
   "onCompletionStateClick" | "onNoteCompletionChange" | "onPathChange"
@@ -22,4 +23,5 @@ export type QuestsByCategoriesVM = {
   | "onNoteCompletionChange"
   | "onPathChange"
   | "disabledQuests"
+  | "isCompletedVisible"
 >;

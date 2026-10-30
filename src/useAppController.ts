@@ -17,10 +17,14 @@ import {
   saveProgress,
 } from "./helpers";
 import { useScrollRestoration } from "./hooks/useScrollRestoration";
+import { IS_COMPLETED_VISIBLE_LS_KEY } from "./constants";
 
 export const useAppController = (): AppVM => {
   const [{ isLoading, error, quests, rawQuests }, setQuestsState] =
     useState<AppControllerQuestsState>({ isLoading: false });
+  const [isCompletedVisible, setIsCompletedVisible] = useState(
+    localStorage.getItem(IS_COMPLETED_VISIBLE_LS_KEY) === "true",
+  );
 
   useScrollRestoration({ enabled: quests !== undefined });
 
@@ -112,6 +116,12 @@ export const useAppController = (): AppVM => {
         return quest;
       }),
     }));
+  };
+
+  const onIsCompletedVisibleChange: AppVM["onIsCompletedVisibleChange"] = (
+    e,
+  ) => {
+    setIsCompletedVisible(e.target.checked);
   };
 
   const controls: AppVM["controls"] = {
@@ -226,6 +236,13 @@ export const useAppController = (): AppVM => {
     saveProgress(progress);
   }, [quests]);
 
+  useEffect(() => {
+    localStorage.setItem(
+      IS_COMPLETED_VISIBLE_LS_KEY,
+      isCompletedVisible.toString(),
+    );
+  }, [isCompletedVisible]);
+
   return {
     isLoading,
     error,
@@ -236,5 +253,7 @@ export const useAppController = (): AppVM => {
     controls,
     confirmationDialog,
     disabledQuests,
+    isCompletedVisible,
+    onIsCompletedVisibleChange,
   };
 };
