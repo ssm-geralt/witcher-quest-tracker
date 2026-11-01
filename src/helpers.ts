@@ -380,3 +380,53 @@ export const getDisabledQuests = (
 
   return output;
 };
+
+export const handleAutoCompletionStateUpdates = (
+  map: Map<string, Quest>,
+  id: string,
+) => {
+  const target = map.get(id);
+
+  if (!target || target.isAutoSet === false) {
+    return map;
+  }
+
+  const areRulesValid = validateDependencyRuleSet(target.cutoffs, map);
+
+  if (areRulesValid) {
+    target.completionState = "failure";
+    target.isAutoSet = true;
+  } else {
+    target.completionState = "empty";
+    target.isAutoSet = true;
+  }
+
+  target.cutoffFor.forEach(({ id }) => {
+    handleAutoCompletionStateUpdates(map, id);
+  });
+
+  return map;
+};
+
+export const handleCompletionStateUpdate = (
+  quests: Quest[],
+  id: string,
+  newState: QuestCompletionState,
+) => {
+  const map = new Map(quests.map((q) => [q.id, { ...q }]));
+
+  const target = map.get(id);
+
+  if (!target) {
+    return quests;
+  }
+
+  target.completionState = newState;
+  target.isAutoSet = false;
+
+  target.cutoffFor.forEach(({ id }) => {
+    handleAutoCompletionStateUpdates(map, id);
+  });
+
+  return [...map.values()];
+};

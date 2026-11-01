@@ -441,8 +441,7 @@
         "isCompleted": false,
         "link": "https://www.youtube.com/watch?v=5D6rsORwqXc&list=PLgHgYXIqVlYb0UtbPpQmlVbbomM92PNEv&t=348s"
       }
-    ],
-    "cutoffs": [[{ "name": "Ghosts of the Past" }]]
+    ]
   },
   {
     "name": "Caravan Attack",
@@ -679,7 +678,7 @@
         "isCompleted": false
       }
     ],
-    "cutoffs": [[{ "name": "Bitter Harvest" }, { "name": "Fake Papers" }]]
+    "cutoffs": [[{ "name": "Fake Papers" }], [{ "name": "Bitter Harvest" }]]
   },
   {
     "name": "Death By Fire",

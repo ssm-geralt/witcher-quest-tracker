@@ -12,6 +12,7 @@ import {
   getDisabledQuests,
   getIsProgressMade,
   getNextCompletionState,
+  handleCompletionStateUpdate,
   loadProgress,
   processQuests,
   saveProgress,
@@ -45,13 +46,11 @@ export const useAppController = (): AppVM => {
 
     setQuestsState((prevQuestsState) => ({
       ...prevQuestsState,
-      quests: prevQuestsState.quests?.map((quest) => {
-        if (id === quest.id) {
-          return { ...quest, completionState: newState, isAutoSet: false };
-        }
-
-        return quest;
-      }),
+      quests: handleCompletionStateUpdate(
+        prevQuestsState.quests || [],
+        id,
+        newState,
+      ),
     }));
   };
 
